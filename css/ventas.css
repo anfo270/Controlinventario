@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+}
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    width: 60%;
+}
+.contenedor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+}
+
+p{
+    margin: 0.5em;
+}
+.boxtext{
+    margin-left: 1em;
+    font-size: 1em;
+    width: 10em;
+}
+
+.botones{
+    width: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.cancelar{
+    flex-grow: 0;
+}
+.btn{
+    width: 5em;
+    height: 3em;
+    font-size: 1em;
+    margin: .2em;
+}
+
+select{
+    height: 1.5em;
+    width: 6em;
+    font-size: 0.8em;
+}

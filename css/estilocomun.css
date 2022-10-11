@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+}
+
+.contenedor{
+    background-color:  #eaefe1;
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+   
+}
+button{
+    background-color:#8AC440;
+    color: white;
+    border:none;
+    border-radius: 0.5em;
+    height: 15%;
+    width: 25%;
+    font-size: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn:hover{
+    background-color: #749e3c;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25em;
+    height: 2.5em;
+}
+
+nav>.cerrar{
+    background-color: red;
+    font-size: 1em;
+    width: 7em;
+    height: 2em;
+}
+nav>p{
+    color:black;
+}
+nav>.cerrar:hover{
+    background-color: rgb(163, 0, 0);
+}
+.btncerrar{
+    background-color: red;
+
+}
+
+.btncerrar:hover{
+    background-color: rgb(163, 0, 0);
+}
+input {
+    border: 0;
+    border-radius: .25em;
+    width: 15.5em;
+    height: 1.2em;
+    
+}
+
+.cancelar {
+    background-color: red;
+}
+.cancelar:hover {
+    background-color: rgb(163, 0, 0);
+}
+.boxtext{
+    border-color: black;
+    border:solid 0.01em;
+}
+
