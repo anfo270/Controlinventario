@@ -19,7 +19,8 @@ body{
 .btn{
     background-color:#8AC440;
     height: 15%;
-    width: 25%;
+    width: 350px;
+    /*width: 25%;*/
     font-size: 3em;
     display: flex;
     flex-wrap: wrap;
