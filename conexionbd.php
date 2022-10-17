@@ -1,15 +1,16 @@
 <?
-    $servername = "localhost";
-    $database = "control_inventario";
-    $username = "root";
-    $password = "";
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo "Connected successfully";
-    mysqli_close($conn)
-    
+    session_start();
+    //datos de db
+    $server='localhost';
+    $user='root';
+    $pass='';
+    $db='control_inventario';
+
+    //conexion a base de datos
+    $conexion=new mysqli($server,$user,$pass,$db);
+    //verificacion de error
+    if($conexion->connect_error)
+        die('La conexion a fallado'.$conexion->connect_errno);
+
+        
 ?>
