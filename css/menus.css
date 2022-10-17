@@ -13,7 +13,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
+    padding-top:60px
 }
 
 .btn{
@@ -26,9 +27,12 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2.5%;
 }
 .btn:hover{
     background-color: #749e3c;
+    cursor: pointer;
 }
-
-
+.cerrar{
+    margin-bottom: 0px;
+}
