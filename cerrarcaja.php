@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.html');
 }
+$usu = $_SESSION['Usuario']
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +21,13 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     <nav><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
         <button class="btncerrar" onclick="location.href='cerrar.php'">Cerrar Caja</button>
-        <h3>Fecha:</h3><p id="fecha">0/0/0</p>
-        <h3>Hora</h3><p id="hora">00:00</p>
+        <?php
+        date_default_timezone_set('America/Denver');
+        $Fecha = date('d/m/Y', time());
+        $Hora = date('h:i a', time());
+        echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";
+        echo "<h3>Fecha:</h3><p id='hora'>$Hora</p>";
+        ?>
     </div> 
 </body>
 </html>
