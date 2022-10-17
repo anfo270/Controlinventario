@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
+    header('location: index.html');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +16,7 @@
     <title>Abrir Caja</title>
 </head>
 <body>
-    <nav><button class="btn cerrar">Cerrar Sesion</button> <p>Jesus Flores</p></nav>
+    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesion</button> <p>Jesus Flores</p></nav>
     <div class="contenedor">
         <button class="btn abrircaja" onclick="location.href='seccionventas.html'">Abrir Caja</button>
         <h3>Fecha:</h3><p id="fecha">0/0/0</p>

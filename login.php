@@ -1,14 +1,5 @@
 <?php
 include('conexionbd.php');
-$server='localhost';
-$user='root';
-$pass='';
-$db='control_inventario';
-
-//conexion a base de datos
-$conexion=new mysqli($server,$user,$pass,$db);
-//verificacion de error
-    
 
 $user=$_POST['user'];
 $pass=$_POST['pass'];
@@ -28,7 +19,7 @@ if($query){
         $_SESSION['Local']=$row['Local'];
     }
     if($puesto =="vendedor"){
-        header('location: abrircaja.html');
+        header('location: abrircaja.php');
     }else{
     header('location: menu.html');
     }
