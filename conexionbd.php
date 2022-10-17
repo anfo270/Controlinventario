@@ -1,4 +1,4 @@
-<?
+<?php
     session_start();
     //datos de db
     $server='localhost';
