@@ -4,7 +4,6 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.html');
 }
 $usu = $_SESSION['Usuario']
-
 ?>
 
 <!DOCTYPE html>
@@ -16,19 +15,16 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilocomun.css">
     <link rel="stylesheet" href="css/menus.css">
-    <title>Abrir Caja</title>
+    <title>Secci&oacute;n de ventas</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
-        <button class="btn abrircaja" onclick="location.href='seccionventas.php'">Abrir Caja</button><br>
-        <?php
-        date_default_timezone_set('America/Denver');
-        $Fecha = date('d/m/Y', time());
-        $Hora = date('h:i a', time());
-        echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";
-        echo "<h3>Fecha:</h3><p id='hora'>$Hora</p>";
-        ?>
+        <button class="btn telefon" onclick="location.href='telefonventa.php'">Tel&eacute;fonos</button>
+        <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
+        <button class="btn recarga" onclick="location.href='recargaventa.php'">Recarga</button>
+        <button class="btn accesorio" onclick="location.href='accesorioventa.php'">Accesorio</button>
+        <button class="btn servicios" onclick="location.href='serviciosventas.php'">Servicio</button>
     </div> 
 </body>
 </html>

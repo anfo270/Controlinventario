@@ -4,7 +4,6 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.html');
 }
 $usu = $_SESSION['Usuario']
-
 ?>
 
 <!DOCTYPE html>
@@ -16,19 +15,14 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilocomun.css">
     <link rel="stylesheet" href="css/menus.css">
-    <title>Abrir Caja</title>
+    <title>Men&uacute;</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
-        <button class="btn abrircaja" onclick="location.href='seccionventas.php'">Abrir Caja</button><br>
-        <?php
-        date_default_timezone_set('America/Denver');
-        $Fecha = date('d/m/Y', time());
-        $Hora = date('h:i a', time());
-        echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";
-        echo "<h3>Fecha:</h3><p id='hora'>$Hora</p>";
-        ?>
-    </div> 
+        <button class="btn ventas" onclick="location.href='abrircaja.php'">Ventas</button>
+        <button class="btn inventario" onclick="location.href='inventario.php'">Inventario</button>
+        <button class="btn administrador" onclick="location.href='administrador.php'">Administrador</button>
+    </div>
 </body>
 </html>

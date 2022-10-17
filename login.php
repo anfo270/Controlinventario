@@ -24,7 +24,7 @@ if($query){
         if($puesto =="vendedor"){
             header('location: abrircaja.php');
         }else{
-            header('location: menu.html');
+            header('location: menu.php');
         }
     } else {
         echo '<script>alert("Usuario o contrase\u00F1a incorrectos.")</script> ';
