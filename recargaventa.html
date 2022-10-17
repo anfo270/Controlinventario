@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav><button class="btn cerrar">Cerrar Sesion</button> <p>Jesus Flores</p></nav>
+    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesion</button> <p>Jesus Flores</p></nav>
     <div class="contenedor">
         <label for="">
             <p>Proveedor:
@@ -23,23 +23,7 @@
             </select></p>
         </label>
         <label for="">
-            <p>Monto: $
-             <select name="Monto">
-                <option>10</option>
-                <option>20</option>
-                <option>30</option>               
-                <option>40</option>
-                <option>50</option>
-                <option>60</option>
-                <option>70</option>
-                <option>80</option>
-                <option>90</option>
-                <option>100</option>
-                <option>150</option>
-                <option>200</option>
-                <option>250</option>
-                <option>300</option>
-            </select></p>
+            <p>Monto: <input type="text" name="precio" id="precio" class="boxtext" required></p>
         </label>
         
             <div class="botones">
