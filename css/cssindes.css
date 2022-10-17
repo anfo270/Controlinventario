@@ -3,7 +3,7 @@ html{
     font-size: 16px;
 }
 body {
-    background-color: #fff;
+    background-color: rgb(241, 241, 241);
     width: 100%;
     height: 100vh;
 
@@ -14,20 +14,16 @@ body {
 }
 
 .contenedor {
-    background-color: #eaefe1;
+    background-color: #dde0d7;
     width: 20em;
     height: 20em;
     font-size: 1.3em;
-
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-
     border-radius: 0.8em;
 }
-
 
 button {
     margin-top: .8em;
@@ -35,7 +31,7 @@ button {
     border: 0em;
     border-radius: .6em;
     font-size: 1.1em;
-    padding: 0.1em;
+    padding: 0.28em;
 }
 
 .ingresar {
@@ -48,10 +44,12 @@ button {
 
 .ingresar:hover {
     background-color: #749e3c;
+    cursor: pointer;
 }
 
 .cancelar:hover {
     background-color: rgb(163, 0, 0);
+    cursor: pointer;
 }
 
 label{

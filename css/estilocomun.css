@@ -29,6 +29,7 @@ button{
 }
 .btn:hover{
     background-color: #749e3c;
+    cursor: pointer;
     
 }
 nav{
@@ -44,12 +45,14 @@ nav>.cerrar{
     font-size: 1em;
     width: 7em;
     height: 2em;
+    cursor: pointer;
 }
 nav>p{
     color:black;
 }
 nav>.cerrar:hover{
     background-color: rgb(163, 0, 0);
+    cursor: pointer;
 }
 .btncerrar{
     background-color: red;
@@ -58,6 +61,7 @@ nav>.cerrar:hover{
 
 .btncerrar:hover{
     background-color: rgb(163, 0, 0);
+    cursor: pointer;
 }
 input {
     border: 0;
@@ -72,6 +76,7 @@ input {
 }
 .cancelar:hover {
     background-color: rgb(163, 0, 0);
+    cursor: pointer;
 }
 .boxtext{
     border-color: black;
