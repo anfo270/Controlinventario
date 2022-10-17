@@ -3,9 +3,11 @@ include('conexionbd.php');
 
 $user=$_POST['user'];
 $pass=$_POST['pass'];
+$_SESSION['Usuario']="";
+$_SESSION['Contraseña']="";
 
 //buscar usuario
-$query=mysqli_query($conexion,"SELECT * FROM usuarios WHERE Usuario='".$user."'and Contraseña='".$pass."'");
+$query=mysqli_query($conexion,"SELECT * FROM usuarios WHERE Usuario='$user' AND Contraseña='$pass'");
 //asignamos el valor en una variable, si es 0 no existe
 
 if($query){
@@ -18,13 +20,18 @@ if($query){
         $puesto=$_SESSION['Puesto']=$row['Puesto'];
         $_SESSION['Local']=$row['Local'];
     }
-    if($puesto =="vendedor"){
-        header('location: abrircaja.php');
-    }else{
-    header('location: menu.html');
+    if($user == $_SESSION['Usuario'] && $pass == $_SESSION['Contraseña']){
+        if($puesto =="vendedor"){
+            header('location: abrircaja.php');
+        }else{
+            header('location: menu.html');
+        }
+    } else {
+        echo '<script>alert("Usuario o contrase\u00F1a incorrectos.")</script> ';
+        echo "<script>location.href='index.html'</script>";
     }
 }else{
-    header('location: index.html');
+    echo '<script>alert("Usuario o contrase\u00F1a incorrectos.")</script> ';
+    echo "<script>location.href='index.html'</script>";
 }
-
 ?>
