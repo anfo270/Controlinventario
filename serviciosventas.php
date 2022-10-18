@@ -25,9 +25,10 @@ $usu = $_SESSION['Usuario']
         <form action="ventas.php" method="POST">
             
                 <h3>Tipo de servicio:</h3>
+                lista de financieras
                 <p><input type="radio" name="servico" id="checkpayjoy" value="payjoy" required> Movistar</p>
                 <p><input type="radio" name="servicio" id="checkmovistar" value="movistar" requiered> Payjoy</p>
-  
+                 monto por input
             
             <div class="botones">
                 <button type="submit" class="btn">Agregar producto</button>

@@ -24,7 +24,7 @@ $usu = $_SESSION['Usuario']
         <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
         <button class="btn recarga" onclick="location.href='recargaventa.php'">Recarga</button>
         <button class="btn accesorio" onclick="location.href='accesorioventa.php'">Accesorio</button>
-        <button class="btn servicios" onclick="location.href='serviciosventas.php'">Servicio</button>
+        <button class="btn servicios" onclick="location.href='serviciosventas.php'">Pago de servicio</button>
     </div> 
 </body>
 </html>

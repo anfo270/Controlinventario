@@ -38,6 +38,7 @@ $usu = $_SESSION['Usuario']
                     <p>Proveedor:</p>
                 </td>
                 <td>
+                    lista de proveedores y bd
                     <input type="text" name="numero" class="boxtext" id="input2" onkeypress="nextFocus('input2', 'input3')">
                 </td>
             </tr>

@@ -15,13 +15,17 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilocomun.css">
     <link rel="stylesheet" href="css/menus.css">
-    <title>Men&uacute; inventario</title>
+    <title>Men&uacute;</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
-        <button class="btn transpaso" onclick="location.href='stock.php'">Consulta</button>
-        <button class="btn inventario" onclick="location.href='reporte.php'">Inventario de PDV</button>
+        <button class="btn inventario" onclick="location.href='inventario.php'">FINANCIERAS</button>
+        <button class="btn administrador" onclick="location.href='administrador.php'">MARCAS</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">TIPO DE ACTIVACION</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">LOCACION</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">PROVEEDOR</button>
+        <button class="btn cerrar" onclick="location.href='abrircaja.php'">Reseteo general</button>
     </div>
 </body>
 </html>

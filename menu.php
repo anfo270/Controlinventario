@@ -20,9 +20,10 @@ $usu = $_SESSION['Usuario']
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
-        <button class="btn ventas" onclick="location.href='abrircaja.php'">Ventas</button>
-        <button class="btn inventario" onclick="location.href='inventario.php'">Inventario</button>
+        <button class="btn ventas" onclick="location.href='abrircaja.php'">Vendedor</button>
+        <button class="btn inventario" onclick="location.href='inventario.php'">Responsable</button>
         <button class="btn administrador" onclick="location.href='administrador.php'">Administrador</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">Sistema</button>
     </div>
 </body>
 </html>

@@ -31,8 +31,12 @@ $usu = $_SESSION['Usuario']
             <label for="">
                 <p>Modelo: </p><p>Galaxy A23</p>
             </label>
+            lista de financiera
             <label>
-                <p class="precio">Precio:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
+                <p class="precio">Precio de producto:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
+            </label>
+            <label>
+                <p class="precio">Primer pago:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
             </label>
             <div class="botones">
                 <button class="btn">Agregar producto</button>

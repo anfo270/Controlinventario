@@ -64,6 +64,7 @@ $usu = $_SESSION['Usuario']
         <label class="pass">
             <p>Contraseña:<input type="password" name="contraseña" id="contraseña" class="boxtext" required></p>
         </label>
+        pedir factura
         <div class="botonventa">
             <button class="btn">Aceptar</button>
             <button class="btn cancelar">Cancelar</button>
