@@ -20,7 +20,7 @@ $usu = $_SESSION['Usuario']
 </head>
 
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
             <label for="">
                 <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>

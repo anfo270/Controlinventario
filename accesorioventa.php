@@ -20,7 +20,7 @@ $usu = $_SESSION['Usuario']
 </head>
 
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesion</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
             <label for="">
                 <p>SKU:<input type="text" name="SKU" id="SKU" class="boxtext" required></p>
