@@ -17,6 +17,7 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="css/reporte.css">
 
     <title>Compras</title>
+    <script src="javascript/script.js"></script>
 </head>
 <body>
 
@@ -29,7 +30,7 @@ $usu = $_SESSION['Usuario']
                     <p>Factura:</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
                 </td>
             </tr>
             <tr>
@@ -37,7 +38,7 @@ $usu = $_SESSION['Usuario']
                     <p>Proveedor:</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input2" onkeypress="nextFocus('input2', 'input3')">
                 </td>
             </tr>
             <tr>
@@ -45,14 +46,14 @@ $usu = $_SESSION['Usuario']
                     <p>Modelo:</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input3" onkeypress="nextFocus('input3', 'input4')">
                 </td>
             </tr>
             <tr>
                 <td>
                     <p>Cantidad </p>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input4">
                 </td>
             </tr>
         </table>

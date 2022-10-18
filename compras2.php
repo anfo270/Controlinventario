@@ -17,6 +17,7 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="css/reporte.css">
 
     <title>Compras</title>
+    <script src="javascript/script.js"></script>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -43,7 +44,7 @@ $usu = $_SESSION['Usuario']
                     <p>IMEI</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
                 </td>
             </tr>
             <tr>
@@ -51,7 +52,7 @@ $usu = $_SESSION['Usuario']
                     <p>IMEI</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input2" onkeypress="nextFocus('input2', 'input3')">
                 </td>
             </tr>
             <tr>
@@ -59,7 +60,7 @@ $usu = $_SESSION['Usuario']
                     <p>IMEI</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input3" onkeypress="nextFocus('input3', 'input4')">
                 </td>
             </tr>
             <tr>
@@ -67,7 +68,7 @@ $usu = $_SESSION['Usuario']
                     <p>IMEI</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input4" onkeypress="nextFocus('input4', 'input5')">
                 </td>
             </tr>
             <tr>
@@ -75,7 +76,7 @@ $usu = $_SESSION['Usuario']
                     <p>IMEI</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext" id="input5" >
                 </td>
             </tr>
             <tr>
