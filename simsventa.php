@@ -26,14 +26,24 @@ $usu = $_SESSION['Usuario']
                 <p>ICC:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
             </label>
             <label for="">
-                lista de marcas
-                <p>Marca: </p><p>Movistar</p>
+                <p>Marca: 
+                    <select name="proveedor">
+                        <option>Movistar</option>
+                        <option>Bait</option>
+                    </select>
+                </p>
             </label>
             <label for="">
-                lista de tipo de venta
-
-                se por input el numero
-                <p>DN: </p><p>6568214595</p>
+                <p>Tipo de activación:
+                    <select name="proveedor">
+                        <option>Prepago</option>
+                        <option>Protabilidad</option>
+                        <option>Plan</option>
+                    </select>
+                </p>
+            </label>
+            <label for="">
+                <p>DN: <input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
             </label>
             <label for="">
                 <p>Precio:<input type="text" name="precio" id="precio" class="boxtext" required></p>
