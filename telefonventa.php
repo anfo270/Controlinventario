@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
                 <p>Modelo: </p><p>Galaxy A23</p>
             </label>
             <label>
-                <p class="precio">Precio:</p><p>$ 6599</p>
+                <p class="precio">Precio:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
             </label>
             <div class="botones">
                 <button class="btn">Agregar producto</button>
