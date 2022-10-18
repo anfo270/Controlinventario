@@ -23,8 +23,7 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
         <h1>Ingreso</h1>
-            <p>Numero de transpaso: <input type="text" name="numero" class="boxtext"></p>
-        <table>
+        <table >
             <tr>
                 <td>
                     <p>Factura:</p>
@@ -46,7 +45,7 @@ $usu = $_SESSION['Usuario']
                     <p>Modelo:</p>
                 </td>
                 <td>
-                    <<input type="text" name="numero" class="boxtext">
+                    <input type="text" name="numero" class="boxtext">
                 </td>
             </tr>
             <tr>

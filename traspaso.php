@@ -27,13 +27,13 @@ $usu = $_SESSION['Usuario']
         <table>
             <tr>
                 <td>
-                    <p>Articulo</p>
+                    <p class="titulo">Articulo</p>
                 </td>
                 <td>
-                    <p>Cantidad</p>
+                    <p class="titulo">Cantidad</p>
                 </td>
                 <td>
-                    <p>Recibido</p>
+                    <p class="titulo">Recibido</p>
                 </td>
             </tr>
             <tr>

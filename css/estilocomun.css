@@ -83,3 +83,6 @@ input {
     border:solid 0.01em;
 }
 
+.titulo{
+    font-weight: bolder;
+}
