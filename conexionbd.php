@@ -1,5 +1,4 @@
 <?php
-    session_start();
     //datos de db
     $server='localhost';
     $user='root';
@@ -7,10 +6,13 @@
     $db='control_inventario';
 
     //conexion a base de datos
-    $conexion=new mysqli($server,$user,$pass,$db);
+    try{
+    $conexion= new PDO("mysql:host=$server;port=3306;dbname=$db",$user ,$pass);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    }
     //verificacion de error
-    if($conexion->connect_error)
-        die('La conexion a fallado'.$conexion->connect_errno);
-
-        
+    catch (PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage();
+    }
 ?>
