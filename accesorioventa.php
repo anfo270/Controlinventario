@@ -18,16 +18,20 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="css/ventas.css">
     <title>Tel&eacute;fono</title>
     <script src="javascript/datosaccesorio.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
             <label for="">
-                <p>SKU:<input type="text" name="SKU" id="SKU" class="boxtext" required></p>
+                <p>SKU:<input type="text" name="SKU" id="SKU" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>
             </label>
             <label for="">
-                <p>Tipo: </p><p>Audifonos</p>
+                <p>Marca: </p><p class="Marca"></p>
+            </label>
+            <label for="">
+                <p>Descripcion: </p><p class="Descripcion"></p>
             </label>
             <label for="">
                 <p>Precio:<input type="text" name="precio" id="precio" class="boxtext" required></p>
@@ -35,7 +39,7 @@ $usu = $_SESSION['Usuario']
             <div class="botones">
                 <button class="btn">Agregar producto</button>
                 <button class="btn" onclick="location.href='ventas.php'">Vender</button>
-                <button class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
+                <button class="btn cancelar" onclick="location.href='seccionventas.php'" >Cancelar</button>
             </div>
     </div>
 </body>

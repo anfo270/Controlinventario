@@ -18,26 +18,26 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="css/ventas.css">
     <title>Tel&eacute;fono</title>
     <script src="javascript/datostelefono.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
             <label for="">
-                <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" required></p>
+                <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI')" required></p>
             </label>
             <label for="">
-                <p>Marca: </p><p class="Marca">Samsung</p>
+                <p>Marca: </p><p class="Marca" id="Marca"></p>
             </label>
             <label for="">
-                <p>Modelo: </p><p>Galaxy A23</p>
+                <p>Modelo: </p><p id="Modelo"></p>
             </label>
             <label for="">
-                <p>Financiera: <select name="proveedor">
-
-                <option value="PAYJOY">PAYJOY</option>
-            
+                <p>Financiera:
+            <select name="proveedor" class="proveedor">
                 <option>Contado</option>
+                <option value="PAYJOY">PAYJOY</option>
             </select>
 
                 </p>
