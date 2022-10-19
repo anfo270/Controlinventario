@@ -10,8 +10,5 @@ include('conexionbd.php');
             'Modelo'=>$item->Modelo
         ];
     }
-
     echo json_encode($data);
-    
-
 ?>
