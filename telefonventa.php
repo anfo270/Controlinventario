@@ -24,10 +24,10 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
             <label for="">
-                <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
+                <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" required></p>
             </label>
             <label for="">
-                <p>Marca: </p><p>Samsung</p>
+                <p>Marca: </p><p class="Marca">Samsung</p>
             </label>
             <label for="">
                 <p>Modelo: </p><p>Galaxy A23</p>
@@ -35,7 +35,7 @@ $usu = $_SESSION['Usuario']
             <label for="">
                 <p>Financiera: <select name="proveedor">
 
-                <option>PAYJOY</option>
+                <option value="PAYJOY">PAYJOY</option>
             
                 <option>Contado</option>
             </select>
