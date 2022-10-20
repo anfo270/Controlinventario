@@ -20,6 +20,13 @@ $usu = $_SESSION['Usuario']
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="menu.php">Men&uacute;</a></li>
+            <li><a href="inventario.php">Responsable</a></li>
+            <li>Traspaso</li>
+        </ul>
+    </div>
     <div class="contenedor">
         <label for="">
             <p>Numero de transpaso: <input type="text" name="numero" class="boxtext"></p>

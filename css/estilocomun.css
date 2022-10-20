@@ -86,3 +86,35 @@ input {
 .titulo{
     font-weight: bolder;
 }
+
+/* CSS BREADCRUM */
+.bdcrumb{
+    display: block;
+    position: absolute;
+    top: 32px;
+    z-index: 100;
+}
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+/* Muestra elementos de la lista uno al lado del otro */
+ul.breadcrumb li {
+    display: inline;
+}
+/* Agregue un símbolo de barra (/) antes o detrás de cada elemento de la lista */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #313131;
+    content: "•\00a0";
+}
+/* Agrega un color a todos los enlaces dentro de la lista. */
+ul.breadcrumb li a {
+    color: #1900ff;
+    text-decoration: none;
+}
+/* Agregar un color al pasar el mouse */
+ul.breadcrumb li a:hover {
+    color: #978bff;
+    text-decoration: none;
+}
