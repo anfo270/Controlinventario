@@ -15,7 +15,7 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilocomun.css">
     <link rel="stylesheet" href="css/menus.css">
-    <title>Men&uacute;</title>
+    <title>Sistema</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -26,12 +26,12 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn inventario" onclick="location.href='inventario.php'">FINANCIERAS</button>
-        <button class="btn administrador" onclick="location.href='administrador.php'">MARCAS</button>
-        <button class="btn administrador" onclick="location.href='sistema.php'">TIPO DE ACTIVACION</button>
-        <button class="btn administrador" onclick="location.href='sistema.php'">LOCACION</button>
-        <button class="btn administrador" onclick="location.href='sistema.php'">PROVEEDOR</button>
-        <button class="btn cerrar" onclick="location.href='abrircaja.php'">Reseteo general</button>
+        <button class="btn inventario" onclick="location.href='inventario.php'">Financieras</button>
+        <button class="btn administrador" onclick="location.href='administrador.php'">Marcas</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">Tip. Activaci&oacute;n</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">Locaci&oacute;n</button>
+        <button class="btn administrador" onclick="location.href='sistema.php'">Proveedor</button>
+        <button class="btn cerrar reset" onclick="location.href='abrircaja.php'">Reset general</button><br><br>
     </div>
 </body>
 </html>

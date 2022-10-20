@@ -19,7 +19,7 @@ body{
 
 .btn{
     background-color:#8AC440;
-    height: 15%;
+    height: 16%;
     width: 350px;
     /*width: 25%;*/
     font-size: 3em;
@@ -27,7 +27,7 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2.5%;
+    margin-bottom: 15px;
 }
 .btn:hover{
     background-color: #749e3c;
@@ -35,4 +35,13 @@ body{
 }
 .cerrar{
     margin-bottom: 0px;
+}
+.reset{
+    background-color: red;
+
+}
+
+.reset:hover{
+    background-color: rgb(163, 0, 0);
+    cursor: pointer;
 }
