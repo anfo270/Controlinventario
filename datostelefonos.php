@@ -1,5 +1,5 @@
 <?php
-include('conexionbd.php');
+include('Config/conexionbd.php');
     $res=$conexion->query('SELECT * FROM telefonos') or die(print($conexion->errorInfo()));
     $datatel=[];
     while($item=$res->fetch(PDO::FETCH_OBJ)){
