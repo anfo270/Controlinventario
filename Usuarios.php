@@ -1,13 +1,13 @@
 <?php
 session_start();
-if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
+if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
     header('location: index.html');
 }
 $usu = $_SESSION['Usuario']
 ?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +15,9 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilocomun.css">
     <link rel="stylesheet" href="css/menus.css">
-    <title>Men&uacute;</title>
+    <title>Usuario</title>
 </head>
+
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
@@ -26,13 +27,18 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn" onclick="location.href='compras.php'">Compras</button>
-        <button class="btn" onclick="location.href='traspaso.php'">Traspaso</button>
-        <button class="btn ventas" onclick="location.href='Usuarios.php'">USUARIOS</button>
-        <button class="btn ventas" onclick="location.href='abrircaja.php'">Cobranza</button>
-        <button class="btn ventas" onclick="location.href='abrircaja.php'">Inventario general</button>
-        
-
+        <h1>Usuarios</h1>
+        <table borde='1'>
+            <tr>
+                <td class="titulo">Nombre</td>
+                <td class="titulo">Apellidos</td>
+                <td class="titulo">Contraseña</td>
+                <td class="titulo">Puesto</td>
+                <td class="titulo">Local</td>
+            </tr>
+        </table>
+        <table id="tableusers"></table>
     </div>
 </body>
+
 </html>

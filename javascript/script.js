@@ -6,6 +6,3 @@ function nextFocus(inputF, inputS) {
     });
   }
 
- 
-
-  function actualizar(){location.reload(true);}
