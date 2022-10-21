@@ -28,10 +28,10 @@ $usu = $_SESSION['Usuario']
                 <p>SKU:<input type="text" name="SKU" id="SKU" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>
             </label>
             <label for="">
-                <p>Marca: </p><p class="Marca"></p>
+                <p>Marca: </p><p id="Marca"></p>
             </label>
             <label for="">
-                <p>Descripcion: </p><p class="Descripcion"></p>
+                <p>Descripcion: </p><p id="Descripcion"></p>
             </label>
             <label for="">
                 <p>Precio:<input type="text" name="precio" id="precio" class="boxtext" required></p>

@@ -8,16 +8,16 @@ function pulsar(inputF) {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                        data.map(item =>{
-                            if(item.SKU==SKU){
-                                document.getElementById('Marca').innerHTML=item.SKU;
-                                document.getElementById('Descripcion').innerHTML=item.Descripcion;
-                            }else{
-                              document.getElementById('Marca').innerHTML="";
-                              
-                              document.getElementById('Descripcion').innerHTML="";
-                            }
-                        })
+                    data.map(item => {
+                        if (item.SKU == SKU) {
+                            document.getElementById('Marca').innerHTML = item.Marca;
+                            document.getElementById8('Descripcion').innerHTML = item.Descripcion;
+                        } else {
+                            document.getElementById('Marca').innerHTML = "";
+                            document.getElementById('Descripcion').innerHTML = "";
+
+                        }
+                    })
                 })
         }
     });

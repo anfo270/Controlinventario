@@ -7,15 +7,15 @@ function pulsar(inputF) {
             fetch('datostelefonos.php')
                 .then(res => res.json())
                 .then(data => {
-                        data.map(item=>{
-                            if(item.IMEI==IMEI){
-                                document.getElementById('Marca').innerHTML=item.Marca;
-                                document.getElementById('Modelo').innerHTML=item.Modelo;
-                            }else{
-                            document.getElementById('Marca').innerHTML="";
-                            document.getElementById('Modelo').innerHTML="";
-                            }
-                        })
+                    data.map(item => {
+                        if (item.IMEI == IMEI) {
+                            document.getElementById('Marca').innerHTML = item.Marca;
+                            document.getElementById('Modelo').innerHTML = item.Modelo;
+                        } else {
+                            document.getElementById('Marca').innerHTML = "";
+                            document.getElementById('Modelo').innerHTML = "";
+                        }
+                    })
                 })
         }
     });
