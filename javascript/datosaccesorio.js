@@ -8,11 +8,15 @@ function pulsar(inputF) {
                 .then(data => {
                     data.map(item => {
                         if (item.SKU == SKU) {
+                            document.getElementById('Marca').style.color='black';
                             document.getElementById('Marca').innerHTML = item.Marca;
+                            document.getElementById('Descripcion').style.color='black';
                             document.getElementById8('Descripcion').innerHTML = item.Descripcion;
                         } else {
-                            document.getElementById('Marca').innerHTML = "";
-                            document.getElementById('Descripcion').innerHTML = "";
+                            document.getElementById('Marca').style.color='red';
+                            document.getElementById('Marca').innerHTML = "No se encontro";
+                            document.getElementById('Descripcion').style.color='red';
+                            document.getElementById('Descripcion').innerHTML = "No se encontro";
 
                         }
                     })
