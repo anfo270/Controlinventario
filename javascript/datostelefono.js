@@ -1,7 +1,6 @@
 
 function pulsar(inputF) {
     document.getElementById(inputF).addEventListener('keydown', function (event) {
-        console.log(event)
         if (event.keyCode == 13) {
             let IMEI = parseInt(event.path[0].value);
             fetch('datostelefonos.php')
