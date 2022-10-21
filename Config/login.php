@@ -25,7 +25,7 @@ if($res->rowCount()==1){
         if($row['Puesto']=="vendedor"){
         header('location: ..\abrircaja.php');
         }else{
-            header('location: menu.php');
+            header('location: ..\menu.php');
         }
     } 
     else {
