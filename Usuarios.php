@@ -28,7 +28,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <h1>Usuarios</h1>
-        <table borde='1'>
+        <table>
             <tr>
                 <td class="titulo">Nombre</td>
                 <td class="titulo">Apellidos</td>

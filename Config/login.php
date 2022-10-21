@@ -23,7 +23,7 @@ if($res->rowCount()==1){
         $_SESSION['Local']=$row['Local'];
     if($user == $_SESSION['Usuario'] && $pass == $_SESSION['Contraseña']){
         if($row['Puesto']=="vendedor"){
-           header('location: abrircaja.php');
+           header('location: \Ctrl Inve/abrircaja.php');
         }else{
             header('location: menu.php');
         }
