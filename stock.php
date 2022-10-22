@@ -52,7 +52,7 @@ $usu = $_SESSION['Usuario']
                     <p>Cantidad</p>
                 </td>
                 <td>
-                    <p>Precio por unidad</p>
+                    <p>Local</p>
                 </td>
             </tr>
             <tr>
