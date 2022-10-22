@@ -27,12 +27,7 @@ $usu = $_SESSION['Usuario']
                 <p>ICC:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
             </label>
             <label for="">
-                <p>Marca: 
-                    <select name="proveedor">
-                        <option>Movistar</option>
-                        <option>Bait</option>
-                    </select>
-                </p>
+                <p>Marca:<p id="Marca"></p></p>
             </label>
             <label for="">
                 <p>Tipo de activación:
