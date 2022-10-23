@@ -17,8 +17,8 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
     <title>Tel&eacute;fono</title>
-    <script src="javascript/datosaccesorio.js"></script>
-    <script src="javascript/script.js"></script>
+    <script src="../javascript/datosaccesorio.js"></script>
+    <script src="../javascript/script.js"></script>
 </head>
 
 <body>

@@ -2,7 +2,7 @@ function pulsar(inputF) {
     document.getElementById(inputF).addEventListener('keydown', function (event) {
         if (event.keyCode == 13) {
             let ICC = event.path[0].value;
-            fetch('datossims.php')
+            fetch('../datossims.php')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
