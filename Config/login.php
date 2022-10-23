@@ -22,7 +22,7 @@ if ($res->rowCount() == 1) {
     $_SESSION['Puesto'] = $row['Puesto'];
     $_SESSION['Local'] = $row['Local'];
     if ($row['Puesto'] == "vendedor") {
-        header('location: ..\abrircaja.php');
+        header('location: ..\menu_ventas/abrircaja.php');
     } else {
         header('location: ..\menu.php');
     }
