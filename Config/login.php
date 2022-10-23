@@ -21,9 +21,8 @@ if ($res->rowCount() == 1) {
     $_SESSION['Contraseña'] = $row['Contraseña'];
     $_SESSION['Puesto'] = $row['Puesto'];
     $_SESSION['Local'] = $row['Local'];
-    if(!$user==$_SESSION['Usuario'] || !$pass==$_SESSION['Contraseña']){
-        echo '<script>alert("Usuario o contrase\u00F1a incorrectos.")</script> ';
-        echo "<script>location.href='../index.php'</script>";
+    if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contraseña']){
+        echo "<script>location.href='../menu.php'</script>";
     }else{
         if ($row['Puesto'] == "vendedor") {
             header('location: ..\menu_ventas/abrircaja.php');

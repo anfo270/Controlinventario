@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
+if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario']

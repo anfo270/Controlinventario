@@ -63,6 +63,11 @@ $usu = $_SESSION['Usuario']
 
         <?php } ?>
     </div>
+    <div class="modal-contenedor" id="modal-contenedor">
+        <form action="eliminar.php" method="post">
+            <label><p>Ingresa tu contraseña para confirmar</p></label>
+        </form>
+    </div>
 </body>
 
 </html>
