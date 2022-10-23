@@ -9,7 +9,7 @@ function pulsar(inputF) {
                     data.map(item => {
                         if (item.ICC == ICC) {
                             document.getElementById('Marca').style.color='black';
-                            document.getElementById('Marca').innerHTML = item.MARCA;
+                            document.getElementById('Marca').innerHTML = item.Marca;
                         } else {
                             document.getElementById('Marca').style.color='red';
                             document.getElementById('Marca').innerHTML = "No se encontro";
