@@ -13,8 +13,8 @@ $usu = $_SESSION['Usuario']
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilocomun.css">
-    <link rel="stylesheet" href="css/reporte.css">
+    <link rel="stylesheet" href="../css/estilocomun.css">
+    <link rel="stylesheet" href="../css/reporte.css">
 
     <title>Men&uacute; inventario</title>
 </head>
@@ -22,61 +22,65 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="menu.php">Men&uacute;</a></li>
+            <li><a href="../menu.php">Men&uacute;</a></li>
             <li><a href="inventario.php">Responsable</a></li>
-            <li><a href="reporte.php">Reporte</a></li>
-            <li>Consulta</li>
+            <li>Traspaso</li>
         </ul>
     </div>
     <div class="contenedor">
-        <h2>Consulta</h2>
-        <div>
-        <label for=""><p>Marca:
-            <select>
-                <option value="Samsung">Samsung</option>
-            </select>
-            </p>
+        <label for="">
+            <p>Numero de transpaso: <input type="text" name="numero" class="boxtext"></p>
         </label>
-        <label for=""><p>Tipo de articulo:
-            <select>
-                <option value="cargador">cargador</option>
-            </select>
-            </p></label>
-        </div>
         <table>
             <tr>
                 <td>
-                    <p>Modelo</p>
+                    <p class="titulo">Articulo</p>
                 </td>
                 <td>
-                    <p>Cantidad</p>
+                    <p class="titulo">Cantidad</p>
                 </td>
                 <td>
-                    <p>Local</p>
+                    <p class="titulo">Recibido</p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>Tipo C carga rapida</p>
+                    <p>Samsung Galaxy s19</p>
                 </td>
                 <td>
                     <p>2</p>
                 </td>
                 <td>
-                    <p>$299</p>
+                    <input type="checkbox" name="recibido" id="recibido">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>Tipo c</p>
+                    <p>Audifonos</p>
                 </td>
                 <td>
                     <p>5</p>
                 </td>
                 <td>
-                    <p>$250</p>
+                    <input type="checkbox" name="recibido" id="recibido">
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <p>Cargador</p>
+                </td>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <input type="checkbox" name="recibido" id="recibido">
+                </td>
+            </tr>
+        </table>
+        <div class="botones">
+            <button class="btn">Aceptar</button>
+            <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>
+        </div>
     </div>
 </body>
 </html>
