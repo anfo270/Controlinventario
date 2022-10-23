@@ -20,7 +20,7 @@ $usu = $_SESSION['Usuario']
     <script src="javascript/script.js"></script>
 </head>
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     
     <div class="contenedor">
         <h2>Ingreso</h2>
