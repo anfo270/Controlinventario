@@ -28,6 +28,6 @@ if ($res->rowCount() == 1) {
     }
 } else {
     echo '<script>alert("Usuario o contrase\u00F1a incorrectos.")</script> ';
-    echo "<script>location.href='../index.html'</script>";
+    echo "<script>location.href='../index.php'</script>";
 }
 ?>
