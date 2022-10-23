@@ -9,7 +9,7 @@
     }else{
         echo("No se pudo eliminar");
     }
-    if($id= $_SESSION['ID']){
+    if($id== $_SESSION['ID']){
         header('location: ..\cerrar.php');
     }
 ?>
