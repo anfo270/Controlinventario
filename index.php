@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['Usuario'])&& isset( $_SESSION['Contraseña'])){
+    header('location: menu.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

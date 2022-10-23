@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
-    header('location: index.html');
+    header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
 
