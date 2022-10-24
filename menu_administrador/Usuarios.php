@@ -33,7 +33,7 @@ $usu = $_SESSION['Usuario']
         <h1>Usuarios</h1>
         <table>
         
-            <tr><td><button class="btn" onclick="location.href='#.php'">Agregar</button></td></tr>
+            <tr><td><button class="btn" onclick="location.href='agregar_usuario.php'">Agregar</button></td></tr>
         </table>
         <table>
             <tr>
