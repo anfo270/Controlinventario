@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
-    header('location: index.html');
+    header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
 ?>
@@ -13,12 +13,12 @@ $usu = $_SESSION['Usuario']
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilocomun.css">
-    <link rel="stylesheet" href="css/menus.css">
+    <link rel="stylesheet" href="../css/estilocomun.css">
+    <link rel="stylesheet" href="../css/menus.css">
     <title>Men&uacute;</title>
 </head>
 <body>
-    <nav><button class="btn cerrar" id="cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="menu.php">Men&uacute;</a></li>
@@ -28,7 +28,7 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <button class="btn" onclick="location.href='compras.php'">Compras</button>
         <button class="btn" onclick="location.href='traspaso.php'">Traspaso</button>
-        <button class="btn ventas" onclick="location.href='Usuarios.php'">USUARIOS</button>
+        <button class="btn ventas" onclick="location.href='Usuarios.php'">Usuarios</button>
         <button class="btn ventas" onclick="location.href='abrircaja.php'">Cobranza</button>
         <button class="btn ventas" onclick="location.href='abrircaja.php'">Inventario general</button>
         

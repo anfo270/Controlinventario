@@ -1,0 +1,46 @@
+.modal-contenedor{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color:#c0c2bb ;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.model{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #dde0d7;
+    width: 37.5em;
+    max-width: 100%;
+    padding: 2em 3.5em ;
+    border-radius: 1em;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.model button{
+    font-size: 3em;
+    width: 4em;
+    margin: auto;
+}
+.model input{
+    width: 15em;
+    height: 2em;
+    margin-left: 1em;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}

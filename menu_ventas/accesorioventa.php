@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
-    header('location: index.html');
+    header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
 ?>
@@ -14,11 +14,11 @@ $usu = $_SESSION['Usuario']
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilocomun.css">
-    <link rel="stylesheet" href="css/ventas.css">
+    <link rel="stylesheet" href="../css/estilocomun.css">
+    <link rel="stylesheet" href="../css/ventas.css">
     <title>Tel&eacute;fono</title>
-    <script src="javascript/datosaccesorio.js"></script>
-    <script src="javascript/script.js"></script>
+    <script src="../javascript/datosaccesorio.js"></script>
+    <script src="../javascript/script.js"></script>
 </head>
 
 <body>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +12,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <form method="POST" action="login.php">
+        <form method="POST" action="Config/login.php">
 
             <label for="">Usuario:
                 <input type="text" name="user" class="boxtext" required></label>

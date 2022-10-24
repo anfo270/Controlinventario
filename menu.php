@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
-    header('location: index.html');
+if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contraseña'])){
+    header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
 ?>
@@ -25,10 +25,10 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn ventas" onclick="location.href='abrircaja.php'">Vendedor</button>
-        <button class="btn inventario" onclick="location.href='inventario.php'">Responsable</button>
-        <button class="btn administrador" onclick="location.href='administrador.php'">Administrador</button>
-        <button class="btn administrador" onclick="location.href='sistema.php'">Sistema</button>
+        <button class="btn ventas" onclick="location.href='menu_ventas/abrircaja.php'">Vendedor</button>
+        <button class="btn inventario" onclick="location.href='menu_responsable/inventario.php'">Responsable</button>
+        <button class="btn administrador" onclick="location.href='menu_administrador/administrador.php'">Administrador</button>
+        <button class="btn administrador" onclick="location.href='menu_sistema/sistema.php'">Sistema</button>
     </div>
 </body>
 </html>
