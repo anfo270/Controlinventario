@@ -57,17 +57,17 @@ $usu = $_SESSION['Usuario']
                         <td><?php echo $item->Contraseña; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
-                        <td><button class='btn reset' id="eliminar" >Eliminar</button></td>
+                        <td><button class='btn reset' id="eliminar"<?php $id=$item->ID;?> >Eliminar</button></td>
                         <td><button class='btn' onclick="location.href='#.php'">Editar</button> </td>
                     </tr>
                 </table>
 
         <?php } ?>
         <div class="modal-contenedor" id="modal-contenedor">
-        <form action="../Config/eliminar.php" method="post" class="model">
+        <div action="../Config/eliminar.php" class="model">
             <p>Ingresa tu contraseña para confirmar<input type="text" name="pass" id="pass" ></p>
-            <button type="submit" onclick="location.href='../Config/eliminar.php?ID_usuarios=<?php echo $item->ID;?>'" id="aceptar">Aceptar</button>
-        </form>
+            <button id="aceptar" onclick="location.href='../Config/eliminar.php?ID_usuarios=<?php echo $id;?>'" >Aceptar</button>
+        </div>
     </div>
     </div>
    
