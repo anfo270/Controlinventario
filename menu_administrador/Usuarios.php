@@ -17,9 +17,10 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/menus.css">
     <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <title>Usuario</title>
 </head>
-
+    <script src="../javascript/popup.js"></script>
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
@@ -56,18 +57,20 @@ $usu = $_SESSION['Usuario']
                         <td><?php echo $item->Contraseña; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
-                        <td><button class='btn reset' onclick="location.href='../Config/eliminar.php?ID_usuarios=<?php echo $item->ID;?>'">Eliminar</button></td>
+                        <td><button class='btn reset' id="eliminar" >Eliminar</button></td>
                         <td><button class='btn' onclick="location.href='#.php'">Editar</button> </td>
                     </tr>
                 </table>
 
         <?php } ?>
-    </div>
-    <div class="modal-contenedor" id="modal-contenedor">
-        <form action="eliminar.php" method="post">
-            <label><p>Ingresa tu contraseña para confirmar</p></label>
+        <div class="modal-contenedor" id="modal-contenedor">
+        <form action="../Config/eliminar.php" method="post" class="model">
+            <p>Ingresa tu contraseña para confirmar<input type="text" name="pass" id="pass" ></p>
+            <button type="submit" onclick="location.href='../Config/eliminar.php?ID_usuarios=<?php echo $item->ID;?>'" id="aceptar">Aceptar</button>
         </form>
     </div>
+    </div>
+   
 </body>
 
 </html>
