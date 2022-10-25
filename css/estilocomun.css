@@ -14,6 +14,14 @@ html{
     height: 100vh;
    
 }
+.formSistema{
+    background-color:#d4d6d0;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+	border-radius:15px;
+    margin-bottom: 40px;
+}
 button{
     background-color:#8AC440;
     color: white;
@@ -29,8 +37,7 @@ button{
 }
 .btn:hover{
     background-color: #749e3c;
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 nav{
     display: flex;
@@ -63,6 +70,14 @@ nav>.cerrar:hover{
     background-color: rgb(163, 0, 0);
     cursor: pointer;
 }
+.btnagregar{
+    padding: 5%;
+    font-size: medium;
+}
+.btnagregar:hover{
+    cursor: pointer; 
+}
+
 input {
     border: 0;
     border-radius: .25em;
@@ -81,6 +96,7 @@ input {
 .boxtext{
     border-color: black;
     border:solid 0.01em;
+    border-radius: .25em;
 }
 
 .titulo{
