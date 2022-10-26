@@ -46,12 +46,23 @@ table {
   }
   
   th, td {
-    padding: 1em;
+    padding: 2em;
   }
   .bordes tr{
-    border: .2em solid black;
+    border: 1px solid black;
   }
-  
+  .tabla_usuarios{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .tabla_usuarios th,td{
+    padding: 0;
+  }
+  .tabla_usuarios select{
+    border-radius: 0.5em;
+    width: 16em;
+  }
   .botonventa,.pass{
     width: 100%;
     height: 50%;

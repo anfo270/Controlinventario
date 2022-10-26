@@ -30,7 +30,7 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <h1>Nuevo Usuario</h1>
+        <h1>Editar Usuario</h1>
         <form action="../Config/nuevo_usuario.php" method="post">
             <table class="tabla_usuarios">
                 <tr>
