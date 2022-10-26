@@ -1,4 +1,5 @@
 body{
+    background-color:  #eaefe1;
     margin: 0;
     padding: 0;
 }
@@ -8,7 +9,7 @@ html{
 }
 
 .contenedor{
-    background-color:  #eaefe1;
+   
     width: 100%;
     margin: 0;
     height: 100vh;
@@ -41,6 +42,7 @@ button{
 }
 nav{
     display: flex;
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     padding: .25em;
