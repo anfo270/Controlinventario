@@ -16,7 +16,8 @@ if ($res->rowCount() == 1) {
     $row = $res->fetch();
     $_SESSION['ID'] = $row['ID'];
     $_SESSION['Nombre'] = $row['Nombre'];
-    $_SESSION['Apellidos'] = $row['Apellidos'];
+    $_SESSION['Apellido_Paterno'] = $row['Apellido_Paterno'];
+    $_SESSION['Apellido_Materno']=$row['Apellido_Materno'];
     $_SESSION['Usuario'] = $row['Usuario'];
     $_SESSION['Contraseña'] = $row['Contraseña'];
     $_SESSION['Puesto'] = $row['Puesto'];

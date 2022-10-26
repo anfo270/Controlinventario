@@ -37,7 +37,10 @@ $usu = $_SESSION['Usuario']
                     <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre"></td>
                 </tr>
                 <tr>
-                    <td><p>Apellidos:</p></td><td> <input type="text" name="Apellidos" id="Apellidos "></td>
+                    <td><p>Apellido Paterno:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellidos "></td>
+                </tr>
+                <tr>
+                    <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellidos "></td>
                 </tr>
                 <tr>
                     <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña"></td>
@@ -59,14 +62,14 @@ $usu = $_SESSION['Usuario']
                     <td>
                     <select name="Local" id="Local">
                             <option value=" ">Seleccionar...</option>
-                            <option value="TORRES_LOCAL">Torres Local</option>
-                            <option value="TORRES_ISLA">Torres Isla</option>
-                            <option value="BODEGA_LIBRAMIENTO">Bodega Libramiento</option>
-                            <option value="LOCAL_LIBRAMIENTO">Local Libramiento</option>
-                            <option value="CENTRO_VICENTE">Centro Vicente</option>
-                            <option value="CENTRO_16_SEPTIEMBRE">Centro 16 de Septiembre</option>
-                            <option value="CENTRO_UGARTE">Centro Ugarte</option>
-                            <option value="CENTRO_PLAZA_CATEDRAL">Centro Plaza Catedral</option>
+                            <option value="TORRES LOCAL">Torres Local</option>
+                            <option value="TORRES ISLA">Torres Isla</option>
+                            <option value="BODEGA LIBRAMIENTO">Bodega Libramiento</option>
+                            <option value="LOCAL LIBRAMIENTO">Local Libramiento</option>
+                            <option value="CENTRO VICENTE">Centro Vicente</option>
+                            <option value="CENTRO 16 SEPTIEMBRE">Centro 16 de Septiembre</option>
+                            <option value="CENTRO UGARTE">Centro Ugarte</option>
+                            <option value="CENTRO PLAZA CATEDRAL">Centro Plaza Catedral</option>
                         </select>
                     </td>
                 </tr>

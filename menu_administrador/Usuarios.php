@@ -38,8 +38,10 @@ $usu = $_SESSION['Usuario']
         <table>
             <tr>
                 <td class="titulo">Nombre</td>
-                <td class="titulo">Apellidos</td>
+                <td class="titulo">Apellido Paterno</td>
+                <td class="titulo">Apellidos Materno</td>
                 <td class="titulo">Contraseña</td>
+                <td class="titulo"> Usuario</td>
                 <td class="titulo">Puesto</td>
                 <td class="titulo">Local</td>
                 <td></td>
@@ -50,10 +52,12 @@ $usu = $_SESSION['Usuario']
         $res = $conexion->query("SELECT * FROM usuarios") or die(print($conexion->errorInfo()));
         while ($item = $res->fetch(PDO::FETCH_OBJ)) { ?>
 
-                <table>
+                <table class="bordes">
                     <tr>
                         <td><?php echo $item->Nombre; ?></td>
-                        <td><?php echo $item->Apellidos; ?></td>
+                        <td><?php echo $item->Apellido_Paterno; ?></td>
+                        <td><?php echo $item->Apellido_Materno; ?></td>
+                        <td><?php echo $item->Usuario; ?></td>  
                         <td><?php echo $item->Contraseña; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
