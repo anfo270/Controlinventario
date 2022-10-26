@@ -36,7 +36,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
     </div>
     <div class="contenedor">
         <h1>Editar Usuario</h1>
-        <form action="../Config/nuevo_usuario.php" method="post">
+        <form action="../Config/eliminar.php?identificador=<?php echo 2;?>" method="post">
             <table class="tabla_usuarios">
                 <tr>
                     <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre" <?php echo "value='$item->Nombre'"; ?>></td>
