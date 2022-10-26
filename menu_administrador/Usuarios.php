@@ -62,7 +62,7 @@ $usu = $_SESSION['Usuario']
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
                         <td><button class='btn reset' id="eliminar"<?php $id=$item->ID;?> >Eliminar</button></td>
-                        <td><button class='btn' onclick="location.href='editar_usuarios.php'">Editar</button> </td>
+                        <td><button class='btn' onclick="location.href='editar_usuarios.php?id= <?php echo $id= $item->ID; ?>'">Editar</button> </td>
                     </tr>
                 </table>
 

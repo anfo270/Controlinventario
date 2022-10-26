@@ -76,7 +76,7 @@ $usu = $_SESSION['Usuario']
             </table>
             <div class="botones">
             <button type="reset" class="btn reset" >Cancelar</button>
-            <button type="submit" class="btn" >Siguiente</button>
+            <button type="submit" class="btn" >Guardar</button>
         </div>
         </form>
 

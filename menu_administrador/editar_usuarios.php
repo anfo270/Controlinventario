@@ -4,7 +4,12 @@ session_start();
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$res=$conexion->query("SELECT *FROM usuarios WHERE ID=$_GET[id]") or die(print($conexion->errorInfo()));
+if(!$item=$res->fetch(PDO::FETCH_OBJ)){
+    echo '<script>alert("No se puede acceder al usuario")</script>';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,16 +39,16 @@ $usu = $_SESSION['Usuario']
         <form action="../Config/nuevo_usuario.php" method="post">
             <table class="tabla_usuarios">
                 <tr>
-                    <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre"></td>
+                    <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre" <?php echo "value='$item->Nombre'"; ?>></td>
                 </tr>
                 <tr>
-                    <td><p>Apellido Paterno:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellidos "></td>
+                    <td><p>Apellido Paterno:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellido_Paterno" <?php echo "value='$item->Apellido_Paterno'"; ?>></td>
                 </tr>
                 <tr>
-                    <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellidos "></td>
+                    <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellido_Materno" <?php echo "value='$item->Apellido_Materno'"; ?>></td>
                 </tr>
                 <tr>
-                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña"></td>
+                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña" <?php echo "value='$item->Contraseña'"; ?>></td>
                 </tr>
                 <tr>
                     <td><p>Puesto:</p></td>
@@ -76,7 +81,7 @@ $usu = $_SESSION['Usuario']
             </table>
             <div class="botones">
             <button type="reset" class="btn reset" >Cancelar</button>
-            <button type="submit" class="btn" >Siguiente</button>
+            <button type="submit" class="btn" >Guardar</button>
         </div>
         </form>
 
