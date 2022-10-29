@@ -1,19 +1,19 @@
 .contenedor{
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 40px;
 }
 
 .botones{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    flex-wrap: wrap;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
     
 }
 
@@ -31,43 +31,45 @@ label{
 
 
 .btn{
-    width: 5em;
-    height: 3em;
-    font-size: 1em;
-    margin: .2em;
+  width: 5em;
+  height: 3em;
+  font-size: 1em;
+  margin: .2em;
 }
 
 table {
-    table-layout:fixed;
-    width: 100%;
-    border-collapse: collapse;
-    overflow-wrap: break-word;
+  table-layout:fixed;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-wrap: break-word;
     
+}
+
+th, td {
+  padding: 2em;
   }
   
-  th, td {
-    padding: 2em;
-  }
-  .bordes tr{
-    border: 1px solid black;
-  }
-  .tabla_usuarios{
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  .tabla_usuarios th,td{
-    padding: 0;
-  }
-    
-  .botonventa,.pass{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
+.bordes tr {
+  border: 0.1em double black;
+}
+
+.tabla_usuarios {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tabla_usuarios th,
+td {
+  padding: 0;
+}
+
+.botonventa, .pass {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
     flex-wrap: wrap;
   }
-
-  
