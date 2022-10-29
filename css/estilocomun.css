@@ -136,3 +136,8 @@ ul.breadcrumb li a:hover {
     color: #978bff;
     text-decoration: none;
 }
+
+select{
+    border-radius: 0.5em;
+    width: 16em;
+  }
