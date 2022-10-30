@@ -78,7 +78,6 @@ $usu = $_SESSION['Usuario']
                         <button class="btn" id="aceptar" type="submit" >Aceptar</button>
                     </form>
             </div>
-            
         </div>
         
     </div>

@@ -15,6 +15,7 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/menus.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <title>Sistema</title>
 </head>
 <body>
@@ -31,7 +32,17 @@ $usu = $_SESSION['Usuario']
         <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
-        <button class="btn cerrar reset" onclick="location.href='reset.php'">Reset general</button><br><br>
+        <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button><br><br>
     </div>
+    <div class="modal-contenedor" id="modal-contenedor">
+            <div class="model">
+                    <form action="../Config/borrartablas.php" method="post">
+                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
+                        <button id="" class="btn reset" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
+                        <button class="btn" id="aceptar" type="submit" >Aceptar</button>
+                    </form>
+            </div>
+            
+        </div>
 </body>
 </html>
