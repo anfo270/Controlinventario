@@ -2,6 +2,9 @@
 require ("conexionbd.php");
 session_start();
 $local=$_SESSION['Local']; 
+
+$señal=$_GET['señal'];
+
 //libreria
 require '..\vendor/autoload.php';
 //archivos necesarios
@@ -18,10 +21,15 @@ $spreadsheet->setActiveSheetIndex(0);
 //establecemos da hoja a trabajar por hoja activa
 $hojaactiva=$spreadsheet->getActiveSheet();
 //Consulta de datos segun la locacion del usuario
-$consulta_telefonos=$conexion->query("SELECT * FROM telefonos WHERE Locacion='$local'") or die(print($conexion->errorInfo()));
-$consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
-$consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
-
+if($señal==1){
+    $consulta_telefonos=$conexion->query("SELECT * FROM telefonos WHERE Locacion='$local'") or die(print($conexion->errorInfo()));
+    $consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
+    $consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
+}else{
+    $consulta_telefonos=$conexion->query("SELECT * FROM telefonos") or die(print($conexion->errorInfo()));
+    $consulta_accesorios=$conexion->query("SELECT * FROM accesorio ")or die(print($conexion->errorInfo()));
+    $consulta_sims=$conexion->query("SELECT * FROM sims ")or die(print($conexion->errorInfo()));
+}
 //posision y valor en celda
 $posicion=1;
 

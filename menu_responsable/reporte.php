@@ -28,7 +28,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <button class="btn transpaso" onclick="location.href='stock.php'">Consulta</button>
-        <button class="btn inventario" onclick="location.href='../Config/inventaroppvd.php'">Inventario de PDV</button>
+        <button class="btn inventario" onclick="location.href='../Config/inventaroppvd.php?señal=<?php echo 1?>'">Inventario de PDV</button>
     </div>
 </body>
 </html>
