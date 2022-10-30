@@ -45,6 +45,9 @@ $usu = $_SESSION['Usuario']
 
                 if ($res->rowCount() > 0){
                     echo "<select type='text' name='nf' class='boxtext' placeholder='Elige financiera'>";
+                    ?>
+                    <option>Seleccionar...</option>
+                    <?php
                     while($row = $res->fetch()){
                         echo "<option value='".$row["Nombre"]."'>".$row["Nombre"]."</option>";
                     }
