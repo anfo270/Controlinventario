@@ -20,8 +20,9 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/popup.css">
     <title>Usuario</title>
 </head>
-    <script src="../javascript/popup.js"></script>
+
 <body>
+
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
@@ -50,10 +51,11 @@ $usu = $_SESSION['Usuario']
         </table>
         <?php
         $res = $conexion->query("SELECT * FROM usuarios") or die(print($conexion->errorInfo()));
-        while ($item = $res->fetch(PDO::FETCH_OBJ)) { ?>
+        while ($item = $res->fetch(PDO::FETCH_OBJ)) { 
+            ?>
 
                 <table class="bordes">
-                    <tr>
+                    <tr><?php $id=$item->ID; ?>
                         <td><?php echo $item->Nombre; ?></td>
                         <td><?php echo $item->Apellido_Paterno; ?></td>
                         <td><?php echo $item->Apellido_Materno; ?></td>
@@ -61,20 +63,26 @@ $usu = $_SESSION['Usuario']
                         <td><?php echo $item->Contraseña; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
-                        <td><button class='btn reset' id="eliminar"<?php $id=$item->ID;?> >Eliminar</button></td>
+                        
+                        <td><button class='btn reset' id="eliminar" onclick=" document.getElementById('modal-contenedor').style.visibility='visible'">Eliminar</button></td>
                         <td><button class='btn' onclick="location.href='editar_usuarios.php?id= <?php echo $id= $item->ID; ?>'">Editar</button> </td>
                     </tr>
                 </table>
 
         <?php } ?>
         <div class="modal-contenedor" id="modal-contenedor">
-        <div action="../Config/eliminar.php" class="model">
-            <p>Ingresa tu contraseña para confirmar<input type="text" name="pass" id="pass" ></p>
-            <button id="aceptar" onclick="location.href='../Config/eliminar.php?ID_usuarios=<?php echo $id;?>'" >Aceptar</button>
+            <div class="model">
+                    <form action="../Config/eliminar.php?ID_usuarios=<?php echo $id;?>" method="post">
+                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
+                        <button id="" class="btn reset" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
+                        <button class="btn" id="aceptar" type="submit" >Aceptar</button>
+                    </form>
+            </div>
+            
         </div>
+        
     </div>
-    </div>
-   
+  
 </body>
 
 </html>

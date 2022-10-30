@@ -6,16 +6,15 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    pointer-events: none;
-    opacity: 0;
+    /* pointer-events: none; */
+    /* opacity: 0; */
+    visibility: hidden;
     top:0;
     left:0;
     height: 100vh;
     width: 100vw;
 }
-
-.model{
-    display: flex;
+.model form{ display: flex;
     margin: 0;
     padding: 0;
     background-color: #dde0d7;
@@ -28,6 +27,7 @@
     flex-direction: row;
     align-items: center;
 }
+
 
 .model button{
     font-size: 3em;
@@ -43,4 +43,11 @@
 .show{
     pointer-events: auto;
     opacity: 1;
+}
+.modal-contenedor  .btn{
+    overflow-wrap: break-word;
+    height: 3em;
+    font-size: 1em;
+    width: 8em;
+    padding: 0;
 }

@@ -3,16 +3,21 @@
     include('conexionbd.php');
     //variable de ID 
     $id=intval($_GET['ID_usuarios']);
-    //borramos el registro
-    $res=$conexion->query("DELETE FROM usuarios WHERE ID='$id'") or die(print($conexion->errorInfo()));
-    if($res){
-        echo("<script>Se elimino existosamente el usuario</script>");
+    if($_POST['pass']!=$_SESSION['Contraseña']){
+       echo("<script>Contraseña incorrecta</script>");
         echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
     }else{
-        echo("No se pudo eliminar");
-        echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
-    }
-    if($id== $_SESSION['ID']){
-        header('location: ..\cerrar.php');
+        //borramos el registro
+        $res=$conexion->query("DELETE FROM usuarios WHERE ID='$id'") or die(print($conexion->errorInfo()));
+        if($res){
+            echo("<script>Se elimino existosamente el usuario</script>");
+            echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
+        }else{
+            echo("No se pudo eliminar");
+            echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
+        }
+        if($id== $_SESSION['ID']){
+            header('location: ..\cerrar.php');
+        }   
     }
 ?>
