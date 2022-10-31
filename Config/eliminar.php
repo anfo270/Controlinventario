@@ -4,7 +4,7 @@
     //variable de ID 
     $id=intval($_GET['ID_usuarios']);
     if($_POST['pass']!=$_SESSION['Contraseña']){
-       echo("<script>alert('Contraseña incorrecta')</script>");
+        echo("<script>alert('Contraseña incorrecta')</script>");
         echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
     }else{
         //borramos el registro

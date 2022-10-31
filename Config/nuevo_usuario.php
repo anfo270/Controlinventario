@@ -35,7 +35,7 @@ if($_GET['identificador']==2){
 
 function actualizar($Nombre,$Apellidos_Paterno,$Apellido_Materno,$Contraseña,$puesto,$Local,$Usuario,$conexion,$id_use){
     $res="UPDATE usuarios SET Nombre='$Nombre' , Apellido_Paterno='$Apellidos_Paterno', Apellido_Materno='$Apellido_Materno' ,  Usuario='$Usuario',
-                              Contraseña='$Contraseña' ,  Puesto='$puesto' ,  Local='$Local' WHERE ID='$id_use'" ;
+                            Contraseña='$Contraseña' ,  Puesto='$puesto' ,  Local='$Local' WHERE ID='$id_use'" ;
     $res=$conexion->query($res) or die(print($conexion->errorInfo()));
     return $res;
 }

@@ -82,7 +82,6 @@ $usu = $_SESSION['Usuario']
 
     </div>
 
-   
 </body>
 
 </html>

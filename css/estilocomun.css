@@ -9,11 +9,9 @@ html{
 }
 
 .contenedor{
-   
     width: 100%;
     margin: 0;
     height: 100vh;
-   
 }
 .formSistema{
     background-color:#d4d6d0;
@@ -140,4 +138,4 @@ ul.breadcrumb li a:hover {
 select{
     border-radius: 0.5em;
     width: 16em;
-  }
+}

@@ -35,14 +35,13 @@ $usu = $_SESSION['Usuario']
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button><br><br>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">
-            <div class="model">
-                    <form action="../Config/borrartablas.php" method="post">
-                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
-                        <button id="" class="btn reset" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
-                        <button class="btn" id="aceptar" type="submit" >Aceptar</button>
-                    </form>
-            </div>
-            
-        </div>
+        <div class="model">
+            <form action="../Config/borrartablas.php" method="post">
+                <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
+                <button id="" class="btn reset" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
+                <button class="btn" id="aceptar" type="submit" >Aceptar</button>
+            </form>
+        </div>        
+    </div>
 </body>
 </html>

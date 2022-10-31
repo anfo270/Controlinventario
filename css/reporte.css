@@ -71,5 +71,5 @@ td {
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
+}
