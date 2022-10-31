@@ -1,4 +1,6 @@
 <?php
+require('../Config/metodosbd.php');
+require('../Config/conexionbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
@@ -45,8 +47,14 @@ $usu = $_SESSION['Usuario']
                     <p>Proveedor:</p>
                 </td>
                 <td>
-                    lista de proveedores y bd
-                    <input type="text" name="numero" class="boxtext" id="input2" onkeypress="nextFocus('input2', 'input3')">
+                    <select name="proveedor" id="proveedor">
+                        <option value=" ">Seleccionar...</option>
+                        <?php
+                        $local=consulta($conexion,"proveedor");
+                        while($item=$local->fetch(PDO::FETCH_OBJ)){?>
+                            <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                        <?php } ?>
+                    </select>
                 </td>
             </tr>
             <tr>

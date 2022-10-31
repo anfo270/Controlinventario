@@ -1,6 +1,7 @@
 <?php
+include('Config/metodosbd.php');
 include('Config/conexionbd.php');
-    $res=$conexion->query('SELECT * FROM accesorio') or die(print($conexion->errorInfo()));
+    $res=consulta($conexion,"accesorio");
     $datataccesorio=[];
     while($item=$res->fetch(PDO::FETCH_OBJ)){
         $datataccesorio[]=[

@@ -1,6 +1,7 @@
 <?php
+include('Config/metodosbd.php');
 include('Config/conexionbd.php');
-    $res=$conexion->query('SELECT * FROM sims') or die(print($conexion->errorInfo()));
+    $res=consulta($conexion,"sims");
     $datasims=[];
     while($item=$res->fetch(PDO::FETCH_OBJ)){
         $datasims[]=[

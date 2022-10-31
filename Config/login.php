@@ -1,5 +1,6 @@
 <?php
 include('conexionbd.php');
+
 session_start();
 
 $user = $_POST['user'];

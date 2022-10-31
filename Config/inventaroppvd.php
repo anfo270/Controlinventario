@@ -1,5 +1,7 @@
 <?php
 require ("conexionbd.php");
+require ("metodosbd.php");
+
 session_start();
 $local=$_SESSION['Local']; 
 
@@ -26,9 +28,9 @@ if($señal==1){
     $consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
     $consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
 }else{
-    $consulta_telefonos=$conexion->query("SELECT * FROM telefonos") or die(print($conexion->errorInfo()));
-    $consulta_accesorios=$conexion->query("SELECT * FROM accesorio ")or die(print($conexion->errorInfo()));
-    $consulta_sims=$conexion->query("SELECT * FROM sims ")or die(print($conexion->errorInfo()));
+    $consulta_telefonos=consulta($conexion,"telefonos");
+    $consulta_accesorios=consulta($conexion,"accesorio");
+    $consulta_sims=consulta($conexion, "sims");
 }
 //posision y valor en celda
 $posicion=1;

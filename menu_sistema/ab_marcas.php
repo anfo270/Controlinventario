@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
     header('location: ../index.php');
@@ -40,9 +41,7 @@ $usu = $_SESSION['Usuario']
             <form method="POST" action="../Config/baja_sistema.php"><center>
                 <input name="tipoAB" value="08sdcac" hidden>
                 <?php
-                $res = $conexion->prepare("SELECT * FROM marcas") or die(print($conexion->errorInfo()));
-                $res->execute();
-
+                $res = consulta($conexion,"marcas");
                 if ($res->rowCount() > 0){
                     echo "<select type='text' name='nf' class='boxtext' placeholder='Elige marca'>";
                     ?>

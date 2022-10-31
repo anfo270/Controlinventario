@@ -1,5 +1,6 @@
 <?php
 include('../Config/conexionbd.php');
+include('../Config/metodosbd.php');
 session_start();
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
     header('location: index.php');
@@ -61,16 +62,13 @@ $usu = $_SESSION['Usuario']
                     <td><p>Local</p></td>
                     <td>
                     <select name="Local" id="Local">
-                            <option value=" ">Seleccionar...</option>
-                            <option value="TORRES LOCAL">Torres Local</option>
-                            <option value="TORRES ISLA">Torres Isla</option>
-                            <option value="BODEGA LIBRAMIENTO">Bodega Libramiento</option>
-                            <option value="LOCAL LIBRAMIENTO">Local Libramiento</option>
-                            <option value="CENTRO VICENTE">Centro Vicente</option>
-                            <option value="CENTRO 16 SEPTIEMBRE">Centro 16 de Septiembre</option>
-                            <option value="CENTRO UGARTE">Centro Ugarte</option>
-                            <option value="CENTRO PLAZA CATEDRAL">Centro Plaza Catedral</option>
-                        </select>
+                        <option value=" ">Seleccionar...</option>
+                        <?php
+                        $local=consulta($conexion,"locacion");
+                        while($item=$local->fetch(PDO::FETCH_OBJ)){?>
+                            <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                        <?php } ?>
+                    </select>
                     </td>
                 </tr>
             </table>
