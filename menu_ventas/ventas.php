@@ -34,37 +34,14 @@ $usu = $_SESSION['Usuario']
                     <p><b>Precio por unidad<b></p>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>Tipo C carga rapida</p>
-                </td>
-                <td>
-                    <p>2</p>
-                </td>
-                <td>
-                    <p>$299</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Tipo c</p>
-                </td>
-                <td>
-                    <p>5</p>
-                </td>
-                <td>
-                    <p>$250</p>
-                </td>
-            </tr>
         </table>
 
         <label>
-            <p>Precio:  $1848 </p>
+            <p>Precio: </p>
         </label>
         <label class="pass">
             <p>Contraseña:<input type="password" name="contraseña" id="contraseña" class="boxtext" required></p>
         </label>
-        pedir factura
         <div class="botonventa">
             <button class="btn">Aceptar</button>
             <button class="btn cancelar">Cancelar</button>

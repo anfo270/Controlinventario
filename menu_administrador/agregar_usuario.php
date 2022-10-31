@@ -49,8 +49,9 @@ $usu = $_SESSION['Usuario']
                 <tr>
                     <td><p>Puesto:</p></td>
                     <td>
-                        <select name="Puesto" id="Puesto">
+                        <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
+                            <option value="nuevo"> Genérico</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPOSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
