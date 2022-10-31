@@ -1,5 +1,7 @@
 <?php
 session_start();
+require ('../Config/metodosbd.php');
+require('../Config/conexionbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
@@ -25,7 +27,7 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor">
         <label for="">
-            <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI')" required></p>
+            <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></p>
         </label>
         <label for="">
             <p>Marca: </p><p class="Marca" id="Marca"></p>
@@ -35,9 +37,13 @@ $usu = $_SESSION['Usuario']
         </label>
         <label for="">
             <p>Financiera:
-        <select name="proveedor" class="proveedor">
-            <option>Contado</option>
-            <option value="PAYJOY">PAYJOY</option>
+        <select name="proveedor" class="select-css proveedor">
+            <option value="">Seleccionar...</option>
+            <?php
+                $financiera=consulta($conexion,"financiera");
+                while($item=$financiera->fetch(PDO::FETCH_OBJ)){ ?>
+                    <option value="<?php echo $item->Nombre?>"><?php echo $item->Nombre?></option>
+                <?php } ?>
         </select>
 
             </p>

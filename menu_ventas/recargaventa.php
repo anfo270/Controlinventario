@@ -24,7 +24,7 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <label for="">
             <p>Proveedor:
-             <select name="proveedor">
+             <select name="proveedor" class="select-css">
                 <option>Movistar</option>
                 <option>Bait</option>
             </select></p>

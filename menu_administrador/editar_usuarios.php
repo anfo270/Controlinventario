@@ -54,7 +54,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                 <tr>
                     <td><p>Puesto:</p></td>
                     <td>
-                        <select name="Puesto" id="Puesto">
+                        <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPONSABLE">Responsable</option>
@@ -66,7 +66,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                 <tr>
                     <td><p>Local</p></td>
                     <td>
-                    <select name="Local" id="Local">
+                    <select name="Local" id="Local" class="select-css">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"locacion");

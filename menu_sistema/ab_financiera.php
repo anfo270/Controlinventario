@@ -43,7 +43,7 @@ $usu = $_SESSION['Usuario']
                 <?php
                 $res = consulta($conexion,"financiera");
                 if ($res->rowCount() > 0){
-                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige financiera'>";
+                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige financiera' class='select-css'>";
                     ?>
                     <option>Seleccionar...</option>
                     <?php

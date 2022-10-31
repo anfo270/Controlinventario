@@ -135,7 +135,8 @@ ul.breadcrumb li a:hover {
     text-decoration: none;
 }
 
-select{
+.select-css{
+    font-size: 1em;
     border-radius: 0.5em;
-    width: 16em;
+    width: auto;
 }

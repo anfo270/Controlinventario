@@ -61,7 +61,7 @@ $usu = $_SESSION['Usuario']
                 <tr>
                     <td><p>Local</p></td>
                     <td>
-                    <select name="Local" id="Local">
+                    <select name="Local" id="Local" class="select-css">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"locacion");

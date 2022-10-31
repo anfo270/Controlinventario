@@ -25,7 +25,7 @@ $usu = $_SESSION['Usuario']
         <form action="ventas.php" method="POST">
             <h3>Tipo de servicio:</h3>
             <Label>
-                <P>Financiera: <select>
+                <P>Financiera: <select class="select-css">
                     <option>PAYJOY</option>
                     <OPTION>Movistar</OPTION>
                 </select></P>

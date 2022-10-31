@@ -1,4 +1,5 @@
 <?php
+include('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 session_start();
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
@@ -50,7 +51,7 @@ $usu = $_SESSION['Usuario']
             </tr>
         </table>
         <?php
-        $res = $conexion->query("SELECT * FROM usuarios") or die(print($conexion->errorInfo()));
+        $res = consulta($conexion,"usuarios");
         while ($item = $res->fetch(PDO::FETCH_OBJ)) { 
             ?>
 

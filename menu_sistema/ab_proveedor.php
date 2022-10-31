@@ -43,7 +43,7 @@ $usu = $_SESSION['Usuario']
                 <?php
                 $res = consulta($conexion,"proveedor");
                 if ($res->rowCount() > 0){
-                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige proveedor'>";
+                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige proveedor' class='select-css'>";
                     ?>
                     <option>Seleccionar...</option>
                     <?php

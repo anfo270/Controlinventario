@@ -47,7 +47,7 @@ $usu = $_SESSION['Usuario']
                     <p>Proveedor:</p>
                 </td>
                 <td>
-                    <select name="proveedor" id="proveedor">
+                    <select name="proveedor" id="proveedor" class="select-css">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"proveedor");

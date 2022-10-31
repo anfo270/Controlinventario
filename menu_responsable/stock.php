@@ -32,13 +32,13 @@ $usu = $_SESSION['Usuario']
         <h2>Consulta</h2>
         <div>
         <label for=""><p>Marca:
-            <select>
+            <select class="select-css">
                 <option value="Samsung">Samsung</option>
             </select>
             </p>
         </label>
         <label for=""><p>Tipo de articulo:
-            <select>
+            <select class="select-css">
                 <option value="cargador">cargador</option>
             </select>
             </p></label>

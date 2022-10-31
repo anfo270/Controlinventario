@@ -44,7 +44,7 @@ $usu = $_SESSION['Usuario']
                 $res = consulta($conexion,"activacion");
 
                 if ($res->rowCount() > 0){
-                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige tipo de activaci&oacute;n'>";
+                    echo "<select type='text' name='nf' class='boxtext' placeholder='Elige tipo de activaci&oacute;n' class='select-css'>";
                     ?>
                     <option>Seleccionar...</option>
                     <?php

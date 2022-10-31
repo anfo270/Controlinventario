@@ -16,7 +16,7 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
-    <title>Tel&eacute;fono</title>
+    <title>Sims</title>
     <script src="../javascript/datossims.js"></script>
 </head>
 
