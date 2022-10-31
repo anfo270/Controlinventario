@@ -79,7 +79,7 @@ $spreadsheet->getActiveSheet()->setAutoFilter(
 );
 //damos opcion de donde se descarga el archivo
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="Inventario.xlsx"');
+header('Content-Disposition: attachment;filename="*.xlsx"');
 header('Cache-Control: max-age=0');
 //damos opcion de tipo de archivo
 $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
