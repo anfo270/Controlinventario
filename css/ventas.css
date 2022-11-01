@@ -5,14 +5,7 @@ body{
 html{
     font-size: 16px;
 }
-form{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-size: 1.5em;
-    width: 60%;
-}
+
 .contenedor{
     display: flex;
     align-items: center;

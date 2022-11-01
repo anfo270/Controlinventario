@@ -1,9 +1,11 @@
 <?php
+require('../Config/conexionbd.php');
+require('../Config/metodosbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
 
-    <title>Men&uacute; inventario</title>
+    <title>Carrito de ventas</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -35,7 +37,8 @@ $usu = $_SESSION['Usuario']
                 </td>
             </tr>
         </table>
-
+        <table>
+        </table>
         <label>
             <p>Precio: </p>
         </label>

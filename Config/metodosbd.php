@@ -20,4 +20,9 @@ function consulta($conexion,$basedatos){
     $res=$conexion->query("SELECT * FROM $nombre ") or die(print($conexion->errorInfo()));
     return $res;
 }
+function busqueda($conexion,$base_datos,$tipo,$referencia){
+    $nombre=bd($base_datos);
+    $res=$conexion->query("SELECT * FROM $nombre WHERE $tipo=$referencia");
+    return $res;
+}
 ?>

@@ -25,7 +25,7 @@ $usu = $_SESSION['Usuario']
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <div class="contenedor">
+    <form class="contenedor" action="ventas.php" method="POST">
         <label for="">
             <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></p>
         </label>
@@ -48,19 +48,18 @@ $usu = $_SESSION['Usuario']
 
             </p>
         </label>
-        
         <label>
             <p class="precio">Precio de producto:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
         </label>
         <label>
-            <p class="precio">Primer pago:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
+            <p class="precio">Primer pago:<input type="text" name="Precio" id="Precio" class="boxtext" required></p>
         </label>
         <div class="botones">
             <button class="btn">Agregar producto</button>
-            <button class="btn" onclick="location.href='ventas.php'">Vender</button>
+            <button class="btn" type="submit">Vender</button>
             <button class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
         </div>
-    </div>
+    </form>
 </body>
 
 </html>

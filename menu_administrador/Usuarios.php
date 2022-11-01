@@ -42,8 +42,8 @@ $usu = $_SESSION['Usuario']
                 <td class="titulo">Nombre</td>
                 <td class="titulo">Apellido Paterno</td>
                 <td class="titulo">Apellidos Materno</td>
-                <td class="titulo">Contraseña</td>
-                <td class="titulo"> Usuario</td>
+                <td class="titulo">Usuario</td>
+                <td class="titulo"> Contraseña</td>
                 <td class="titulo">Puesto</td>
                 <td class="titulo">Local</td>
                 <td></td>
