@@ -19,8 +19,8 @@ if($tipo=="recarga"||$tipo=="servicio"){
         header("location: ..\menu_ventas/ventas.php");
         
     }else{
-        echo "<script>alert('El producto ya esta en el carrito')</script>";
-        echo "<script>location.href='../menu_ventas/seccionventas.php'</script>";  
+        echo "<script>alert('El producto ya esta en el carrito no se puede agregar otra vez')</script>";
+        echo "<script>location.href='../menu_ventas/ventas.php'</script>";  
     }
 }else{
     echo "<script>alert('No se encontró el articulo')</script>";

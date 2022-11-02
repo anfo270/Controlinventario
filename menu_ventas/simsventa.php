@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('../Config/conexionbd.php');
+require('../Config/metodosbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
@@ -31,11 +33,15 @@ $usu = $_SESSION['Usuario']
         </label>
         <label for="">
             <p>Tipo de activación:
-                <select name="proveedor">
-                    <option>Prepago</option>
-                    <option>Protabilidad</option>
-                    <option>Plan</option>
+                <select name="proveedor" class="select-css">
+                    <option value="">Seleccionar...</option>
+                    <?php $activacion=consulta($conexion,"activacion");
+                        while($item=$activacion->fetch(PDO::FETCH_OBJ)){
+                    ?>
+                        <option value="<?php echo $item->Nombre;?>"><?php echo $item->Nombre;?></option>
+                    <?php }?>
                 </select>
+                
             </p>
         </label>
         <label for="">
@@ -45,9 +51,8 @@ $usu = $_SESSION['Usuario']
             <p>Precio:<input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
         <div class="botones">
-            <button class="btn">Agregar producto</button>
+            <button class="btn cancelar" type="reset">Cancelar</button>
             <button class="btn" type="submit">Vender</button>
-            <button class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
         </div>
     </form>
 </body>

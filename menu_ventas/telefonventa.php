@@ -55,9 +55,8 @@ $usu = $_SESSION['Usuario']
             <p class="precio">Primer pago:<input type="text" name="Precio" id="Precio" class="boxtext" required></p>
         </label>
         <div class="botones">
-            <button class="btn">Agregar producto</button>
+            <button class="btn cancelar" type="reset">Cancelar</button>
             <button class="btn" type="submit">Vender</button>
-            <button class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
         </div>
     </form>
 </body>

@@ -42,9 +42,8 @@ $usu = $_SESSION['Usuario']
         </label>
         
             <div class="botones">
-                <button class="btn">Agregar producto</button>
-                <button class="btn" type="submit">Vender</button>
-                <button class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
+            <button class="btn cancelar" type="reset">Cancelar</button>
+            <button class="btn" type="submit">Vender</button>
             </div>
     </form>
 </body>
