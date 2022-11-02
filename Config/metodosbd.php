@@ -25,7 +25,6 @@ function consulta($conexion,$basedatos){
 }
 function busqueda($conexion,$base_datos,$tipo,$referencia){
     $nombre=bd($base_datos);
-    //how 
     $res=$conexion->query("SELECT * FROM $nombre WHERE $tipo='$referencia'");
     return $res;
 }

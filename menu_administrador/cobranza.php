@@ -14,7 +14,7 @@ $usu = $_SESSION['Usuario']
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
-    <link rel="stylesheet" href="../css/menus.css">
+    <link rel="stylesheet" href="../css/ventas.css">
     <title>Men&uacute;</title>
 </head>
 <body>
@@ -22,17 +22,16 @@ $usu = $_SESSION['Usuario']
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="menu.php">Men&uacute;</a></li>
-            <li>Administrador</li>
+            <li>Cobranaza</li>
         </ul>
     </div>
-    <div class="contenedor">
-        <button class="btn" onclick="location.href='compras.php'">Compras</button>
-        <button class="btn" onclick="location.href='traspaso.php'">Traspaso</button>
-        <button class="btn ventas" onclick="location.href='Usuarios.php'">Usuarios</button>
-        <button class="btn ventas" onclick="location.href='cobranza.php'">Cobranza</button>
-        <button class="btn ventas" onclick="location.href='../Config/inventaroppvd.php?señal=<?php echo 2?>'">Inventario general</button>
-        
-
-    </div>
+    <form class="contenedor" action="../Config/inventaroppvd.php?señal=3" method="post">
+        <h1>Seleccionar la fecha</h1>
+        <input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >
+        <div class="botones">
+            <button class="btn cancelar"type="reset">Cancelar</button>
+            <button class="btn"type="submit">Aceptar</button>
+        </div>
+    </form>
 </body>
 </html>

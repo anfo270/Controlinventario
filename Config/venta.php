@@ -5,7 +5,7 @@ session_start();
 $pass=$_POST['pass'];
 $use=$_SESSION['Usuario'];
 $locacion=$_SESSION['Local'];
-$Fecha = date('d/m/Y', time());
+$Fecha = date('d-m-Y', time());
 
 if($pass!=$_SESSION['Contraseña']){
     echo "<script>alert('Contraseña incorrecta');</script>";
@@ -18,5 +18,5 @@ while($item=$res->fetch(PDO::FETCH_OBJ)){
                                         or die(print($conexion->errorInfo()));
     $resdelete=$conexion->query("DELETE FROM carrito WHERE ID = $item->ID");
 }
-header("location: ..\menu_ventas/seccionventas");
+header("location: ..\menu_ventas/seccionventas.php");
 ?>
