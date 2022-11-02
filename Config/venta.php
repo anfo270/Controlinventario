@@ -18,4 +18,5 @@ while($item=$res->fetch(PDO::FETCH_OBJ)){
                                         or die(print($conexion->errorInfo()));
     $resdelete=$conexion->query("DELETE FROM carrito WHERE ID = $item->ID");
 }
+header("location: ..\menu_ventas/seccionventas");
 ?>
