@@ -11,6 +11,9 @@ function bd($nombre){
         "sims"=>"sims",
         "telefonos"=>"telefonos",
         "usuarios"=>"usuarios",
+        "carrito"=>"carrito",
+        "ventas"=>"ventas",
+        "marcarecargas"=>"marcarecargas",
     );
     return $bd[$nombre];
 }
@@ -22,7 +25,8 @@ function consulta($conexion,$basedatos){
 }
 function busqueda($conexion,$base_datos,$tipo,$referencia){
     $nombre=bd($base_datos);
-    $res=$conexion->query("SELECT * FROM $nombre WHERE $tipo=$referencia");
+    //how 
+    $res=$conexion->query("SELECT * FROM $nombre WHERE $tipo='$referencia'");
     return $res;
 }
 ?>

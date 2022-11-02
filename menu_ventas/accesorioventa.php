@@ -23,9 +23,9 @@ $usu = $_SESSION['Usuario']
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <div class="contenedor">
+    <form class="contenedor" action="../Config/carrito.php?tipo=SKU" method="post">
         <label for="">
-            <p>SKU:<input type="text" name="SKU" id="SKU" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>
+            <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>
         </label>
         <label for="">
             <p>Marca: </p><p id="Marca"></p>
@@ -34,14 +34,14 @@ $usu = $_SESSION['Usuario']
             <p>Descripcion: </p><p id="Descripcion"></p>
         </label>
         <label for="">
-            <p>Precio:<input type="text" name="precio" id="precio" class="boxtext" required></p>
+            <p>Precio:<input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
         <div class="botones">
             <button class="btn">Agregar producto</button>
-            <button class="btn" onclick="location.href='ventas.php'">Vender</button>
+            <button class="btn" type="submit">Vender</button>
             <button class="btn cancelar" onclick="location.href='seccionventas.php'" >Cancelar</button>
         </div>
-    </div>
+    </form>
 </body>
 
 </html>

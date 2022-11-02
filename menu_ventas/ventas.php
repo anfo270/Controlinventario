@@ -5,7 +5,8 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario'];
+$usu = strval($_SESSION['Usuario']);
+//how convert to string?
 ?>
 
 <!DOCTYPE html>
@@ -27,20 +28,37 @@ $usu = $_SESSION['Usuario'];
         <table>
             <tr>
                 <td>
-                    <p><b> Producto</b></p>
+                    <p><b>Producto</b></p>
                 </td>
                 <td>
-                    <p><b>Cantidad</b></p>
+                    <p><b>Modelo</b></p>
                 </td>
                 <td>
                     <p><b>Precio por unidad<b></p>
                 </td>
+                <td></td>
             </tr>
         </table>
         <table>
+        <?php $productos=busqueda($conexion,"carrito","Usuario",$usu);
+                $precio=0;
+                while($item=$productos->fetch(PDO::FETCH_OBJ)){ ?>
+                    <tr>
+                        <td><p><?php echo ucwords($item->tipo); ?></p></td>
+                        <td><p><?php 
+                        if($item->tipo=="recarga"||$item->tipo=="servicio"){
+                            echo ucwords($item->FinancieraActivacion);
+                        }else{
+                                echo ucwords($item->Modelo); }
+                                ?></p></td>
+                        <td><p><?php echo ucwords($item->Precio); ?></p></td>
+                        <td><button class="btn cancelar" onclick="location.href='../Config/eliminar_carrito.php?id=<?php echo $item->ID; ?>'">Eliminar</button></td>
+                    </tr>
+                <?php $precio=intval($item->Precio)+$precio;  }?>
+
         </table>
         <label>
-            <p>Precio: </p>
+            <p>Total:<?php echo('$'.$precio);?> </p>
         </label>
         <label class="pass">
             <p>Contraseña:<input type="password" name="contraseña" id="contraseña" class="boxtext" required></p>

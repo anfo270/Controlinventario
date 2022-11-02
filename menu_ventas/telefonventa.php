@@ -25,9 +25,9 @@ $usu = $_SESSION['Usuario']
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <form class="contenedor" action="ventas.php" method="POST">
+    <form class="contenedor" action="../Config/carrito.php?tipo=IMEI" method="POST">
         <label for="">
-            <p>IMEI:<input type="text" name="IMEI" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></p>
+            <p>IMEI:<input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></p>
         </label>
         <label for="">
             <p>Marca: </p><p class="Marca" id="Marca"></p>

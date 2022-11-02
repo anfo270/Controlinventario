@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('..\Config/conexionbd.php');
+require('..\Config/metodosbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
@@ -21,25 +23,28 @@ $usu = $_SESSION['Usuario']
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <div class="contenedor">
-        <form action="ventas.php" method="POST">
+    <form class="contenedor" action="../Config/carrito.php?tipo=servicio" method="post">
             <h3>Tipo de servicio:</h3>
             <Label>
-                <P>Financiera: <select class="select-css">
-                    <option>PAYJOY</option>
-                    <OPTION>Movistar</OPTION>
+                <P>Financiera: <select class="select-css" name="proveedor">
+                <?php $proveedores=consulta($conexion,"marcarecargas");
+                    while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
+                        <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                            <?php } ?>
+                <?php $proveedores=consulta($conexion,"financiera");
+                    while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
+                        <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                <?php } ?>
                 </select></P>
             </Label>
             <label>
-                <p>Monto: <input type="text" name="monto" id="monto" class="boxtext"> </p>
+                <p>Monto: <input type="text" name="Precio" id="monto" class="boxtext"> </p>
             </label>
             <div class="botones">
-                <button type="submit" class="btn">Agregar producto</button>
-                <button class="btn" onclick="location.href='ventas.php'">Vender</button>
+                <button class="btn" submit="submit">Vender</button>
                 <button type="reset" class="btn cancelar" onclick="location.href='seccionventas.php'">Cancelar</button>
             </div>
-        </form>
-    </div>
+    </form>
 </body>
 
 </html>

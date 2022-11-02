@@ -1,7 +1,7 @@
 
 function pulsar(inputF) {
     document.getElementById(inputF).addEventListener('keydown', function (event) {
-        if (event.keyCode == 13) {
+        if (event.keyCode === 13) {
             let SKU = event.path[0].value;
             fetch('../datosaccesorios.php')
                 .then(res => res.json())
