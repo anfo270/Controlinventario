@@ -18,7 +18,7 @@ use \PhpOffice\PhpSpreadsheet\IOFactory;
 $spreadsheet = new SpreadSheet();
 
 //nombre de autor y titulo
-$spreadsheet->getProperties()->setCreator("Marko Robles")->setTitle("Inventario");
+$spreadsheet->getProperties()->setCreator($_SESSION['Usuario'])->setTitle("Inventario");
 //Numero de hoja para trabajar, activamos la hoja
 $spreadsheet->setActiveSheetIndex(0);
 //establecemos da hoja a trabajar por hoja activa
@@ -28,54 +28,55 @@ if($señal==1){
     $consulta_telefonos=$conexion->query("SELECT * FROM telefonos WHERE Locacion='$local'") or die(print($conexion->errorInfo()));
     $consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
     $consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
-}else if($señal==3){
-    $consulta_ventas=busqueda($conexion,"ventas","Fecha",$data);
+}
+// else if($señal==3){
+//     $consulta_ventas=busqueda($conexion,"ventas","Fecha",$data);
     
-    $hojaactiva->setCellValue("A1","IMEI/ICC/SKU");
-    $hojaactiva->getColumnDimension('A')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("A1","IMEI/ICC/SKU");
+//     $hojaactiva->getColumnDimension('A')->setWidth(120, 'pt');
     
-    $hojaactiva->setCellValue("B1","Marca");
-    $hojaactiva->getColumnDimension('B')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("B1","Marca");
+//     $hojaactiva->getColumnDimension('B')->setWidth(120, 'pt');
     
-    $hojaactiva->setCellValue("C1","Modelo");
-    $hojaactiva->getColumnDimension('C')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("C1","Modelo");
+//     $hojaactiva->getColumnDimension('C')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("D1","Vendedor");
-    $hojaactiva->getColumnDimension('D')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("D1","Vendedor");
+//     $hojaactiva->getColumnDimension('D')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("E1","Fecha");
-    $hojaactiva->getColumnDimension('E')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("E1","Fecha");
+//     $hojaactiva->getColumnDimension('E')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("F1","Locacion");
-    $hojaactiva->getColumnDimension('F')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("F1","Locacion");
+//     $hojaactiva->getColumnDimension('F')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("G1","Precio");
-    $hojaactiva->getColumnDimension('G')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("G1","Precio");
+//     $hojaactiva->getColumnDimension('G')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("H1","Financiera");
-    $hojaactiva->getColumnDimension('H')->setWidth(120, 'pt');
+//     $hojaactiva->setCellValue("H1","Financiera");
+//     $hojaactiva->getColumnDimension('H')->setWidth(120, 'pt');
 
-    $hojaactiva->getStyle("A1:H1")->getFont()->setBold(true);
+//     $hojaactiva->getStyle("A1:H1")->getFont()->setBold(true);
 
-    while($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
-        $posicion++;
-        $hojaactiva->setCellValue("A{$posicion}",$item->IMEIICCSKU);
-        $hojaactiva->setCellValue("B{$posicion}",$item->Marca);
-        $hojaactiva->setCellValue("C{$posicion}",$item->Modelo);
-        $hojaactiva->setCellValue("D{$posicion}",$item->Vendedor);
-        $hojaactiva->setCellValue("E{$posicion}",$item->Fecha);
-        $hojaactiva->setCellValue("F{$posicion}",$item->Locacion);
-        $hojaactiva->setCellValue("G{$posicion}",$item->Precio);
-        $hojaactiva->setCellValue("H{$posicion}",$item->Financiera);
-    }
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="*.xlsx"');
-    header('Cache-Control: max-age=0');
-    //damos opcion de tipo de archivo
-    $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
-    $writer->save('php://output');
-    header('location: ..\menu_administrador/cobranza.php');
-}else{
+//     // while($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
+//     //     $posicion++;
+//     //     $hojaactiva->setCellValue("A{$posicion}",$item->IMEIICCSKU);
+//     //     $hojaactiva->setCellValue("B{$posicion}",$item->Marca);
+//     //     $hojaactiva->setCellValue("C{$posicion}",$item->Modelo);
+//     //     $hojaactiva->setCellValue("D{$posicion}",$item->Vendedor);
+//     //     $hojaactiva->setCellValue("E{$posicion}",$item->Fecha);
+//     //     $hojaactiva->setCellValue("F{$posicion}",$item->Locacion);
+//     //     $hojaactiva->setCellValue("G{$posicion}",$item->Precio);
+//     //     $hojaactiva->setCellValue("H{$posicion}",$item->Financiera);
+//     // }
+//     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+//     header('Content-Disposition: attachment;filename="*.xlsx"');
+//     header('Cache-Control: max-age=0');
+//     //damos opcion de tipo de archivo
+//     $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+//     $writer->save('php://output');
+//     header('location: ..\menu_administrador/cobranza.php');
+else{
     $consulta_telefonos=consulta($conexion,"telefonos");
     $consulta_accesorios=consulta($conexion,"accesorio");
     $consulta_sims=consulta($conexion, "sims");
@@ -130,7 +131,7 @@ header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 header('Content-Disposition: attachment;filename="*.xlsx"');
 header('Cache-Control: max-age=0');
 //damos opcion de tipo de archivo
-$writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+$writer = IOFactory::createWriter($spreadsheet, 'xlsx');
 $writer->save('php://output');
 
 ?>

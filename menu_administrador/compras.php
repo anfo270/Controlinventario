@@ -57,11 +57,13 @@ $usu = $_SESSION['Usuario']
                     </select>
                 </td>
             </tr>
+            <p>lista de marcas</p>
             <tr>
                 <td>
                     <p>Modelo:</p>
                 </td>
                 <td>
+                    <p>cambiarlos a select y bd</p>
                     <input type="text" name="numero" class="boxtext" id="input3" onkeypress="nextFocus('input3', 'input4')">
                 </td>
             </tr>

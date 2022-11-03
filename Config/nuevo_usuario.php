@@ -22,6 +22,7 @@ if($_GET['identificardor']==1){
 
 if($_GET['identificador']==2){
     $id_use=$_GET['id'];
+    //revisar
     $actualizar=actualizar($Nombre,$Apellido_Paterno,$Apellido_Materno,$Contraseña,$puesto,$Local,$Usuario,$conexion,$id_use);
     if($actualizar){
         echo "<script>alert('Se modifico el Usuario');</script>"; 
