@@ -40,8 +40,7 @@ function articulo($nombre){
 }
 
 function insertar_carrito($conexion,$usuario,$ID,$precio,$financiera,$Marca,$Modelo,$columnas){
-    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, Precio, FinancieraActivacion,Marca,Modelo,tipo) VALUE
-    ('$usuario','$ID','$precio','$financiera','$Marca','$Modelo','$columnas') ")or die(print($conexion->errorInfo()));
+    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, Precio, FinancieraActivacion,Marca,Modelo,tipo) VALUES ('$usuario','$ID','$precio','$financiera','$Marca','$Modelo','$columnas') ")or die(print($conexion->errorInfo()));
     return $res;
 }
 
