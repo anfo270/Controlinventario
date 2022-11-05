@@ -24,6 +24,13 @@ $usu = $_SESSION['Usuario']
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="seccionventas.php">Ventas</a></li>
+            <li>Recargas</li>
+        </ul>
+    </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=recarga" method="post">
         <label for="">
             <p>Proveedor:

@@ -21,8 +21,9 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="menu.php">Men&uacute;</a></li>
-            <li>Cobranaza</li>
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="administrador.php">Administrador</a></li>
+            <li>Cobranza</li>
         </ul>
     </div>
     <form class="contenedor" action="../Config/inventaroppvd.php?señal=3" method="post">

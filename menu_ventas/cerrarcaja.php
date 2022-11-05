@@ -19,10 +19,17 @@ $usu = $_SESSION['Usuario']
 </head>
 <body>
     <nav><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="seccionventas.php">Ventas</a></li>
+            <li>Cerrar caja</li>
+        </ul>
+    </div>
     <div class="contenedor">
         <button class="btncerrar" onclick="location.href='../cerrar.php'">Cerrar Caja</button>
         <?php
-        date_default_timezone_set('America/Denver');
+        date_default_timezone_set('America/Mexico_City');
         $Fecha = date('d/m/Y', time());
         $Hora = date('h:i a', time());
         echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";

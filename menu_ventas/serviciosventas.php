@@ -18,11 +18,18 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
-    <title>Tel&eacute;fono</title>
+    <title>Pago de servicios</title>
 </head>
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="seccionventas.php">Ventas</a></li>
+            <li>Pago de servicios</li>
+        </ul>
+    </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=servicio" method="post">
             <h3>Tipo de servicio:</h3>
             <Label>

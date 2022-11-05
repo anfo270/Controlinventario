@@ -19,20 +19,22 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/menus.css">
     <link rel="stylesheet" href="../css/reporte.css">
     <link rel="stylesheet" href="../css/popup.css">
-    <title>Usuario</title>
+    <title>Agregar usuario</title>
 </head>
     <script src="../javascript/popup.js"></script>
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="menu.php">Men&uacute;</a></li>
-            <li>Administrador</li>
+            <li><a href="menu.php">🏠</a></li>
+            <li><a href="administrador.php">Administrador</a></li>
+            <li><a href="Usuarios.php">Usuarios</a></li>
+            <li>Agregar</li>
         </ul>
     </div>
     <div class="contenedor">
         <h1>Nuevo Usuario</h1>
-        <form action="../Config/nuevo_usuario.php?identificardor=<?php echo 1;?>" method="post">
+        <form action="../Config/nuevo_usuario.php?identificador=<?php echo 1;?>" method="post">
             <table class="tabla_usuarios">
                 <tr>
                     <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre"></td>
@@ -51,7 +53,7 @@ $usu = $_SESSION['Usuario']
                     <td>
                         <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
-                            <option value="nuevo"> Genérico</option>
+                            <option value="NUEVO"> Genérico</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPOSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>

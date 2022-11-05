@@ -16,13 +16,20 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
-    <title>Tel&eacute;fono</title>
+    <title>Accesorio</title>
     <script src="../javascript/datosaccesorio.js"></script>
     <script src="../javascript/script.js"></script>
 </head>
 
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="seccionventas.php">Ventas</a></li>
+            <li>Accesorio</li>
+        </ul>
+    </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=SKU" method="post">
         <label for="">
             <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>

@@ -9,7 +9,7 @@ $puesto=$_POST['Puesto'];
 $Local=$_POST['Local'];
 $Usuario=$Nombre." ".$Apellido_Paterno;
 
-if($_GET['identificardor']==1){
+if($_GET['identificador']==1){
     $insertar=insert($Nombre,$Apellido_Paterno,$Apellido_Materno,$Contraseña,$puesto,$Local,$Usuario,$conexion);
     if($insertar){
         echo "<script>alert('Se agrego el Usuario');</script>"; 
@@ -31,6 +31,9 @@ if($_GET['identificador']==2){
         echo "<script>alert('No se modifico el usuario');</script>";
         echo "<script>location.href='../menu_administrador/Usuarios.php'</script>";
     }
+}else{
+    echo "<script>alert('No se pudo realizar ninguno de los cambios.');</script>"; 
+        echo "<script>location.href='../menu_administrador/Usuarios.php'</script>";
 }
 
 

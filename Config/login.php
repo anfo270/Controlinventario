@@ -25,7 +25,7 @@ if ($res->rowCount() == 1) {
     $_SESSION['Local'] = $row['Local'];
     if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contraseña']){
 
-        if ($row['Puesto'] == "vendedor") {
+        if ($row['Puesto'] == "vendedor"||$row['Puesto'] == "VENDEDOR"||$row['Puesto'] == "nuevo"||$row['Puesto'] == "NUEVO") {
             header('location: ..\menu_ventas/abrircaja.php');
         } else {
             header('location: ..\menu.php');

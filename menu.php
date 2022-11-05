@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
+if ($_SESSION['Puesto'] == "vendedor"||$_SESSION['Puesto'] == "VENDEDOR"||$_SESSION['Puesto'] == "nuevo"||$_SESSION['Puesto'] == "NUEVO") {
+    header('location: menu_ventas/seccionventas.php');
+}
 $usu = $_SESSION['Usuario']
 ?>
 
@@ -21,7 +24,7 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="menu.php">Men&uacute;</a></li>
+            <li><a href="menu.php">🏠</a></li>
         </ul>
     </div>
     <div class="contenedor">

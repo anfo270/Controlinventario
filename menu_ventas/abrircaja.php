@@ -20,10 +20,15 @@ $usu = $_SESSION['Usuario']
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+        </ul>
+    </div>
     <div class="contenedor">
         <button class="btn abrircaja" onclick="location.href='seccionventas.php'">Abrir Caja</button><br>
         <?php
-        date_default_timezone_set('America/Denver');
+        date_default_timezone_set('America/Mexico_City');
         $Fecha = date('d/m/Y', time());
         $Hora = date('h:i a', time());
         echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";

@@ -19,6 +19,12 @@ $usu = $_SESSION['Usuario']
 </head>
 <body>
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="seccionventas.php">Ventas</a></li>
+        </ul>
+    </div>
     <div class="contenedor">
         <button class="btn telefon" onclick="location.href='telefonventa.php'">Tel&eacute;fonos</button>
         <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
