@@ -33,34 +33,80 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=IMEI" method="POST">
-        <label for="">
-            <p>IMEI:<input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></p>
-        </label>
-        <label for="">
-            <p>Marca: </p><p class="Marca" id="Marca"></p>
-        </label>
-        <label for="">
-            <p>Modelo: </p><p id="Modelo"></p>
-        </label>
-        <label for="">
-            <p>Financiera:
-        <select name="proveedor" class="select-css proveedor">
-            <option value="">Seleccionar...</option>
-            <?php
-                $financiera=consulta($conexion,"financiera");
-                while($item=$financiera->fetch(PDO::FETCH_OBJ)){ ?>
-                    <option value="<?php echo $item->Nombre?>"><?php echo $item->Nombre?></option>
-                <?php } ?>
-        </select>
-
-            </p>
-        </label>
-        <label>
-            <p class="precio">Precio de producto:<input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
-        </label>
-        <label>
-            <p class="precio">Primer pago:<input type="text" name="Precio" id="Precio" class="boxtext" required></p>
-        </label>
+        <h1>Teléfonos</h1>
+        <table>
+            <tr>
+                <td>IMEI:</td>
+                <td><input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></td>
+            </tr>
+            <tr>
+                <td>
+                    Marca:
+                </td>
+                <td>
+                    <p class="Marca" id="Marca"></p>
+                </td>
+            </tr>
+            <tr>   
+                <td>
+                    Modelo:
+                </td>
+                <td> 
+                    <p id="Modelo"></p>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Financiera:
+                </td>
+                <td>
+                    <select name="proveedor" class="select-css proveedor">
+                    <option value="">Seleccionar...</option>
+                    <?php
+                        $financiera=consulta($conexion,"financiera");
+                        while($item=$financiera->fetch(PDO::FETCH_OBJ)){ ?>
+                            <option value="<?php echo $item->Nombre?>"><?php echo $item->Nombre?></option>
+                        <?php } ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Nombre de cliente:
+                </td>
+                <td>
+                    <input type="text" name="cliente" id="IMEI" class="boxtext" required>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Numero de teléfono:
+                </td>
+                <td>
+                    <input type="text" name="num_tel" id="IMEI" class="boxtext" required>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Correo:
+                </td>
+                <td>
+                    <input type="text" name="correo" id="IMEI" class="boxtext" required>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Precio de producto:
+                </td>
+                <td>
+                    <input type="text" name="" id="IMEI" class="boxtext" required>
+                </td>
+            </tr>
+            <tr>
+                <td> Primer pago:</td>
+                <td><input type="text" name="Precio" id="Precio" class="boxtext" required></p></td>
+            </tr>
+        </table>           
         <div class="botones">
             <button class="btn cancelar" type="reset">Cancelar</button>
             <button class="btn" type="submit">Vender</button>
