@@ -3,7 +3,21 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$Factura=intval($_POST['Factura']);
+$tipos=$_POST['Tipo'];
+$proveedor=$_POST['proveedor'];
+$marcas=$_POST['marcas'];
+$modelo=$_POST['modelo'];
+$cantidad=intval($_POST['cantidad']);
+function tipo($valor){
+    $tipo = array(
+        "sims"=>"ICC",
+        "telefonos"=>"IMEI",
+        "accesorio"=>"SKU",
+    );
+    return $tipo[$valor];
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +39,7 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <h2>Ingreso</h2>
         <div>
-        <label for=""><p>Factura: 5000
+        <label><p>Factura: <?php echo $Factura;?>
             </p>
         </label>
         </div>
@@ -35,58 +49,21 @@ $usu = $_SESSION['Usuario']
                     <p>Modelo</p>
                 </td>
                 <td>
-                    <p>SAMSUNG GALAXY S10</p>
+                    <p><?php echo $modelo;?></p>
                 </td>
             </tr>
-
+            <?php for ($i=0; $i <$cantidad ; $i++) { ?>
             <tr>
+                
                 <td>
-                    <p>IMEI</p>
+                    <p><?php echo tipo($tipos); ?></p>
                 </td>
                 <td>
                     <input type="text" name="numero" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
                 </td>
+                
             </tr>
-            <tr>
-                <td>
-                    <p>IMEI</p>
-                </td>
-                <td>
-                    <input type="text" name="numero" class="boxtext" id="input2" onkeypress="nextFocus('input2', 'input3')">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>IMEI</p>
-                </td>
-                <td>
-                    <input type="text" name="numero" class="boxtext" id="input3" onkeypress="nextFocus('input3', 'input4')">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>IMEI</p>
-                </td>
-                <td>
-                    <input type="text" name="numero" class="boxtext" id="input4" onkeypress="nextFocus('input4', 'input5')">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>IMEI</p>
-                </td>
-                <td>
-                    <input type="text" name="numero" class="boxtext" id="input5" >
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Total</p>
-                </td>
-                <td>
-                    <p>$1100000</p>
-                </td>
-            </tr>
+            <?php } ?>
         </table>
         <div class="botones">
             <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>

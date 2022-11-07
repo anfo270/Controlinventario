@@ -22,6 +22,8 @@
         $tm="locacion";
     }else if($tab=="ac9a089c"){
         $tm="proveedor";
+    }else if($tab=="24jlbn6hkll"){
+        $tm="telefonia";
     }
 
     $res=$conexion->query("INSERT INTO $tm (nombre) VALUES ('$nombre')") or die(print($conexion->errorInfo()));

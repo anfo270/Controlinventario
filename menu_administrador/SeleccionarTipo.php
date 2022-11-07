@@ -26,13 +26,9 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn" onclick="location.href='SeleccionarTipo.php'">Compras</button>
-        <button class="btn" onclick="location.href='traspaso.php'">Traspaso</button>
-        <button class="btn ventas" onclick="location.href='Usuarios.php'">Usuarios</button>
-        <button class="btn ventas" onclick="location.href='cobranza.php'">Cobranza</button>
-        <button class="btn ventas" onclick="location.href='../Config/inventaroppvd.php?señal=<?php echo 2?>'">Inventario general</button>
-        
-
+        <button class="btn" onclick="location.href='compras.php?tipo=sims'">Sims</button>
+        <button class="btn" onclick="location.href='compras.php?tipo=telefonos'">Teléfonos</button>
+        <button class="btn ventas" onclick="location.href='compras.php?tipo=accesorio'">Accesorio</button>
     </div>
 </body>
 </html>

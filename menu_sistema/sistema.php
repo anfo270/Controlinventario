@@ -32,7 +32,8 @@ $usu = $_SESSION['Usuario']
         <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
-        <p>agregar botón para telefonía,modelos</p>
+        <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button>
+        <p>agregar botón para modelos</p>
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button><br><br>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">
