@@ -40,7 +40,7 @@ function tipo($valor){
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     
-    <div class="contenedor">
+    <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos; ?>" method="post">
         <h2>Ingreso</h2>
         <div>
         <label><p>Factura: <?php echo $Factura;?>
@@ -80,6 +80,6 @@ function tipo($valor){
             <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
             <button class="btn">Aceptar</button>
         </div>
-    </div>
+    </form>
 </body>
 </html>
