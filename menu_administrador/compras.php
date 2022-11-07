@@ -31,15 +31,27 @@ $usu = $_SESSION['Usuario']
             <li>Compras</li>
         </ul>
     </div>
-    <div class="contenedor">
+    <form action="compras2.php" method="post" class="contenedor">
         <h1>Ingreso</h1>
-        <table >
+        <table>
             <tr>
                 <td>
                     <p>Factura:</p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
+                    <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                Tipo:
+                </td>
+                <td>
+                    <ol>
+                        <li><p><input type="radio" name="Tipo" value="sims"> Sims</p></li>
+                        <li><p><input type="radio" name="Tipo" value="telefonos"> Equipo</p></li>
+                        <li><p><input type="radio" name="Tipo" value="accesorio"> Accesorio</p></li>
+                    </ol>
                 </td>
             </tr>
             <tr>
@@ -57,27 +69,47 @@ $usu = $_SESSION['Usuario']
                     </select>
                 </td>
             </tr>
-            <p>lista de marcas</p>
+            <tr>
+                <td>
+                    <p>Marcas:</p>
+                </td>
+                <td>
+                    <select name="marcas" id="marcas" class="select-css">
+                        <option value=" ">Seleccionar...</option>
+                        <?php
+                        $local=consulta($conexion,"marcas");
+                        while($item=$local->fetch(PDO::FETCH_OBJ)){?>
+                            <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                        <?php } ?>
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <p>Modelo:</p>
                 </td>
                 <td>
-                    <p>cambiarlos a select y bd</p>
-                    <input type="text" name="numero" class="boxtext" id="input3" onkeypress="nextFocus('input3', 'input4')">
+                    <select name="modelo" id="modelo" class="select-css">
+                        <option value=" ">Seleccionar...</option>
+                        <?php
+                        $local=consulta($conexion,"modelo");
+                        while($item=$local->fetch(PDO::FETCH_OBJ)){?>
+                            <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                        <?php } ?>
+                    </select>
                 </td>
             </tr>
             <tr>
                 <td>
                     <p>Cantidad </p>
                 <td>
-                    <input type="text" name="numero" class="boxtext" id="input4">
+                    <input type="text" name="cantidad" class="boxtext" id="input4">
                 </td>
             </tr>
         </table>
         <div class="botones">
-            <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
-            <button class="btn" onclick="location.href='compras2.php'">Siguiente</button>
+            <button class="btn cancelar" type="reset">Cancelar</button>
+            <button class="btn" type="submit">Siguiente</button>
         </div>
     </div>
 </body>

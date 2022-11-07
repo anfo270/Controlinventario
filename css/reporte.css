@@ -72,3 +72,17 @@ th, td {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+ol{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0;
+  padding-left: 9em;
+}
+li{
+  display: flex;
+
+}

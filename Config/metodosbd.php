@@ -14,6 +14,7 @@ function bd($nombre){
         "carrito"=>"carrito",
         "ventas"=>"ventas",
         "marcarecargas"=>"marcarecargas",
+        "modelo"=>"modelo",
     );
     return $bd[$nombre];
 }
