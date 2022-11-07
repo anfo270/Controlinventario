@@ -1,25 +1,27 @@
-
 function pulsar(inputF) {
     document.getElementById(inputF).addEventListener('keydown', function (event) {
-        if (event.keyCode === 13) {
-            let SKU = event.path[0].value;
+        if (event.key === "Enter") {
+            let SKU = document.getElementById(inputF).value;
             fetch('../datosaccesorios.php')
                 .then(res => res.json())
                 .then(data => {
-                    data.map(item => {
-                        if (item.SKU == SKU) {
-                            document.getElementById('Marca').style.color='black';
-                            document.getElementById('Marca').innerHTML = item.Marca;
-                            document.getElementById('Descripcion').style.color='black';
-                            document.getElementById('Descripcion').innerHTML = item.Descripcion;
+                        let item = data.filter(function(item){
+                        return item.SKU== SKU;
+                        
+                        });
+                        console.log(item);
+                        console.log(item.length);
+                        if (item.length>0) {
+                            document.getElementById('Marca').style.color="black";
+                            document.getElementById('Modelo').style.color="black";
+                            document.getElementById('Marca').innerHTML = item[0].Marca;
+                            document.getElementById('Modelo').innerHTML = item[0].Modelo;
                         } else {
-                            document.getElementById('Marca').style.color='red';
-                            document.getElementById('Marca').innerHTML = "No se encontro";
-                            document.getElementById('Descripcion').style.color='red';
-                            document.getElementById('Descripcion').innerHTML = "No se encontro";
-
+                            document.getElementById('Marca').style.color="red";
+                            document.getElementById('Modelo').style.color="red";
+                            document.getElementById('Marca').innerHTML = "No se encontró";
+                            document.getElementById('Modelo').innerHTML = "No se encontró";
                         }
-                    })
                 })
         }
     });

@@ -33,10 +33,10 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=ICC" method="post">
         <label for="">
-            <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" required></p>
+            <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" onkeypress="pulsar('IMEI');" required></p>
         </label>
         <label for="">
-            <p>Marca:<p id="Marca"></p></p>
+            <p>Telefonia:<p id="Telefonia"></p></p>
         </label>
         <label for="">
             <p>Tipo de activación:

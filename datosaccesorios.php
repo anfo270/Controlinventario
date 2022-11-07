@@ -8,7 +8,7 @@ include('Config/conexionbd.php');
             'SKU'=>$item->SKU,
             'Marca'=>$item->Marca,
             'Locacion'=>$item->Locacion,
-            'Descripcion'=>$item->Descripcion,
+            'Modelo'=>$item->Modelo,
         ];
     }
     echo json_encode($datataccesorio);

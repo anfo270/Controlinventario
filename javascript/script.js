@@ -1,8 +1,9 @@
-function nextFocus(inputF, inputS) {
-    document.getElementById(inputF).addEventListener('keydown', function(event) {
-      if (event.keyCode == 13) {
-        document.getElementById(inputS).focus();
-      }
-    });
-  }
+function nextFocus(inputF, inputS){
+  document.addEventListener("keyup",function(event){
+    if(event.key==='Enter'){
+      console.log(event);
+      document.getElementById(inputS).focus();
+    }
+  })
+}
 

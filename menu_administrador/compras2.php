@@ -3,12 +3,17 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
+$controlinput=0;
 $usu = $_SESSION['Usuario'];
 $Factura=intval($_POST['Factura']);
-$tipos=$_POST['Tipo'];
-$proveedor=$_POST['proveedor'];
-$marcas=$_POST['marcas'];
-$modelo=$_POST['modelo'];
+$tipos=$_GET['tipo'];
+if($tipos!="sims"){
+    $proveedor=$_POST['proveedor'];
+    $marcas=$_POST['marcas'];
+    $modelo=$_POST['modelo'];
+}else{
+    $telefonia=$_POST['telefonia'];
+}
 $cantidad=intval($_POST['cantidad']);
 function tipo($valor){
     $tipo = array(
@@ -30,8 +35,7 @@ function tipo($valor){
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
 
-    <title>Compras</title>
-    <script src="javascript/script.js"></script>
+    <title>Compras</title><script src="../javascript/script.js"></script>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -49,7 +53,12 @@ function tipo($valor){
                     <p>Modelo</p>
                 </td>
                 <td>
-                    <p><?php echo $modelo;?></p>
+                    <p><?php 
+                    if($tipos!="sims"){
+                        echo $modelo;
+                    }else{
+                        echo $telefonia;
+                    }?></p>
                 </td>
             </tr>
             <?php for ($i=0; $i <$cantidad ; $i++) { ?>
@@ -59,11 +68,13 @@ function tipo($valor){
                     <p><?php echo tipo($tipos); ?></p>
                 </td>
                 <td>
-                    <input type="text" name="numero" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
+                    <input type="text" name="numero<?php echo $i ?>" class="boxtext" id=<?php echo 'input'. $controlinput ?> onkeypress="nextFocus('<?php echo 'input'.$controlinput?>',' <?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>')">
                 </td>
                 
             </tr>
-            <?php } ?>
+            <?php
+                $controlinput++;
+                } ?>
         </table>
         <div class="botones">
             <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>

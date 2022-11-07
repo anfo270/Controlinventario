@@ -31,16 +31,16 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=SKU" method="post">
-        <label for="">
-            <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('SKU')"  required></p>
+        <label  >
+            <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('ID');"  required></p>
         </label>
-        <label for="">
+        <label>
             <p>Marca: </p><p id="Marca"></p>
         </label>
-        <label for="">
-            <p>Descripcion: </p><p id="Descripcion"></p>
+        <label>
+            <p>Modelo: </p><p id="Modelo"></p>
         </label>
-        <label for="">
+        <label>
             <p>Precio:<input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
         <div class="botones">

@@ -6,8 +6,10 @@ include('Config/conexionbd.php');
     while($item=$res->fetch(PDO::FETCH_OBJ)){
         $datasims[]=[
             'ICC'=>$item->ICC,
-            'Marca'=>$item->MARCA,
-            'Locacion'=>$item->LOCACION,
+            'Marca'=>$item->Marca,
+            'Locacion'=>$item->Locacion,
+            'Modelo'=>$item->Modelo,
+            'Telefonia'=>$item->Telefonia,
         ];
     }
     echo json_encode($datasims);

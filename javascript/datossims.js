@@ -1,21 +1,23 @@
 function pulsar(inputF) {
     document.getElementById(inputF).addEventListener('keydown', function (event) {
-        if (event.keyCode == 13) {
+        if (event.key === "Enter") {
             let ICC = document.getElementById(inputF).value;
             fetch('../datossims.php')
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    data.map(item => {
-                        if (item.ICC == ICC) {
-                            document.getElementById('Marca').style.color='black';
-                            document.getElementById('Marca').innerHTML = item.Marca;
+                        let item = data.filter(function(item){
+                            return item.ICC== ICC;
+                        });
+                        console.log(item);
+                        console.log(item.length);
+                        if (item.length>0) {
+                            document.getElementById('Telefonia').style.color="black";
+                            document.getElementById('Telefonia').innerHTML = item[0].Telefonia;
                         } else {
-                            document.getElementById('Marca').style.color='red';
-                            document.getElementById('Marca').innerHTML = "No se encontro";
+                            document.getElementById('Telefonia').style.color="red";
+                            document.getElementById('Telefonia').innerHTML = "No se encontró";
                         }
                     })
-                })
         }
     });
 }
