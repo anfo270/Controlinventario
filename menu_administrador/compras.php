@@ -19,7 +19,7 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/reporte.css">
 
     <title>Compras</title>
-    <script src="javascript/script.js"></script>
+    <script src="../javascript/script.js"></script>
 </head>
 <body>
 
@@ -39,7 +39,7 @@ $usu = $_SESSION['Usuario']
                     <p>Factura:</p>
                 </td>
                 <td>
-                    <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2')">
+                    <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2');">
                 </td>
             </tr><?php if($_GET['tipo']!="sims"){?>
             <tr>
@@ -47,7 +47,7 @@ $usu = $_SESSION['Usuario']
                     <p>Proveedor:</p>
                 </td>
                 <td>
-                    <select name="proveedor" id="proveedor" class="select-css">
+                    <select name="proveedor" id="proveedor input2" class="select-css" onkeypress="nextFocus('input2', 'input3');">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"proveedor");
@@ -62,7 +62,7 @@ $usu = $_SESSION['Usuario']
                     <p>Marcas:</p>
                 </td>
                 <td>
-                    <select name="marcas" id="marcas" class="select-css">
+                    <select name="marcas" id="marcas input3" class="select-css"  onkeypress="nextFocus('input3', 'input4');">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"marcas");
@@ -77,7 +77,7 @@ $usu = $_SESSION['Usuario']
                     <p>Modelo:</p>
                 </td>
                 <td>
-                    <select name="modelo" id="modelo" class="select-css">
+                    <select name="modelo" id="modelo input4" class="select-css"  onkeypress="nextFocus('input4', 'input5');">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"modelo");
@@ -92,7 +92,7 @@ $usu = $_SESSION['Usuario']
                     <p>Telefonía</p>
                 </td>
                 <td>
-                <select name="telefonia" id="modelo" class="select-css">
+                <select name="telefonia" id="modelo input2" class="select-css" onkeypress="nextFocus('input2', 'input5');">
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"telefonia");
@@ -105,7 +105,7 @@ $usu = $_SESSION['Usuario']
                 <td>
                     <p>Cantidad </p>
                 <td>
-                    <input type="text" name="cantidad" class="boxtext" id="input4">
+                    <input type="text" name="cantidad" class="boxtext" id="input5">
                 </td>
             </tr>
         </table>

@@ -68,7 +68,7 @@ function tipo($valor){
                     <p><?php echo tipo($tipos); ?></p>
                 </td>
                 <td>
-                    <input type="text" name="numero<?php echo $i ?>" class="boxtext" id=<?php echo 'input'. $controlinput ?> onkeypress="nextFocus('<?php echo 'input'.$controlinput?>',' <?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>')">
+                    <input type="text" name="numero<?php echo $i ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');">
                 </td>
                 
             </tr>
@@ -77,7 +77,7 @@ function tipo($valor){
                 } ?>
         </table>
         <div class="botones">
-            <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>
+            <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
             <button class="btn">Aceptar</button>
         </div>
     </div>
