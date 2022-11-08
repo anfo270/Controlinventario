@@ -4,9 +4,10 @@ require ("metodosbd.php");
 
 session_start();
 $local=$_SESSION['Local']; 
+$señal="";
 
 $señal=$_GET['señal'];
-$data=$_POST['date'];
+//$data=$_POST['date'];
 $posicion=1;
 $creadorArchivo=$_SESSION['Usuario'];
 //libreria
