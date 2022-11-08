@@ -8,6 +8,7 @@ $local=$_SESSION['Local'];
 $señal=$_GET['señal'];
 $data=$_POST['date'];
 $posicion=1;
+$creadorArchivo=$_SESSION['Usuario'];
 //libreria
 require '..\vendor/autoload.php';
 //archivos necesarios
@@ -18,7 +19,7 @@ use \PhpOffice\PhpSpreadsheet\IOFactory;
 $spreadsheet = new SpreadSheet();
 
 //nombre de autor y titulo
-$spreadsheet->getProperties()->setCreator($_SESSION['Usuario'])->setTitle("Inventario");
+$spreadsheet->getProperties()->setCreator($creadorArchivo)->setTitle("Inventario");
 //Numero de hoja para trabajar, activamos la hoja
 $spreadsheet->setActiveSheetIndex(0);
 //establecemos da hoja a trabajar por hoja activa
@@ -131,7 +132,7 @@ header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 header('Content-Disposition: attachment;filename="*.xlsx"');
 header('Cache-Control: max-age=0');
 //damos opcion de tipo de archivo
-$writer = IOFactory::createWriter($spreadsheet, 'xlsx');
+$writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
 $writer->save('php://output');
 
 ?>
