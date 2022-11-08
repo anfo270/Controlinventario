@@ -49,7 +49,7 @@ $usu = $_SESSION['Usuario']
                     <option>Seleccionar...</option>
                     <?php
                     while($row = $res->fetch()){
-                        echo "<option value='".$row["nombre"]."'>".$row["nombre"]."</option>";
+                        echo "<option value='".$row["Nombre"]."'>".$row["Nombre"]."</option>";
                     }
                     echo "</select><br><br>";
                     
