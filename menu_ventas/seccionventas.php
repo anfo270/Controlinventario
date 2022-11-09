@@ -26,7 +26,6 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        row
         <button class="btn telefon" onclick="location.href='telefonventa.php'">Tel&eacute;fonos</button>
         <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
         <button class="btn recarga" onclick="location.href='recargaventa.php'">Recarga</button>

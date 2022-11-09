@@ -22,18 +22,18 @@ $usu = $_SESSION['Usuario']
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="../menu.php">Men&uacute;</a></li>
+            <li><a href="../menu.php">🏠</a></li>
             <li>Sistema</li>
         </ul>
     </div>
     <div class="contenedor">
         <button class="btn inventario" onclick="location.href='ab_financiera.php'">Financieras</button>
         <button class="btn administrador" onclick="location.href='ab_marcas.php'">Marcas</button>
+        <button class="btn administrador" onclick="location.href='ab_marcas.php'">Modelos</button>
         <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
-        <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button>
-        <p>agregar botón para modelos</p>
+        <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button><br>
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button><br><br>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">
