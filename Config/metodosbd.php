@@ -42,7 +42,7 @@ function insertar_telefono($IMEI,$Marca,$Locacion,$Modelo,$conexion){
         if(!$insert){
             return "<script>alert('El equipo no se agrego correctamente')</script>";
         }else{
-            return "<script>alert('Se agrego correctamente')</script>";
+            return "<script>alert('Se agrego correctamente                              ')</script>";
         }
     }
 }
