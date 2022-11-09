@@ -22,7 +22,12 @@
         $tm="locacion";
     }else if($tab=="ac9a089c"){
         $tm="proveedor";
+    }if($tab=="ac9a089casd"){
+        $tm="modeloaccesorio";
+    }else if($tab=="ac9a089casfsadsd"){
+        $tm="modelo";
     }
+
 
     $res=$conexion->query("DELETE FROM $tm WHERE nombre = '$nombre'") or die(print($conexion->errorInfo()));
     if(!$res){

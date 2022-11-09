@@ -29,11 +29,12 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <button class="btn inventario" onclick="location.href='ab_financiera.php'">Financieras</button>
         <button class="btn administrador" onclick="location.href='ab_marcas.php'">Marcas</button>
-        <button class="btn administrador" onclick="location.href='ab_marcas.php'">Modelos</button>
+        <button class="btn administrador" onclick="location.href='ab_ModeloTelefono.php'">Modelos Teléfonos</button>
         <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
         <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button><br>
+        <button class="btn administrador" onclick="location.href='ab_ModeloAccesorio.php'">Modelo Accesorio</button><br>
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button><br><br>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">

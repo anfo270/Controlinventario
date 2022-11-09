@@ -14,7 +14,7 @@ function pulsar(inputF) {
                         if (item.length>0) {
                             document.getElementById('Marca').style.color="black";
                             document.getElementById('Modelo').style.color="black";
-                            document.getElementById('Marca').innerHTML = item[0].IMEI;
+                            document.getElementById('Marca').innerHTML = item[0].Marca;
                             document.getElementById('Modelo').innerHTML = item[0].Modelo;
                         } else {
                             document.getElementById('Marca').style.color="red";

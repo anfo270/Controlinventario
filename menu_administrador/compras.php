@@ -80,10 +80,16 @@ $usu = $_SESSION['Usuario']
                     <select name="modelo" id="modelo input4" class="select-css"  onkeypress="nextFocus('input4', 'input5');">
                         <option value=" ">Seleccionar...</option>
                         <?php
+                        $local;
+                        if($_GET['tipo']!="accesorio"){                        
                         $local=consulta($conexion,"modelo");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
-                        <?php } ?>
+                        <?php }}else{
+                        $local=consulta($conexion,"modeloaccesorio");
+                        while($item=$local->fetch(PDO::FETCH_OBJ)){?>
+                            <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
+                        <?php }}?>
                     </select>
                 </td>
             </tr><?php }else{ ?>

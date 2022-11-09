@@ -24,6 +24,10 @@
         $tm="proveedor";
     }else if($tab=="24jlbn6hkll"){
         $tm="telefonia";
+    }else if($tab=="ac9a089casd"){
+        $tm="modeloaccesorio";
+    }else if($tab=="ac9a089casfsadsd"){
+        $tm="modelo";
     }
 
     $res=$conexion->query("INSERT INTO $tm (nombre) VALUES ('$nombre')") or die(print($conexion->errorInfo()));
