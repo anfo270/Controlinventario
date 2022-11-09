@@ -30,10 +30,8 @@ $usu = $_SESSION['Usuario']
         <button class="btn" onclick="location.href='traspaso.php'">Traspaso</button>
         <button class="btn ventas" onclick="location.href='Usuarios.php'">Usuarios</button>
         <button class="btn ventas" onclick="location.href='cobranza.php'">Cobranza</button>
-        <p>Ingresar fecha de ingreso y fecha de traspaso</p>
         <button class="btn ventas" onclick="location.href='../Config/inventaroppvd.php?señal=<?php echo '2';?>'">Inventario general</button>
         
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     </div>
 </body>
 </html>
