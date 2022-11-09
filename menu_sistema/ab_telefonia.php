@@ -16,15 +16,15 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/menus.css">
-    <title>Alta y Baja de tipos de activaci&oacute;n</title>
+    <title>Alta y Baja de telefon&iacute;as</title>
 </head>
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="../menu.php">Men&uacute;</a></li>
+            <li><a href="../menu.php">🏠</a></li>
             <li><a href="sistema.php">Sistema</a></li>
-            <li>Tip. Activaci&oacute;n</li>
+            <li>Telefon&iacute;a</li>
         </ul>
     </div>
     <div class="contenedor">

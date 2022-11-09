@@ -31,7 +31,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
-            <li><a href="menu.php">🏠</a></li>
+            <li><a href="../menu.php">🏠</a></li>
             <li><a href="administrador.php">Administrador</a></li>
             <li><a href="Usuarios.php">Usuarios</a></li>
             <li>Editar</li>
