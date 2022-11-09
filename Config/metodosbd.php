@@ -19,6 +19,7 @@ function bd($nombre){
         "modelo"=>"modelo",
         "telefonia"=>"telefonia",
         "modeloaccesorio"=>"modeloaccesorio",
+        "traspaso"=>"traspaso",
     );
     return $bd[$nombre];
 }
