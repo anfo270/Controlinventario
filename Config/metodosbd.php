@@ -31,22 +31,16 @@ function busqueda($conexion,$base_datos,$tipo,$referencia){
     return $res;
 }
 
-function insertar_telefono($IMEI,$Marca,$Locacion,$Modelo,$conexion){
+function insertar_telefono($IMEI,$Marca,$Locacion,$Modelo,$conexion,$Precio,$FechaIngreso,$Factura){
     $evaluar=busqueda($conexion,"telefonos","IMEI",$IMEI);
     $evaluar->execute();
     if($evaluar->rowCount()>0){
         return "<script>alert('El equipo ya existe')</script>";
     }else{
-        $insert=$conexion->query("INSERT * INTO telefonos (IMEI, Marca, Locacion, Modelo) Values ('$IMEI','$Marca','$Locacion','$Modelo')")
-                                or die(print($conexion->errorInfo()));
-        if(!$insert){
-            return "<script>alert('El equipo no se agrego correctamente')</script>";
-        }else{
-            return "<script>alert('Se agrego correctamente                              ')</script>";
-        }
+        $insert=$conexion->query("INSERT INTO telefonos (IMEI, Marca, Locacion, Modelo, Precio, FechaIngreso,Factura, FechaTraspaso) Values ('$IMEI','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ')") or die(print($conexion->errorInfo()));
+        return $insert;
     }
 }
-
 function insertar_sims(){
 
 }

@@ -103,12 +103,18 @@ $usu = $_SESSION['Usuario']
             </tr><?php }?>
             <tr>
                 <td>
+                    <p>Precio Unitario </p>
+                <td>
+                    <input type="text" name="precio" class="boxtext" id="input5">
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <p>Cantidad </p>
                 <td>
                     <input type="text" name="cantidad" class="boxtext" id="input5">
                 </td>
             </tr>
-            costos
         </table>
         <div class="botones">
             <button class="btn cancelar" type="reset" onclick="location.href='administrador.php'">Cancelar</button>

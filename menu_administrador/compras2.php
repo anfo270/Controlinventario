@@ -7,12 +7,16 @@ $controlinput=0;
 $usu = $_SESSION['Usuario'];
 $Factura=intval($_POST['Factura']);
 $tipos=$_GET['tipo'];
+$precio=$_POST['precio'];
 if($tipos!="sims"){
     $proveedor=$_POST['proveedor'];
     $marcas=$_POST['marcas'];
     $modelo=$_POST['modelo'];
 }else{
     $telefonia=$_POST['telefonia'];
+    $marcas=$telefonia;
+    $modelo=$telefonia;
+    $proveedor=$telefonia;
 }
 $cantidad=intval($_POST['cantidad']);
 function tipo($valor){
@@ -40,7 +44,7 @@ function tipo($valor){
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     
-    <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos; ?>" method="post">
+    <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos.'&modelo='.$modelo.'&marcas='.$marcas.'&proveedor='.$proveedor.'&cantidad='.$cantidad.'&Factura='.$Factura.'&precio='.$precio; ?>" method="post">
         <h2>Ingreso</h2>
         <div>
         <label><p>Factura: <?php echo $Factura;?>
@@ -58,6 +62,7 @@ function tipo($valor){
                         echo $modelo;
                     }else{
                         echo $telefonia;
+                        echo "<input  type='text' name='telefonia' value='{$telefonia}' hidden>";
                     }?></p>
                 </td>
             </tr>
