@@ -108,6 +108,7 @@ $usu = $_SESSION['Usuario']
                     <input type="text" name="cantidad" class="boxtext" id="input5">
                 </td>
             </tr>
+            costos
         </table>
         <div class="botones">
             <button class="btn cancelar" type="reset" onclick="location.href='administrador.php'">Cancelar</button>
