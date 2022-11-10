@@ -103,6 +103,17 @@ input {
     font-weight: bolder;
 }
 
+.carrito{
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 1%;
+}
+.carrito a{
+    color: #1900ff;
+    text-decoration: none;
+}
+
 /* CSS BREADCRUM */
 .bdcrumb{
     display: block;

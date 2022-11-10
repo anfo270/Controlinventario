@@ -43,6 +43,7 @@ $usu = strval($_SESSION['Usuario']);
         <table>
         <?php $productos=busqueda($conexion,"carrito","Usuario",$usu);
         if($productos->rowCount()==0){
+            //header('location:' . getenv('HTTP_REFERER'));
             header('location: seccionventas.php');
         }
                 $precio=0;

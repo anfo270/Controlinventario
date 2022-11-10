@@ -1,5 +1,7 @@
 <?php
 session_start();
+include ('../Config/metodosbd.php');
+include('../Config/conexionbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
@@ -25,6 +27,19 @@ $usu = $_SESSION['Usuario']
             <li><a href="seccionventas.php">Ventas</a></li>
         </ul>
     </div>
+    <div class="carrito">
+        <?php $cant_carrito=0;$carrito=busqueda($conexion,"carrito","usuario",$usu);
+        while($item=$carrito->fetch(PDO::FETCH_OBJ)){
+            $cant_carrito++;
+        }
+        if($cant_carrito>0){
+            echo "<p><a href='ventas.php'>🛒 $cant_carrito</a></p>";
+        }else{
+            echo "<p>🛒 $cant_carrito</p>";
+        }
+        ?>
+    </div>
+    
     <div class="contenedor">
         <button class="btn telefon" onclick="location.href='telefonventa.php'">Tel&eacute;fonos</button>
         <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
