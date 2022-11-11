@@ -9,7 +9,6 @@ include('Config/conexionbd.php');
             'Marca'=>$item->Marca,
             'Locacion'=>$item->Locacion,
             'Modelo'=>$item->Modelo,
-            'Telefonia'=>$item->Telefonia,
         ];
     }
     echo json_encode($datasims);

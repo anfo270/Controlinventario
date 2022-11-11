@@ -12,7 +12,7 @@ function pulsar(inputF) {
                         console.log(item.length);
                         if (item.length>0) {
                             document.getElementById('Telefonia').style.color="black";
-                            document.getElementById('Telefonia').innerHTML = item[0].Telefonia;
+                            document.getElementById('Telefonia').innerHTML = item[0].Marca;
                         } else {
                             document.getElementById('Telefonia').style.color="red";
                             document.getElementById('Telefonia').innerHTML = "No se encontró";
