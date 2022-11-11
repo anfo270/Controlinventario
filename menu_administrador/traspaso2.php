@@ -33,7 +33,7 @@ function tipo($tipo){
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     
-    <form class="contenedor" action="../Config/traspaso.php?cantidad=<?php echo $_POST['cantidad']?>&locacion=<?php echo $_POST['locacion']?>" method="post">
+    <form class="contenedor" action="../Config/traspaso.php?cantidad=<?php echo $_POST['cantidad']?>&locacion=<?php echo $_POST['locacion']?>&tipo=<?php echo $_GET['tipo']?>" method="post">
         <h1>Traspaso <?php echo $_GET['tipo'];?></h1>
         <h3>Numero de traspaso: <?php echo $traspas->rowCount()+1; ?> </h3>
         <table>
