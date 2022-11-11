@@ -56,10 +56,6 @@ function insertar_sims($conexion,$ICC,$Marca,$Locacion,$Modelo,$Telefonia,$Preci
         $insert=$conexion->query("INSERT INTO sims (ICC, Marca, Locacion, Modelo, Telefonia, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$ICC','$Marca','$Locacion','$Modelo','$Telefonia','$Precio','$FechaIngreso','$Factura',' ','$Proveedor')") or die(print($conexion->errorInfo()));
         return $insert;
     }
-    function insertar_traspaso($conexion,$ID,$Marca,$Modelo,$Telefonia,$Precio,$FechaIngreso,$Factura,$FechaTraspaso,$Proveedor,$LocacionActual,$LocacionDestino,$Estado){
-        $insert=$conexion->query("INSERT INTO traspaso (ID,Marca,Modelo,Telefonia,Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) Values('$ID','$Marca','$Modelo','$Telefonia','$Precio','$FechaIngreso','$Factura','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print($conexion->errorInfo()));
-        return $insert;
-    }
 }
 
 
@@ -73,5 +69,10 @@ function insertar_accesorio($conexion,$SKU,$Marca,$Locacion,$Modelo,$Precio,$Fec
         $insert=$conexion->query("INSERT INTO accesorio (SKU, Marca, Locacion, Modelo, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$SKU','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ','$proveedor')") or die(print($conexion->errorInfo()));
         return $insert;
     }
+}
+
+function insertar_traspaso($conexion,$ID,$Marca,$Modelo,$Telefonia,$Precio,$FechaIngreso,$Factura,$FechaTraspaso,$Proveedor,$LocacionActual,$LocacionDestino,$Estado){
+    $insert=$conexion->query("INSERT INTO traspaso (ID,Marca,Modelo,Telefonia,Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) Values('$ID','$Marca','$Modelo','$Telefonia','$Precio','$FechaIngreso','$Factura','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print($conexion->errorInfo()));
+    return $insert;
 }
 ?>
