@@ -49,7 +49,7 @@ $usu = $_SESSION['Usuario']
             
             <select name="proveedor" class="select-css">.
                 <option value=" ">Seleccionar...</option>
-                <?php $proveedores=consulta($conexion,"marcarecargas");
+                <?php $proveedores=consulta($conexion,"telefonia");
                         while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                             <?php } ?>

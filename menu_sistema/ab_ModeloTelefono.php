@@ -29,15 +29,15 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <div class="formSistema">
-        <h1 style="color: #00047F">Agregar Modelo</h1>
+        <h1 style="color: #00047F">Agregar modelo de tel&eacute;fono</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casfsadsd" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Nombre de Modelo"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Modelo de tel&eacute;fono"><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>
         <div class="formSistema">
-        <h1 style="color: #00047F">Eliminar Modelo</h1>
+        <h1 style="color: #00047F">Eliminar modelo de tel&eacute;fono</h1>
             <form method="POST" action="../Config/baja_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casfsadsd" hidden>
                 <?php
@@ -53,7 +53,7 @@ $usu = $_SESSION['Usuario']
                     echo "</select><br><br>";
                     
                 } else{
-                    echo "<p>No se encontraron Modelo.</p>";
+                    echo "<p>No se encontraron modelos.</p>";
                 }
                 ?>
                 <button type="submit" class="btnagregar btncerrar">Quitar</button></center>

@@ -29,15 +29,15 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <div class="formSistema">
-        <h1 style="color: #00047F">Agregar Modelo Accesorio</h1>
+        <h1 style="color: #00047F">Agregar modelo del accesorio</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casd" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Nombre de Modelo Accesorio"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Modelo del accesorio"><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>
         <div class="formSistema">
-        <h1 style="color: #00047F">Eliminar Modelo Accesorio</h1>
+        <h1 style="color: #00047F">Eliminar modelo del accesorio</h1>
             <form method="POST" action="../Config/baja_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casd" hidden>
                 <?php

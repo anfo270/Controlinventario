@@ -8,6 +8,7 @@
     $tab="";
     $tm="";
     $nombre="";
+    $volver=getenv('HTTP_REFERER');
     
     $nombre=$_POST['nf'];
     $tab=$_POST['tipoAB'];
@@ -38,6 +39,9 @@
     else
     {
         echo '<script>alert("'.$nombre.' se agreg\u00F3 correctamente.")</script> ';
-        echo "<script>location.href='../menu_sistema/sistema.php'</script>";
+        //echo "<script>location.href='../menu_sistema/sistema.php'</script>";
+        echo "<script>location.href='$volver'</script>";
+        //header('location:' . getenv('HTTP_REFERER'));
+        //echo $volver;
     }
 ?>
