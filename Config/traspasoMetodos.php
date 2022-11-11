@@ -1,6 +1,7 @@
 <?php
 include('conexionbd.php');
 include('metodosbd.php');
+    if($_GET['NumTraspaso'])
     $Fecha = date('d/m/Y', time());
     $cantidad= $_GET['cantidad'];
     $locacion=$_GET['locacion'];
@@ -18,7 +19,7 @@ include('metodosbd.php');
         $buscar=busqueda($conexion,"sims",tipo($tipo),$_POST["id".$i]);
         while($item=$buscar->fetch(PDO::FETCH_OBJ)){
         // if($tipo=="sims"){       
-            insertar_traspaso($conexion,tipo($tipo),$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR");
+            insertar_traspaso($conexion,tipo($tipo),$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso']);
             // }else{
 
             // }

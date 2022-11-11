@@ -6,8 +6,16 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario'];
+$traspas=$conexion->query("SELECT * FROM traspaso ORDER BY id DESC LIMIT 1");
+$traspas->execute();
 $traspas=consulta($conexion,"traspaso");
 $traspas->execute();
+if($traspas->rowCount()==0){
+    $Numtraspaso=1;
+}else{
+    $Numtraspaso=$traspas->fetch(PDO::FETCH_OBJ)->NumTraspaso+1;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +35,7 @@ $traspas->execute();
     
     <form class="contenedor" action="traspaso2.php?tipo=<?php echo $_GET['tipo'];?>" method="post">
         <h1>Traspaso <?php echo $_GET['tipo'];?></h1>
-        <h3>Numero de traspaso: <?php echo $traspas->rowCount()+1; ?> </h3>
+        <h3>Numero de traspaso: <?php echo $Numtraspaso; ?> </h3>
         <table>
             <tr>
                 <td><p>Ingresa cantidad:</p></td>

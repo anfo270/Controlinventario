@@ -16,6 +16,11 @@ function tipo($tipo){
     );
     return $tipos[$tipo];
 }
+if($traspas->rowCount()==0){
+    $Numtraspaso=1;
+}else{
+    $Numtraspaso=$traspas->fetch(PDO::FETCH_OBJ)->NumTraspaso+1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,9 +38,9 @@ function tipo($tipo){
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     
-    <form class="contenedor" action="../Config/traspasoMetodos.php?cantidad=<?php echo $_POST['cantidad'];?>&locacion=<?php echo $_POST['locacion'];?>&tipo=<?php echo $_GET['tipo'];?>" method="post">
+    <form class="contenedor" action="../Config/traspasoMetodos.php?cantidad=<?php echo $_POST['cantidad'];?>&locacion=<?php echo $_POST['locacion'];?>&tipo=<?php echo $_GET['tipo'];?>&NumTraspaso=<?php echo $Numtraspaso; ?>" method="post">
         <h1>Traspaso <?php echo $_GET['tipo'];?></h1>
-        <h3>Numero de traspaso: <?php echo $traspas->rowCount()+1; ?> </h3>
+        <h3>Numero de traspaso: <?php echo $Numtraspaso; ?> </h3>
         <table>
             <?php
                 for ($i=0; $i <$_POST['cantidad'] ; $i++) { ?>

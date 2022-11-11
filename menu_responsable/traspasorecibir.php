@@ -1,11 +1,14 @@
 <?php
+include('../Config/metodosbd.php');
+include('../Config/conexionbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$NumTras=$_POST['numero'];
+$res=busqueda($conexion,"traspaso","NumTraspaso",$NumTras);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,7 +19,7 @@ $usu = $_SESSION['Usuario']
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
 
-    <title>Traspaso</title>
+    <title>Men&uacute; inventario</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -27,16 +30,14 @@ $usu = $_SESSION['Usuario']
             <li>Traspaso</li>
         </ul>
     </div>
-    <form action="traspasorecibir.php" method="post" class="contenedor">
-        <h1>Traspasos</h1>
-        <h3>
-            Numero de transpaso:
-            <input type="text" name="numero" class="boxtext">
-        </h3>
+    <div class="contenedor">
+        <?php
+        
+        ?>
         <div class="botones">
-            <button class="btn" type="submit">Aceptar</button>
-            <button class="btn cancelar" type="reset" onclick="location.href='inventario.php'">Cancelar</button>
+            <button class="btn">Aceptar</button>
+            <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>
         </div>
-    </form>
+    </div>
 </body>
 </html>
