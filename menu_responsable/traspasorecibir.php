@@ -7,7 +7,13 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
 }
 $usu = $_SESSION['Usuario'];
 $NumTras=$_POST['numero'];
-$res=busqueda($conexion,"traspaso","NumTraspaso",$NumTras);
+$res=$conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$NumTras AND Estado='PENDIENTE DE RECIBIR'") or die(print($conexion->errorInfo()));
+$res->execute();
+if($res->rowCount()==0){
+    echo "<script>alert('No se encontró un traspaso pendiente');</script>";
+    echo "<script>location.href='inventario.php';</script>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +25,7 @@ $res=busqueda($conexion,"traspaso","NumTraspaso",$NumTras);
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
 
-    <title>Men&uacute; inventario</title>
+    <title>Traspaso</title>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -30,14 +36,50 @@ $res=busqueda($conexion,"traspaso","NumTraspaso",$NumTras);
             <li>Traspaso</li>
         </ul>
     </div>
-    <div class="contenedor">
+    <form action="../Config/recibirTraspaso.php?Numtraspaso= <?php echo $NumTras;?>" method="POST" class="contenedor">
+        <table>
+            <tr>
+                <td class="titulo">
+                    <p>IMEI / ICC / SKU</p>
+                </td>
+                <td class="titulo">
+                    <p>Modelo</p>
+                </td>
+                <td class="titulo">
+                    <p>Marca</p>
+                </td>
+                <td class="titulo">
+                    <p>Locacion destino</p>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
         <?php
-        
-        ?>
+        $control=0;
+            while($item=$res->fetch(PDO::FETCH_OBJ)){?>
+            <tr>
+                <td>
+                    <p><?php echo $item->IMEIICC;?><input type="text" name="id<?php echo $control;?>" value="<?php echo $item->IMEIICC;?>" hidden></p>
+                </td>
+                <td>
+                    <p><?php echo $item->Modelo;?></p>
+                </td>
+                <td>
+                    <p><?php echo $item->Marca;?></p>
+                </td>
+                <td>
+                    <p><?php echo $item->LocacionDestino;?></p>
+                </td>
+                <td><input type="checkbox" name="articulo<?php echo $control;?>"> </td>
+            </tr>
+                
+        <?php $control++; }?>
+        </table>
         <div class="botones">
-            <button class="btn">Aceptar</button>
-            <button class="btn cancelar" onclick="location.href='traspaso.php'">Cancelar</button>
+            <button class="btn" type="submit">Aceptar</button>
+            <button class="btn cancelar" type="reset" onclick="location.href='traspaso.php'">Cancelar</button>
         </div>
-    </div>
+    </form>
 </body>
 </html>
