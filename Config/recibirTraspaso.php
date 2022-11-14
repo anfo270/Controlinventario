@@ -9,7 +9,7 @@ while($item=$res->fetch(PDO::FETCH_OBJ)){
     $check=$_POST['articulo'.$control];
     if($check=="on"){
         $cambio=$conexion->query("UPDATE $item->tipo SET Locacion='$item->LocacionDestino' WHERE $item->tipo.ICC='$articulos'") or die(print($conexion->errorInfo()));
-        $cambio=$conexion->query("UPDATE traspaso SET Estado='RECIBIDO' WHERE IMEIICC='$articulos'") or die(print($conexion->errorInfo()));
+        $cambio=$conexion->query("UPDATE traspaso SET Estado='RECIBIDO' WHERE traspaso.IMEIICC='$articulos'") or die(print($conexion->errorInfo()));
     }else{
         
     }

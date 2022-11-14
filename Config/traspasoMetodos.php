@@ -15,15 +15,15 @@ include('metodosbd.php');
         return $tipos[$tipo];
     }
     $id=tipo($tipo);
-    echo "hola";
     for($i=0;$i<$cantidad;$i++){
         $buscar=busqueda($conexion,$tipo,tipo($tipo),$_POST["id".$i]);
+        
         while($item=$buscar->fetch(PDO::FETCH_OBJ)){
-        // if($tipo=="sims"){       
+        if($tipo=="sims"){       
             insertar_traspaso($conexion,$item->ICC,$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso'],$tipo);
-            // }else{
-
-            // }
+            }else{
+                
+            }
         }
     }
 ?>

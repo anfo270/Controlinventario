@@ -6,8 +6,9 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario'];
-$traspas=consulta($conexion,"traspaso");
+$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print($conexion->errorInfo()));
 $traspas->execute();
+$Numtraspaso=0;
 function tipo($tipo){
     $tipos=array(
         "telefonos"=>"IMEI",
@@ -16,10 +17,14 @@ function tipo($tipo){
     );
     return $tipos[$tipo];
 }
+
+
 if($traspas->rowCount()==0){
     $Numtraspaso=1;
 }else{
-    $Numtraspaso=$traspas->fetch(PDO::FETCH_OBJ)->NumTraspaso+1;
+    while($row = $traspas->fetch()){
+        $Numtraspaso=$row["MAX(NumTraspaso)"]+1;
+    }
 }
 ?>
 
