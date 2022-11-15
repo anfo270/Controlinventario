@@ -8,6 +8,7 @@
     $tab="";
     $tm="";
     $nombre="";
+    $volver=getenv('HTTP_REFERER');
     
     $nombre=$_POST['nf'];
     $tab=$_POST['tipoAB'];
@@ -28,15 +29,22 @@
         $tm="modelo";
     }
 
-
-    $res=$conexion->query("DELETE FROM $tm WHERE nombre = '$nombre'") or die(print($conexion->errorInfo()));
-    if(!$res){
-        echo 'Se produjo un error, vuelva a intentarlo.';
-        echo "<script>location.href='../menu_sistema/sistema.php'</script>";
-    } 
-    else
-    {
-        echo '<script>alert("'.$nombre.' se elimin\u00F3 correctamente.")</script> ';
-        echo "<script>location.href='../menu_sistema/sistema.php'</script>";
+    if($nombre == "Seleccionar..."){
+        echo '<script>alert("Por favor, selecciona informaci\u00F3n v\u00E1lida de ' . $tm . '.")</script> ';
+        echo "<script>location.href='$volver'</script>";
+    }else if($nombre == "" || $tab == "" || $tm == ""){
+        header("location: ..\menu_sistema/sistema.php");
+    }else{
+        $res=$conexion->query("DELETE FROM $tm WHERE nombre = '$nombre'") or die(print($conexion->errorInfo()));
+        if(!$res){
+            echo '<script>alert("Se produjo un error, vuelve a intentarlo.")</script> ';
+            echo "<script>location.href='$volver'</script>";
+        } 
+        else
+        {
+            echo '<script>alert("'.$nombre.' se elimin\u00F3 correctamente.")</script> ';
+            echo "<script>location.href='$volver'</script>";
+        }
     }
+    
 ?>
