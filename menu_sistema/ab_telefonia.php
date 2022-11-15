@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar tipo de telefonía</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="24jlbn6hkll" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Tipo de telefonía"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Tipo de telefonía (Movistar, bait)" required><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

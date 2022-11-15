@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar proveedor</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089c" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Nombre del proveedor"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Nombre de proveedor (Virme, Telef&oacute;nica...)" required><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

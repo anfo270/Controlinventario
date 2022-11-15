@@ -32,7 +32,8 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar modelo de tel&eacute;fono</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casfsadsd" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Modelo de tel&eacute;fono"><br><br>
+                <input type="text" name="nf_ModeloTel" class="boxtext" placeholder="Modelo (A22, G41, V40 S...)" required><br><br>
+                <input type="text" name="nf_RecursosTel" class="boxtext" placeholder="Recursos (2+32, 4+128...)"><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

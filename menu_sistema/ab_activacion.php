@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar tipo de activaci&oacute;n</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="24jlbn6hk" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Tipo de activaci&oacute;n"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Tipo de activaci&oacute;n" required><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

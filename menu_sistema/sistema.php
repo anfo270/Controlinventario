@@ -27,14 +27,15 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn inventario" onclick="location.href='ab_financiera.php'">Financieras</button>
         <button class="btn administrador" onclick="location.href='ab_marcas.php'">Marcas</button>
         <button class="btn administrador" onclick="location.href='ab_ModeloTelefono.php'">Modelos</button>
-        <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
-        <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
-        <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
+        <button class="btn administrador" onclick="location.href='ab_ModeloAccesorio.php'">Accesorio</button>
         <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button>
-        <button class="btn administrador" onclick="location.href='ab_ModeloAccesorio.php'">Accesorio</button><br>
+        <button class="btn administrador" onclick="location.href='ab_recargas.php'">Recargas</button>
+        <button class="btn inventario" onclick="location.href='ab_financiera.php'">Financieras</button>
+        <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
+        <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
+        <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">
@@ -46,6 +47,6 @@ $usu = $_SESSION['Usuario']
             </form>
         </div>        
     </div>
-    <center><br><br><br><p style="color:#6D6D6D">© 2022 JF&CT</p></center>
+    <center><br><br><br><br><br><br><p style="color:#6D6D6D">© 2022 JF&CT</p></center>
 </body>
 </html>

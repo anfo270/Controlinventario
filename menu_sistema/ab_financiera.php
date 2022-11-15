@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar financiera</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="o13n1rio" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Nombre financiera"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Nombre financiera (PayJoy, Credi7...)" required><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

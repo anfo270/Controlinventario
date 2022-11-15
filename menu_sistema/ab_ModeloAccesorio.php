@@ -32,7 +32,7 @@ $usu = $_SESSION['Usuario']
         <h1 style="color: #00047F">Agregar modelo del accesorio</h1>
             <form method="POST" action="../Config/alta_sistema.php"><center>
                 <input name="tipoAB" value="ac9a089casd" hidden>
-                <input type="text" name="nf" class="boxtext" placeholder="Modelo del accesorio"><br><br>
+                <input type="text" name="nf" class="boxtext" placeholder="Modelo de dispositivo (A22, G41...)" required><br><br>
                 <button type="submit" class="btnagregar">Agregar</button></center>
             </form>
         </div>

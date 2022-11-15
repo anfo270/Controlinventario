@@ -27,6 +27,8 @@
         $tm="modeloaccesorio";
     }else if($tab=="ac9a089casfsadsd"){
         $tm="modelo";
+    }else if($tab=="68duio0c"){
+        $tm="marcarecargas";
     }
 
     if($nombre == "Seleccionar..."){

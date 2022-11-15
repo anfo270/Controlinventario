@@ -8,27 +8,37 @@
     $tab="";
     $tm="";
     $nombre="";
+    $nf_ModeloTel="";
+    $nf_RecursosTel="";
+
     $volver=getenv('HTTP_REFERER');
-    
-    $nombre=$_POST['nf'];
     $tab=$_POST['tipoAB'];
+    //$nombre=$_POST['nf'];
     
-    if($tab=="o13n1rio"){
-        $tm="financiera";
-    }else if($tab=="08sdcac"){
-        $tm="marcas";
-    }else if($tab=="24jlbn6hk"){
-        $tm="activacion";
-    }else if($tab=="7b65njlk"){
-        $tm="locacion";
-    }else if($tab=="ac9a089c"){
-        $tm="proveedor";
-    }else if($tab=="24jlbn6hkll"){
-        $tm="telefonia";
-    }else if($tab=="ac9a089casd"){
-        $tm="modeloaccesorio";
-    }else if($tab=="ac9a089casfsadsd"){
+    if($tab=="ac9a089casfsadsd"){
         $tm="modelo";
+        $nf_ModeloTel=$_POST['nf_ModeloTel'];
+        $nf_RecursosTel=$_POST['nf_RecursosTel'];
+        $nombre=$nf_ModeloTel . " • " . $nf_RecursosTel;
+    }else{
+        $nombre=$_POST['nf'];
+        if($tab=="o13n1rio"){
+            $tm="financiera";
+        }else if($tab=="08sdcac"){
+            $tm="marcas";
+        }else if($tab=="24jlbn6hk"){
+            $tm="activacion";
+        }else if($tab=="7b65njlk"){
+            $tm="locacion";
+        }else if($tab=="ac9a089c"){
+            $tm="proveedor";
+        }else if($tab=="24jlbn6hkll"){
+            $tm="telefonia";
+        }else if($tab=="ac9a089casd"){
+            $tm="modeloaccesorio";
+        }else if($tab=="68duio0c"){
+            $tm="marcarecargas";
+        }
     }
 
     $res=$conexion->query("INSERT INTO $tm (nombre) VALUES ('$nombre')") or die(print($conexion->errorInfo()));
