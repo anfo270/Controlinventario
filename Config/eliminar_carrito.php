@@ -12,12 +12,13 @@ if($id!="eliminar"){
         echo "<script>location.href='../menu_ventas/seccionventas.php'</script>";
     }
 }else{
-    $res=$conexion->query("DELETE FROM carrito WHERE 'Usuario' = $use");
+    $res=$conexion->query("DELETE FROM carrito WHERE Usuario = '$use'");
     if($res){
-        header('location: ..\menu_ventas/seccionventas.php');
+        echo "<script>alert('Se ha descartado este carrito.')</script>";
+        echo "<script>location.href='../menu_ventas/seccionventas.php'</script>";
     }else{
-        echo "<script>alert('No se pudo eliminar')</script>";
-        echo "<script>location.href='../ventas.php'</script>";
+        echo "<script>alert('No se pudo eliminar el carrito.')</script>";
+        echo "<script>location.href='../menu_ventas/seccionventas.php'</script>";
     }
 }
 
