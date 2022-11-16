@@ -54,4 +54,6 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     height: 100vh;
+    padding-left: 7%;
+    padding-right: 7%;
 }
