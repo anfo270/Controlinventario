@@ -29,6 +29,7 @@ $usu = $_SESSION['Usuario']
     <form class="contenedor" action="../Config/inventaroppvd.php?señal=3" method="post">
         <h1>Seleccionar la fecha</h1>
         <!--<input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >-->
+        agregar un rango de fechas
         <p>D&iacute;a:</p>
         <select type='text' name='date_d' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php

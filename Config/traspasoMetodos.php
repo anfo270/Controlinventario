@@ -1,7 +1,9 @@
 <?php
 include('conexionbd.php');
 include('metodosbd.php');
-    if($_GET['NumTraspaso'])
+    if($_GET['NumTraspaso']){
+        
+    }
     $Fecha = date('d/m/Y', time());
     $cantidad= $_GET['cantidad'];
     $locacion=$_GET['locacion'];
