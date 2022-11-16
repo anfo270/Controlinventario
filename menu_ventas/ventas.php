@@ -24,7 +24,7 @@ $usu = strval($_SESSION['Usuario']);
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <div class="contenedor">
+    <div class="contenedor-ventas">
         <h2>Ventas</h2>
         <table>
             <tr>
