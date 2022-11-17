@@ -5,7 +5,8 @@ session_start();
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$local = $_SESSION['Local'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +52,7 @@ $usu = $_SESSION['Usuario']
             </tr>
         </table>
         <?php
-        $res = consulta($conexion,"usuarios");
+        $res = busqueda($conexion,"usuarios", "Local",$local);
         while ($item = $res->fetch(PDO::FETCH_OBJ)) { 
             ?>
 
