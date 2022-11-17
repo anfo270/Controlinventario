@@ -55,7 +55,8 @@ th, td {
 .bordes-corte{
   padding-top: 0.3em;
   padding-bottom: 0.2em;
-  border-top: 0.1em solid rgb(37, 37, 37);
+  border-top: 0.5px solid rgb(175, 173, 196);
+  border-bottom: 0.5px solid rgb(175, 173, 196);
 }
 
 .tabla_usuarios {

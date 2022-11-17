@@ -31,8 +31,6 @@ $montRec=$_POST['montRec'];
     </div>
     <div class="contenedor">
         <h1>Compra realizada</h1>
-        <iframe scrolling="auto" src="../Config/ticket.php?montRec=<?php echo $montRec;?>" frameborder="1" height="350px" width="99%">
-        </iframe>
         <div class="modal-contenedor" id="modal-contenedor">
             <div class="model">
                     <form action="../Config/venta.php" method="post">
@@ -43,6 +41,8 @@ $montRec=$_POST['montRec'];
                     </form>
             </div>
         </div>
+        <iframe scrolling="auto" src="../Config/ticket.php?montRec=<?php echo $montRec;?>" frameborder="1" height="100%" width="99%">
+        </iframe>
     </div>
 </body>
 </html>
