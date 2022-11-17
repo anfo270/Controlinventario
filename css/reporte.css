@@ -52,6 +52,11 @@ th, td {
 .bordes tr {
   border: 0.1em double black;
 }
+.bordes-corte{
+  padding-top: 0.3em;
+  padding-bottom: 0.2em;
+  border-top: 0.1em solid rgb(37, 37, 37);
+}
 
 .tabla_usuarios {
   display: flex;
