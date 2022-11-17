@@ -12,7 +12,7 @@ $data_m="";
 $data_y="";
 
 date_default_timezone_set('America/Mexico_City');
-$data = date('Y/m/d', time());
+$data = date('d/m/Y', time());
 
 $posicion=1;
 $creadorArchivo=$_SESSION['Usuario'];
