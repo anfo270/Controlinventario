@@ -76,8 +76,9 @@ $usu = strval($_SESSION['Usuario']);
         </div>
         <div class="modal-contenedor" id="modal-contenedor">
             <div class="model">
-                    <form action="../Config/venta.php" method="post">
-                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
+                    <form action="finalizar_compra.php" method="post">
+                        <p>Pago del cliente <input type="text" name="montRec" required></p>
+                        <!--<p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>-->
                         <button class="btn cancelar" id='cancelar' type="reset" onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
                         <button class="btn" id="aceptar" type="submit" >Aceptar</button>
                     </form>

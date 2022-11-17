@@ -111,7 +111,7 @@ $usu = $_SESSION['Usuario']
                     Precio de producto:
                 </td>
                 <td>
-                    <input type="text" name="" id="IMEI" class="boxtext" required>
+                    <input type="text" name="PrecioInicial" id="IMEI" class="boxtext" required>
                 </td>
             </tr>
             <tr>

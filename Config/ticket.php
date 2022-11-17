@@ -6,6 +6,15 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: ../index.php');
 }
+$usu = $_SESSION['Usuario'];
+
+date_default_timezone_set('America/Mexico_City');
+$fecha = date('d/m/Y', time());
+
+$precioFinal=0;
+$MontoRecibido=0;
+$cambio=0;
+
 define('EURO',chr(36)); // Constante con el símbolo Euro.
 $pdf = new FPDF('P','mm',array(80,170)); // Tamaño tickt 80mm x 150 mm (largo aprox)
 $pdf->AddPage();
@@ -26,8 +35,8 @@ $pdf->Cell(60,4,utf8_decode('Régimen de las personas morales'),0,1,'C');
 // DATOS FACTURA        
 $pdf->Ln(5);
 $pdf->Cell(60,4,utf8_decode('Ticket Núm.: 1'),0,1,'');
-$pdf->Cell(60,4,'Fecha: 16/11/2022',0,1,'');
-$pdf->Cell(60,4,utf8_decode('Le atendió: Jesus Flores'),0,1,'');
+$pdf->Cell(60,4,'Fecha: ' . $fecha,0,1,'');
+$pdf->Cell(60,4,utf8_decode('Le atendió: '.$usu),0,1,'');
 
 // COLUMNAS
 $pdf->SetFont('Helvetica', 'B', 7);
@@ -40,7 +49,20 @@ $pdf->Ln(0);
  
 // PRODUCTOS
 $pdf->SetFont('Helvetica', '', 7);
-$pdf->MultiCell(30,4,utf8_decode('telefonos Samsung A22 4+128 PayJoy'),0,'L'); 
+$productos=busqueda($conexion,"carrito","Usuario",$usu);
+if($productos->rowCount()==0){
+    //header('location:' . getenv('HTTP_REFERER'));
+    header('location: seccionventas.php');
+}
+
+while($item=$productos->fetch(PDO::FETCH_OBJ)){
+    $pdf->MultiCell(30,4,'1 '.$item->tipo.' '.$item->Marca.' '.$item->Modelo.' '.$item->FinancieraActivacion,0,'L'); 
+    $pdf->Cell(45, -5, number_format(round($item->PrecioInicial,2), 0, ',', ' ').EURO,0,0,'R');
+    $pdf->Cell(15, -5, number_format(round($item->Precio,2), 0, ',', ' ').EURO,0,0,'R');
+    $pdf->Ln(3);
+    $precioFinal=intval($item->Precio)+$precioFinal;
+}
+/*$pdf->MultiCell(30,4,utf8_decode('telefonos Samsung A22 4+128 PayJoy'),0,'L'); 
 $pdf->Cell(45, -5, number_format(round(3200,2), 0, ',', ' ').EURO,0,0,'R');
 $pdf->Cell(15, -5, number_format(round(500,2), 0, ',', ' ').EURO,0,0,'R');
 $pdf->Ln(3);
@@ -51,21 +73,22 @@ $pdf->Ln(3);
 $pdf->MultiCell(30,4,utf8_decode('recarga Movistar'),0,'L'); 
 $pdf->Cell(45, -5, number_format(round(100,2), 0, ',', ' ').EURO,0,0,'R');
 $pdf->Cell(15, -5, number_format(round(100,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Ln(3);
-
+$pdf->Ln(3);*/
+$MontoRecibido=$_GET['montRec'];
+$cambio=intval($MontoRecibido-$precioFinal);
 //SUMATORIO DE LOS PRODUCTOS
 $pdf->Ln(1); $pdf->Cell(60,0,'','T'); $pdf->Ln(1); 
 $pdf->SetFont('Helvetica', 'B', 9);
 $pdf->Cell(25, 10, 'Total', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 10, number_format(round(600,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 10, number_format(round($precioFinal,2), 0, ',', ' ').EURO,0,0,'R'); 
 $pdf->Ln(3); 
 $pdf->SetFont('Helvetica', '', 7);
 $pdf->Cell(25, 10, 'Monto recibido', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 10, number_format(round(1000,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 10, number_format(round($MontoRecibido,2), 0, ',', ' ').EURO,0,0,'R'); 
 $pdf->Ln(3); 
 $pdf->SetFont('Helvetica', 'B', 9);
 $pdf->Cell(25, 13, 'Cambio', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 13, number_format(round(400,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 13, number_format(round($cambio,2), 0, ',', ' ').EURO,0,0,'R'); 
 
 // PIE DE PAGINA $pdf->Ln(10);
 $pdf->SetFont('Helvetica', '', 7); 
