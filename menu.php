@@ -36,12 +36,12 @@ $usu = $_SESSION['Usuario']
         if ($_SESSION['Puesto'] == "responsable"||$_SESSION['Puesto'] == "RESPONSABLE") {
             echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
-        }else{
+        }/*else{
             echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
-            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Administrador</button>';
-            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Sistema</button>';
-        }
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceAdmin . '">Administrador</button>';
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceSistema . '">Sistema</button>';
+        }*/
         ?>
         <!--<button class="btn ventas" onclick="location.href='menu_ventas/abrircaja.php'">Vendedor</button>
         <button class="btn inventario" onclick="location.href='menu_responsable/inventario.php'">Responsable</button>
