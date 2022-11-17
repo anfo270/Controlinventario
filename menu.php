@@ -6,6 +6,10 @@ if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contraseña'])){
 if ($_SESSION['Puesto'] == "vendedor"||$_SESSION['Puesto'] == "VENDEDOR"||$_SESSION['Puesto'] == "nuevo"||$_SESSION['Puesto'] == "NUEVO") {
     header('location: menu_ventas/seccionventas.php');
 }
+$enlaceVendedor="'menu_ventas/abrircaja.php'";
+$enlaceResponsable="'menu_responsable/inventario.php'";
+$enlaceAdmin="'menu_administrador/administrador.php'";
+$enlaceSistema="'menu_sistema/sistema.php'";
 $usu = $_SESSION['Usuario']
 ?>
 
@@ -28,10 +32,21 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn ventas" onclick="location.href='menu_ventas/abrircaja.php'">Vendedor</button>
+        <?php
+        if ($_SESSION['Puesto'] == "responsable"||$_SESSION['Puesto'] == "RESPONSABLE") {
+            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
+        }else{
+            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Administrador</button>';
+            echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Sistema</button>';
+        }
+        ?>
+        <!--<button class="btn ventas" onclick="location.href='menu_ventas/abrircaja.php'">Vendedor</button>
         <button class="btn inventario" onclick="location.href='menu_responsable/inventario.php'">Responsable</button>
         <button class="btn administrador" onclick="location.href='menu_administrador/administrador.php'">Administrador</button>
-        <button class="btn administrador" onclick="location.href='menu_sistema/sistema.php'">Sistema</button>
+        <button class="btn administrador" onclick="location.href='menu_sistema/sistema.php'">Sistema</button>-->
     </div>
 </body>
 </html>

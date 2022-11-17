@@ -53,7 +53,7 @@ $usu = $_SESSION['Usuario']
                     <td>
                         <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
-                            <option value="NUEVO"> Genérico</option>
+                            <option value="NUEVO"> Nuevo</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPOSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
