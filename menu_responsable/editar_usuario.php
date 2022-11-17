@@ -42,19 +42,16 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
         <form action="../Config/nuevo_usuario_responsable.php?identificador=<?php echo 2;?>&id=<?php echo $item->ID ?>" method="post">
             <table class="tabla_usuarios">
                 <tr>
-                    <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre" <?php echo "value='$item->Nombre'"; ?> readonly></td>
+                    <td><p>Nombre:</p></td><td><?php echo "<p>$item->Nombre</p>" ?></td>
                 </tr>
                 <tr>
-                    <td><p>Apellido Paterno:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellido_Paterno" <?php echo "value='$item->Apellido_Paterno'"; ?> readonly></td>
+                    <td><p>Apellido Paterno:</p></td><td> <?php echo "<p>$item->Apellido_Paterno</p>"; ?></td>
                 </tr>
                 <tr>
-                    <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellido_Materno" <?php echo "value='$item->Apellido_Materno'"; ?> readonly></td>
+                    <td><p>Apellido Materno:</p></td><td><?php echo "<p>$item->Apellido_Materno</p>"?></td>
                 </tr>
                 <tr>
-                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña" <?php echo "value='$item->Contraseña'"; ?> readonly></td>
-                </tr>
-                <tr>
-                    <td><p>Puesto:</p></td><td> <input type="text" name="Puesto" id="Puesto" <?php echo "value='$item->Puesto'"; ?> readonly></td>
+                    <td><p>Puesto:</p></td><td> <?php echo "<p>$item->Puesto</p>"; ?></td>
                 </tr>
                 <tr>
                     <td><p>Local</p></td>

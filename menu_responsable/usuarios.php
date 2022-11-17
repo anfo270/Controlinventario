@@ -45,7 +45,6 @@ $local = $_SESSION['Local'];
                 <td class="titulo">Apellido Paterno</td>
                 <td class="titulo">Apellidos Materno</td>
                 <td class="titulo">Usuario</td>
-                <td class="titulo">Contraseña</td>
                 <td class="titulo">Puesto</td>
                 <td class="titulo">Local</td>
                 <td></td>
@@ -62,7 +61,6 @@ $local = $_SESSION['Local'];
                         <td><?php echo $item->Apellido_Paterno; ?></td>
                         <td><?php echo $item->Apellido_Materno; ?></td>
                         <td><?php echo $item->Usuario; ?></td>  
-                        <td><?php echo $item->Contraseña; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
                         
