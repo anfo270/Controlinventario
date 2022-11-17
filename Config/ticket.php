@@ -7,6 +7,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario'];
+$suc = $_SESSION['Local'];
 
 date_default_timezone_set('America/Mexico_City');
 $fecha = date('d/m/Y', time());
@@ -20,7 +21,7 @@ $pdf = new FPDF('P','mm',array(80,170)); // Tamaño tickt 80mm x 150 mm (largo a
 $pdf->AddPage();
 
 $pdf->SetFont('Helvetica','',8);
-$pdf->Cell(60,4,'Sucursal',0,1,'C');
+$pdf->Cell(60,4,'Sucursal: '.$suc,0,1,'C');
 $pdf->SetFont('Helvetica','',12);
 $pdf->Cell(60,4,'Lumiher Comunicaciones',0,1,'C');
 $pdf->Cell(60,4,'S.A. de C.V.',0,1,'C');
@@ -34,7 +35,7 @@ $pdf->Cell(60,4,utf8_decode('Régimen de las personas morales'),0,1,'C');
  
 // DATOS FACTURA        
 $pdf->Ln(5);
-$pdf->Cell(60,4,utf8_decode('Ticket Núm.: 1'),0,1,'');
+$pdf->Cell(60,4,utf8_decode('Ticket Núm.:_'),0,1,'');
 $pdf->Cell(60,4,'Fecha: ' . $fecha,0,1,'');
 $pdf->Cell(60,4,utf8_decode('Le atendió: '.$usu),0,1,'');
 
