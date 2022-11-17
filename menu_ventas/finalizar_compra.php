@@ -7,6 +7,8 @@ if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contraseña'])){
 }
 $usu = $_SESSION['Usuario'];
 $montRec=$_POST['montRec'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

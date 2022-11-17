@@ -3,7 +3,8 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
     header('location: index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$cortecaja=$_GET['cortecaja'];
 ?>
 
 <!DOCTYPE html>
@@ -19,14 +20,21 @@ $usu = $_SESSION['Usuario']
 </head>
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <div class="bdcrumb">
+    <div class="bdcrumb">   
         <ul class="breadcrumb">
-            <li><a href="../menu.php">🏠</a></li>
-            <li><a href="administrador.php">Administrador</a></li>
-            <li>Cobranza</li>
+        <?php
+            if($_SESSION['Puesto']=="RESPONSABLE"){
+                echo("<li><a href='../menu_responsable/inventario.php'>🏠</a></li>");
+                $cortecaja=$_GET['cortecaja'];
+            }else{
+                echo("  <li><a href='../menu.php'>🏠</a></li><li><a href='administrador.php'>Administrador</a></li><li>Cobranza</li>");
+                $cortecaja="";
+            }
+            ?>
         </ul>
+
     </div>
-    <form class="contenedor" action="../Config/inventaroppvd.php?señal=3" method="post">
+    <form class="contenedor" action="../Config/inventaroppvd.php?señal=3&cortecaja=<?php echo $cortecaja?>" method="post">
         <h1>Seleccionar la fecha</h1>
         <!--<input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >-->
         agregar un rango de fechas
