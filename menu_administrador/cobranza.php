@@ -24,7 +24,7 @@ $cortecaja=$_GET['cortecaja'];
         <ul class="breadcrumb">
         <?php
             if($_SESSION['Puesto']=="RESPONSABLE"){
-                echo("<li><a href='../menu_responsable/inventario.php'>🏠</a></li>");
+                echo("<li><a href='../menu.php'>🏠</a></li>");
                 $cortecaja=$_GET['cortecaja'];
             }else{
                 echo("  <li><a href='../menu.php'>🏠</a></li><li><a href='administrador.php'>Administrador</a></li><li>Cobranza</li>");
