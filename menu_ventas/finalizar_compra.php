@@ -36,7 +36,7 @@ $montRec=$_POST['montRec'];
                     <form action="../Config/venta.php" method="post">
                         <!--<p>Pago del cliente <input type="text" name="montRec" required></p>-->
                         <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
-                        <button class="btn cancelar" id='cancelar' type="reset" onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
+                        <!--<button class="btn cancelar" id='cancelar' type="reset" onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>-->
                         <button class="btn" id="aceptar" type="submit" >Finalizar</button>
                     </form>
             </div>
