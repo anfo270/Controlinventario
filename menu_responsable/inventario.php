@@ -29,6 +29,7 @@ $usu = $_SESSION['Usuario']
         <button class="btn transpaso" onclick="location.href='traspaso.php'">Traspaso</button>
         <button class="btn inventario" onclick="location.href='reporte.php'">Reporte</button>
         <button class="btn inventario" onclick="location.href='corte.php'">Corte de caja</button>
+        <button class="btn inventario" onclick="location.href='usuarios.php'">Usuarios</button>
     </div>
 </body>
 </html>
