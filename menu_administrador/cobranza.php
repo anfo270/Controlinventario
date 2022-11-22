@@ -38,6 +38,7 @@ $cortecaja=$_GET['cortecaja'];
         <h1>Seleccionar la fecha</h1>
         <!--<input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >-->
         agregar un rango de fechas
+        <!-- dia 1 -->
         <p>D&iacute;a:</p>
         <select type='text' name='date_d' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
@@ -68,6 +69,38 @@ $cortecaja=$_GET['cortecaja'];
             }
             ?>
         </select><br>
+                <!-- dia 2 -->
+        <p>D&iacute;a:</p>
+        <select type='text' name='date_d2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+            <?php
+            for($i=1;$i<=9;$i++){
+                echo "<option>0$i</option>";
+            }
+            for($i=10;$i<=31;$i++){
+                echo "<option>$i</option>";
+            }
+            ?>
+        </select>
+        <p>Mes:</p>
+        <select type='text' name='date_m2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+            <?php
+            for($i=1;$i<=9;$i++){
+                echo "<option>0$i</option>";
+            }
+            for($i=10;$i<=12;$i++){
+                echo "<option>$i</option>";
+            }
+            ?>
+        </select>
+        
+        <p>A&ntilde;o:</p>
+        <select type='text' name='date_y2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+            <?php
+            for($i=2022;$i<=2099;$i++){
+                echo "<option>$i</option>";
+            }
+            ?>
+        </select>
         <div class="botones">
             <button class="btn cancelar"type="reset">Cancelar</button>
             <button class="btn"type="submit">Aceptar</button>

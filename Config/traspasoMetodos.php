@@ -16,16 +16,18 @@ include('metodosbd.php');
         );
         return $tipos[$tipo];
     }
-    $id=tipo($tipo);
+    
     for($i=0;$i<$cantidad;$i++){
-        $buscar=busqueda($conexion,$tipo,tipo($tipo),$_POST["id".$i]);
-        
-        while($item=$buscar->fetch(PDO::FETCH_OBJ)){
-        if($tipo=="sims"){       
-            insertar_traspaso($conexion,$item->ICC,$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso'],$tipo);
+        $id=$_POST['id'.$i];
+        if(!$buscar=busqueda($conexion,$tipo,tipo($tipo),$id)){
+            echo "<script>alert(No se encontro algún ".tipo($tipo)." con el $id);</script>";
+        }else{
+            while($item=$buscar->fetch(PDO::FETCH_OBJ)){
+            if($tipo=="sims"){       
+                insertar_traspaso($conexion,$item->tipo($tipo),$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso'],$tipo);
             }else{
-                
             }
+        }
         }
     }
 ?>

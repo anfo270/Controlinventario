@@ -26,7 +26,7 @@ $usu = strval($_SESSION['Usuario']);
     <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="contenedor-ventas">
         <h2>Ventas</h2>
-        <table>
+        <table class="tabla_venta">
             <tr>
                 <td>
                     <p><b>Producto</b></p>
@@ -40,7 +40,7 @@ $usu = strval($_SESSION['Usuario']);
                 <td></td>
             </tr>
         </table>
-        <table>
+        <table class="tabla_venta">
         <?php $productos=busqueda($conexion,"carrito","Usuario",$usu);
         if($productos->rowCount()==0){
             //header('location:' . getenv('HTTP_REFERER'));

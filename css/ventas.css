@@ -51,7 +51,7 @@ select{
     width: 6em;
     font-size: 0.8em;
 }
-table {
+.tabla_venta {
     table-layout:fixed;
     width: 30%;
     border-collapse: collapse;

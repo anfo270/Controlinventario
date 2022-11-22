@@ -57,7 +57,7 @@ if($traspas->rowCount()==0){
                 }?>
         </table>
         <div class="botones">
-            <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
+            <button class="btn cancelar" typer="reset" onclick="location.href='administrador.php'">Cancelar</button>
             <button class="btn" type="submit">Aceptar</button>
         </div>
     </form>

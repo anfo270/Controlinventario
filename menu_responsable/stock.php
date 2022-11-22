@@ -1,9 +1,13 @@
 <?php
-session_start();
-if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
-    header('location: index.php');
-}
-$usu = $_SESSION['Usuario']
+    require('../Config/conexionbd.php');
+    require('../Config/metodosbd.php');
+    session_start();
+
+    if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
+        header('location: index.php');
+    }
+    $usu = $_SESSION['Usuario'];
+
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +19,9 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
-
+    <link rel="stylesheet" href="../css/menus.css">
     <title>Men&uacute; inventario</title>
+    <script type="text/javascript"></script>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -30,53 +35,21 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <h2>Consulta</h2>
-        <div>
-        <label for=""><p>Marca:
-            <select class="select-css">
-                <option value="Samsung">Samsung</option>
+        <form action="consulta.php" method="post">
+            <p>Seleccionar el modelo:</p>
+            <select name="modelo" id="" class="select-css">
+                <option value="">Seleccionar...</option>
+                <?php
+                    $consulta=consulta($conexion,"modelo");
+                    while($item=$consulta->fetch(PDO::FETCH_OBJ)){?>
+                        <option value="<?php echo $item->Nombre ?>"><?php echo $item->Nombre ?></option>
+                    <?PHP }
+                ?>
             </select>
-            </p>
-        </label>
-        <label for=""><p>Tipo de articulo:
-            <select class="select-css">
-                <option value="cargador">cargador</option>
-            </select>
-            </p></label>
-        </div>
-        <table>
-            <tr>
-                <td>
-                    <p>Modelo</p>
-                </td>
-                <td>
-                    <p>Cantidad</p>
-                </td>
-                <td>
-                    <p>Local</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Tipo C carga rapida</p>
-                </td>
-                <td>
-                    <p>2</p>
-                </td>
-                <td>
-                    <p>$299</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Tipo c</p>
-                </td>
-                <td>
-                    <p>5</p>
-                </td>
-                <td>
-                    <p>$250</p>
-                </td>
-            </tr>
+            <div class="botones">
+                <button type="submit" class="btneditar" >Buscar</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

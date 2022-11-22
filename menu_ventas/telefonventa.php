@@ -46,7 +46,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=IMEI" method="POST">
         <h1>Teléfonos</h1>
-        <table>
+        <table class="tabla_venta">
             <tr>
                 <td>IMEI:</td>
                 <td><input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></td>

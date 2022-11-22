@@ -19,6 +19,7 @@ if ($res->rowCount() == 1) {
     $_SESSION['Nombre'] = $row['Nombre'];
     $_SESSION['Apellido_Paterno'] = $row['Apellido_Paterno'];
     $_SESSION['Apellido_Materno']=$row['Apellido_Materno'];
+    $_SESSION['Nombre completo']=$row['Nombre']." ".$row['Apellido_Paterno']." ".$row['Apellido_Materno'];
     $_SESSION['Usuario'] = $row['Usuario'];
     $_SESSION['Contraseña'] = $row['Contraseña'];
     $_SESSION['Puesto'] = $row['Puesto'];

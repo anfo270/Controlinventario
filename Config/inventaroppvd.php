@@ -95,13 +95,17 @@ else if($señal==3){
     $data_d=$_POST['date_d'];
     $data_m=$_POST['date_m'];
     $data_y=$_POST['date_y'];
+    $data_d2=$_POST['date_d2'];
+    $data_m2=$_POST['date_m2'];
+    $data_y2=$_POST['date_y2'];
     $data=$data_d . "-" . $data_m . "-" . $data_y;
+    $data2=$data_d2 . "-" . $data_m2 . "-" . $data_y2;
     $cortecaja=$_GET['cortecaja'];
     if($cortecaja!='cortecaja'){
     //echo '<script>alert("' . $data . '")</script> ';
-        $consulta_ventas=busqueda($conexion,"ventas","Fecha",$data);
+        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
     }else{
-        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha ='$data'"); 
+        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'"); 
     }
     $hojaactiva->setCellValue("A1","IMEI/ICC/SKU");
     $hojaactiva->getColumnDimension('A')->setWidth(120, 'pt');
