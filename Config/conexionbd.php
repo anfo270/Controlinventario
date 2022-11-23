@@ -1,15 +1,9 @@
 <?php
     //datos de db
-    /*$server='localhost';
-    $user='root';
-    $pass='';
-    $db='control_inventario';*/
-
     $server='localhost';
     $user='root';
     $pass='';
     $db='control_inventario';
-
     //conexion a base de datos
     try{
         $conexion= new PDO("mysql:host=$server;port=3306;dbname=$db",$user ,$pass);
