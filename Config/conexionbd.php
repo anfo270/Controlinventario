@@ -1,14 +1,9 @@
 <?php
     //datos de db
-    /*$server='localhost';
+    $server='localhost';
     $user='root';
     $pass='';
-    $db='control_inventario';*/
-
-    $server='db4free.net';
-    $user='cat271';
-    $pass='catcat271';
-    $db='controninvent';
+    $db='control_inventario';
 
     //conexion a base de datos
     try{
