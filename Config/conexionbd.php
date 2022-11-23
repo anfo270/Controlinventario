@@ -5,10 +5,10 @@
     $pass='';
     $db='control_inventario';*/
 
-    $server='db4free.net';
-    $user='cat271';
-    $pass='catcat271';
-    $db='controninvent';
+    $server='localhost';
+    $user='root';
+    $pass='';
+    $db='control_inventario';
 
     //conexion a base de datos
     try{

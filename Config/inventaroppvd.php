@@ -119,19 +119,22 @@ else if($señal==3){
     $hojaactiva->setCellValue("D1","Vendedor");
     $hojaactiva->getColumnDimension('D')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("E1","Fecha");
+    $hojaactiva->setCellValue("E1","Perfil de vendedor");
     $hojaactiva->getColumnDimension('E')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("F1","Locacion");
+    $hojaactiva->setCellValue("F1","Fecha");
     $hojaactiva->getColumnDimension('F')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("G1","Precio");
+    $hojaactiva->setCellValue("G1","Locacion");
     $hojaactiva->getColumnDimension('G')->setWidth(120, 'pt');
 
-    $hojaactiva->setCellValue("H1","Financiera");
+    $hojaactiva->setCellValue("H1","Precio");
     $hojaactiva->getColumnDimension('H')->setWidth(120, 'pt');
 
-    $hojaactiva->getStyle("A1:H1")->getFont()->setBold(true);
+    $hojaactiva->setCellValue("I1","Financiera");
+    $hojaactiva->getColumnDimension('I')->setWidth(120, 'pt');
+
+    $hojaactiva->getStyle("A1:I1")->getFont()->setBold(true);
 
     while($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
         $posicion++;
@@ -139,10 +142,11 @@ else if($señal==3){
         $hojaactiva->setCellValue("B{$posicion}",$item->Marca);
         $hojaactiva->setCellValue("C{$posicion}",$item->Modelo);
         $hojaactiva->setCellValue("D{$posicion}",$item->Vendedor);
-        $hojaactiva->setCellValue("E{$posicion}",$item->Fecha);
-        $hojaactiva->setCellValue("F{$posicion}",$item->Locacion);
-        $hojaactiva->setCellValue("G{$posicion}",$item->Precio);
-        $hojaactiva->setCellValue("H{$posicion}",$item->Financiera);
+        $hojaactiva->setCellValue("E{$posicion}",$item->TipoVendedor);
+        $hojaactiva->setCellValue("F{$posicion}",$item->Fecha);
+        $hojaactiva->setCellValue("G{$posicion}",$item->Locacion);
+        $hojaactiva->setCellValue("H{$posicion}",$item->Precio);
+        $hojaactiva->setCellValue("I{$posicion}",$item->Financiera);
     }
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Disposition: attachment;filename="ReporteCobranza_' . $data . '.xlsx"');

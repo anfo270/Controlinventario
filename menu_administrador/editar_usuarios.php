@@ -62,6 +62,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                             <option value="RESPONSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
                             <option value="SUPERVISOR">Supervisor</option>
+                            <option value="ADMINISTRACION">Adminstración</option>
                         </select>
                     </td>
                 </tr>
@@ -80,7 +81,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                 </tr>
             </table>
             <div class="botones">
-            <button type="reset" class="btn reset" >Cancelar</button>
+            <button type="reset" class="btn reset" onclick="location.href='Usuarios.php'">Cancelar</button>
             <button type="submit" class="btn" >Guardar</button>
         </div>
         </form>
