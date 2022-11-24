@@ -43,10 +43,10 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_d' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=1;$i<=9;$i++){
-                echo "<option>0$i</option>";
+                echo "<option value='0$i'>0$i</option>";
             }
             for($i=10;$i<=31;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
@@ -54,10 +54,10 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_m' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=1;$i<=9;$i++){
-                echo "<option>0$i</option>";
+                echo "<option value='0$i'>0$i</option>";
             }
             for($i=10;$i<=12;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
@@ -65,7 +65,7 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_y' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=2022;$i<=2099;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select><br>
@@ -74,10 +74,10 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_d2' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=1;$i<=9;$i++){
-                echo "<option>0$i</option>";
+                echo "<option value='0$i'>0$i</option>";
             }
             for($i=10;$i<=31;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
@@ -85,10 +85,10 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_m2' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=1;$i<=9;$i++){
-                echo "<option>0$i</option>";
+                echo "<option value='0$i'>0$i</option>";
             }
             for($i=10;$i<=12;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='0$i'>$i</option>";
             }
             ?>
         </select>
@@ -97,7 +97,7 @@ $cortecaja=$_GET['cortecaja'];
         <select type='text' name='date_y2' class='boxtext' placeholder='Elige financiera' class='select-css'>
             <?php
             for($i=2022;$i<=2099;$i++){
-                echo "<option>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>

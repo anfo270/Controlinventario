@@ -17,7 +17,7 @@ function tipo($tipo){
     );
     return $tipos[$tipo];
 }
-
+$tipo=tipo($_GET['tipo']);
 
 if($traspas->rowCount()==0){
     $Numtraspaso=1;
@@ -42,25 +42,20 @@ if($traspas->rowCount()==0){
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    
-    <form class="contenedor" action="../Config/traspasoMetodos.php?cantidad=<?php echo $_POST['cantidad'];?>&locacion=<?php echo $_POST['locacion'];?>&tipo=<?php echo $_GET['tipo'];?>&NumTraspaso=<?php echo $Numtraspaso; ?>" method="post">
-        <h1>Traspaso <?php echo $_GET['tipo'];?></h1>
-        <h3>Numero de traspaso: <?php echo $Numtraspaso; ?> </h3>
+    <form class="contenedor" action="" method="POST">
+        <h1>Traspaso <?php echo  $Numtraspaso?></h1>
         <table>
-            <?php
-                for ($i=0; $i <$_POST['cantidad'] ; $i++) { ?>
+            <?php 
+                $cantidad=$_POST['cantidad'];
+                for($i=0;$i<$cantidad;$i++){ ?>
                 <tr>
-                    <td><p><?php echo tipo($_GET['tipo']);?></p></td>
-                    <td><input type="text" name="id<?php echo $i?>" class="boxtext"></td>
+                    <td><?php echo $tipo;?></td>
+                    <td><input type="text" class="boxtext"name="<?php echo 'id'.$i;?>"></td>
                 </tr>
-                <?php
-                }?>
+            <?PHP } ?>
         </table>
-        <div class="botones">
-            <button class="btn cancelar" typer="reset" onclick="location.href='administrador.php'">Cancelar</button>
-            <button class="btn" type="submit">Aceptar</button>
-        </div>
     </form>
+
+
 </body>
 </html>
-?>

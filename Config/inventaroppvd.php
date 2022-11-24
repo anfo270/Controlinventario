@@ -101,11 +101,11 @@ else if($señal==3){
     $data=$data_d . "-" . $data_m . "-" . $data_y;
     $data2=$data_d2 . "-" . $data_m2 . "-" . $data_y2;
     $cortecaja=$_GET['cortecaja'];
-    if($cortecaja!='cortecaja'){
+    if($cortecaja=='cortecaja'){
     //echo '<script>alert("' . $data . '")</script> ';
+    $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'");
+    }else{ 
         $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
-    }else{
-        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'"); 
     }
     $hojaactiva->setCellValue("A1","IMEI/ICC/SKU");
     $hojaactiva->getColumnDimension('A')->setWidth(120, 'pt');
