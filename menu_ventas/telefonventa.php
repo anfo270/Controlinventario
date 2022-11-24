@@ -103,7 +103,7 @@ $usu = $_SESSION['Usuario']
                     Correo:
                 </td>
                 <td>
-                    <input type="email" name="correo" id="IMEI" class="boxtext" required>
+                    <input type="email" name="correo" id="IMEI" class="boxtext">
                 </td>
             </tr>
             <tr>
@@ -117,6 +117,10 @@ $usu = $_SESSION['Usuario']
             <tr>
                 <td> Primer pago:</td>
                 <td><input type="number" name="Precio" id="Precio" class="boxtext" required></p></td>
+            </tr>
+            <tr>
+                <td>Comentarios</td>
+                <td><input type="text" name="comentarios" class="boxtext"></td>
             </tr>
         </table>           
         <div class="botones">

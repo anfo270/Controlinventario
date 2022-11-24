@@ -64,11 +64,15 @@ $usu = $_SESSION['Usuario']
             </p>
         </label>
         <label for="">
-            <p>DN: <input type="text" name="IMEI" id="IMEI" class="boxtext" required></p>
+            <p>DN: <input type="number" name="num_tel" id="IMEI" class="boxtext" required></p>
         </label>
         <label for="">
             <p>Precio:<input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
+                <label>
+                    <p>Comentarios
+                <input type="text" name="comentarios" class="boxtext"></p>
+                </label>
         <div class="botones">
             <button class="btn cancelar" type="reset">Cancelar</button>
             <button class="btn" type="submit">Vender</button>

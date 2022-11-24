@@ -10,16 +10,26 @@ $financiera=$_POST['proveedor'];
 $precioInic=intval(0);
 $precio=intval($_POST['Precio']);
 $columnas=$_GET['tipo'];
-
+$Nombre=$_POST['cliente'];
+$CorreoElectronico=$_POST['correo'];
+$NumeroTelefono=$_POST['num_tel'];
+$Comentarios=$_POST['comentarios'];
 if($tipo=="recarga"||$tipo=="servicio"){
-    insertar_carrito($conexion,$usuario,$tipo,$precio,$precio,$financiera,$Marca,$Modelo,$columnas);
+    insertar_carrito($conexion,$usuario,$tipo,$precio,$precio,$financiera,$Marca,$Modelo,$columnas,$Comentarios);
     header("location: ..\menu_ventas/ventas.php");
 }else if($articulo=busqueda($conexion,$tipo,$_GET['tipo'],$id)->fetch(PDO::FETCH_OBJ)){
     if(busqueda($conexion,"carrito","IMEIICCSKU",$id)->rowCount()==0){
         $precioInic=intval($_POST['PrecioInicial']);
-        insertar_carrito($conexion,$usuario,$id,$precioInic,$precio,$financiera,$articulo->Marca,$articulo->Modelo,$tipo);
-        header("location: ..\menu_ventas/ventas.php");
-        
+        if($columnas =='IMEI'){
+            insertar_carrito_telefonos($conexion,$usuario,$id,$precioInic,$precio,$financiera,$articulo->Marca,$articulo->Modelo,$tipo,$Nombre,$CorreoElectronico,$NumeroTelefono,$Comentarios);
+            header("location: ..\menu_ventas/ventas.php");
+        }elseif($columnas=="sims"){
+            insertar_carrito_sims($conexion,$usuario,$id,$precioInic,$precio,$financiera,$articulo->Marca,$articulo->Modelo,$tipo,$NumeroTelefono,$Comentarios);
+            header("location: ..\menu_ventas/ventas.php");
+        }else{
+            insertar_carrito($conexion,$usuario,$id,$precioInic,$precio,$financiera,$articulo->Marca,$articulo->Modelo,$tipo,$Comentarios);
+            header("location: ..\menu_ventas/ventas.php");
+        }
     }else{
         echo "<script>alert('El producto ya esta en el carrito, no se puede agregar otra vez.')</script>";
         echo "<script>location.href='../menu_ventas/ventas.php'</script>";  
@@ -41,9 +51,18 @@ function articulo($nombre){
     return $articulos[$nombre];
 }
 
-function insertar_carrito($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas){
-    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas') ")or die(print_r($conexion->errorInfo()));
+function insertar_carrito($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas,$Comentarios){
+    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo,Nombre,CorreoElectronico,NumeroTelefono,Comentarios) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas',' ',' ','','$Comentarios') ")or die(print_r($conexion->errorInfo()));
     return $res;
 }
+function insertar_carrito_telefonos($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas,$Nombre,$CorreoElectronico,$NumeroTelefono,$Comentarios){
+    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo,Nombre,CorreoElectronico,NumeroTelefono,Comentarios) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas','$Nombre','$CorreoElectronico','$NumeroTelefono','$Comentarios') ")or die(print_r($conexion->errorInfo()));
+    return $res;
+}
+function insertar_carrito_sims($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas,$NumeroTelefono,$Comentarios){
+    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo,Nombre,CorreoElectronico,NumeroTelefono,Comentarios) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas','','',$NumeroTelefono,'$Comentarios') ")or die(print_r($conexion->errorInfo()));
+    return $res;
+}
+
 
 ?>
