@@ -23,11 +23,12 @@ include('metodosbd.php');
             echo "<script>alert(No se encontro algún ".tipo($tipo)." con el $id);</script>";
         }else{
             while($item=$buscar->fetch(PDO::FETCH_OBJ)){
-            if($tipo=="sims"){       
-                insertar_traspaso($conexion,$item->tipo($tipo),$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso'],$tipo);
-            }else{
+                if($tipo=="sims"){       
+                    insertar_traspaso($conexion,$item->tipo($tipo),$item->Marca,$item->Modelo,$item->Telefonia,$item->Precio,$item->FechaIngreso,$item->Factura,$Fecha,$item->Proveedor,$item->Locacion,$locacion,"PENDIENTE DE RECIBIR",$_GET['NumTraspaso'],$tipo);
+                }else{
+                    echo 'No se pudo.';
+                }
             }
-        }
         }
     }
 ?>
