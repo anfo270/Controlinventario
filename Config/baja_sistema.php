@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('../Config/conexionbd.php');
-    if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
+    if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
         header('location: index.php');
     }
 

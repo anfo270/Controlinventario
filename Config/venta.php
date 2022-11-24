@@ -9,7 +9,7 @@ date_default_timezone_set('America/Mexico_City');
 $Fecha = date('d-m-Y', time());
 $nombre=$_SESSION['Nombre completo'];
 $puesto=$_SESSION['Puesto'];
-if($pass!=$_SESSION['Contraseña']){
+if($pass!=$_SESSION['Contrasena']){
     echo "<script>alert('Contraseña incorrecta');</script>";
     echo "<script>location.href='../menu_ventas/ventas.php'</script>";
 }

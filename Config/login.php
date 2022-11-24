@@ -6,10 +6,10 @@ session_start();
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $_SESSION['Usuario'] = "";
-$_SESSION['Contraseña'] = "";
+$_SESSION['Contrasena'] = "";
 
 //buscar usuario
-$res = $conexion->prepare("SELECT * FROM usuarios WHERE Usuario='$user' AND Contraseña='$pass'") or die(print($conexion->errorInfo()));
+$res = $conexion->prepare("SELECT * FROM usuarios WHERE Usuario='$user' AND Contrasena='$pass'") or die(print($conexion->errorInfo()));
 $res->execute();
 
 //asignamos el valor en una variable, si es 0 no existe
@@ -21,10 +21,10 @@ if ($res->rowCount() == 1) {
     $_SESSION['Apellido_Materno']=$row['Apellido_Materno'];
     $_SESSION['Nombre completo']=$row['Nombre']." ".$row['Apellido_Paterno']." ".$row['Apellido_Materno'];
     $_SESSION['Usuario'] = $row['Usuario'];
-    $_SESSION['Contraseña'] = $row['Contraseña'];
+    $_SESSION['Contrasena'] = $row['Contrasena'];
     $_SESSION['Puesto'] = $row['Puesto'];
     $_SESSION['Local'] = $row['Local'];
-    if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contraseña']){
+    if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contrasena']){
 
         if ($row['Puesto'] == "vendedor"||$row['Puesto'] == "VENDEDOR"||$row['Puesto'] == "nuevo"||$row['Puesto'] == "NUEVO") {
             header('location: ..\menu_ventas/abrircaja.php');

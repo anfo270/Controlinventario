@@ -3,7 +3,7 @@
     include('conexionbd.php');
     //variable de ID 
     $id=intval($_GET['ID_usuarios']);
-    if($_POST['pass']!=$_SESSION['Contraseña']){
+    if($_POST['pass']!=$_SESSION['Contrasena']){
         echo("<script>alert('Contraseña incorrecta')</script>");
         echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
     }else{

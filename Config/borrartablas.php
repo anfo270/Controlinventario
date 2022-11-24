@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_POST['pass']!=$_SESSION['Contraseña']){
+if($_POST['pass']!=$_SESSION['Contrasena']){
     echo '<script>alert("Contraseña incorrecta")</script>';
     echo ("<script>location.href='../menu_sistema/sistema.php'</script>");
 }else{

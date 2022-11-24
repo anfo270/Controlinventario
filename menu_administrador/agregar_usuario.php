@@ -2,7 +2,7 @@
 include('../Config/conexionbd.php');
 include('../Config/metodosbd.php');
 session_start();
-if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
+if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
@@ -46,7 +46,7 @@ $usu = $_SESSION['Usuario']
                     <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellidos "></td>
                 </tr>
                 <tr>
-                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña"></td>
+                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contrasena" id="Contrasena"></td>
                 </tr>
                 <tr>
                     <td><p>Puesto:</p></td>

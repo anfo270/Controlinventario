@@ -2,7 +2,7 @@
 include('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 session_start();
-if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
+if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario']
@@ -62,7 +62,7 @@ $usu = $_SESSION['Usuario']
                         <td><?php echo $item->Apellido_Paterno; ?></td>
                         <td><?php echo $item->Apellido_Materno; ?></td>
                         <td><?php echo $item->Usuario; ?></td>  
-                        <td><?php echo $item->Contraseña; ?></td>
+                        <td><?php echo $item->Contrasena; ?></td>
                         <td><?php echo $item->Puesto; ?></td>
                         <td><?php echo $item->Local; ?></td>
                         

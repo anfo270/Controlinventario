@@ -2,7 +2,7 @@
 include('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 session_start();
-if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contraseña'])) {
+if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario'];
@@ -51,7 +51,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                     <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellido_Materno" <?php echo "value='$item->Apellido_Materno'"; ?>></td>
                 </tr>
                 <tr>
-                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contraseña" id="Contraseña" <?php echo "value='$item->Contraseña'"; ?>></td>
+                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contrasena" id="Contrasena" <?php echo "value='$item->Contrasena'"; ?>></td>
                 </tr>
                 <tr>
                     <td><p>Puesto:</p></td>

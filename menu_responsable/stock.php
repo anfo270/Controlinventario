@@ -3,7 +3,7 @@
     require('../Config/metodosbd.php');
     session_start();
 
-    if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contraseña'])){
+    if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
         header('location: index.php');
     }
     $usu = $_SESSION['Usuario'];
