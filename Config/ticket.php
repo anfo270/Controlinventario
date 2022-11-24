@@ -20,11 +20,10 @@ define('EURO',chr(36)); // Constante con el símbolo Euro.
 $pdf = new FPDF('P','mm',array(80,170)); // Tamaño tickt 80mm x 150 mm (largo aprox)
 $pdf->AddPage();
 
-$pdf->SetFont('Helvetica','',8);
+$pdf->SetFont('Helvetica','B',12);
 $pdf->Cell(60,4,'Sucursal: '.$suc,0,1,'C');
-$pdf->SetFont('Helvetica','',12);
-$pdf->Cell(60,4,'Lumiher Comunicaciones',0,1,'C');
-$pdf->Cell(60,4,'S.A. de C.V.',0,1,'C');
+$pdf->SetFont('Helvetica','',8);
+$pdf->Cell(60,4,'Lumiher Comunicaciones S.A. de C.V.',0,1,'C');
 $pdf->SetFont('Helvetica','',8);
 $pdf->Cell(60,4,utf8_decode('Blvd. Tomás Fernández #7940-1'),0,1,'C');
 $pdf->Cell(60,4,utf8_decode('Col. Partido Senecú'),0,1,'C');
