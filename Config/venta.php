@@ -9,10 +9,10 @@ date_default_timezone_set('America/Mexico_City');
 $Fecha = date('d-m-Y', time());
 $nombre=$_SESSION['Nombre completo'];
 $puesto=$_SESSION['Puesto'];
-if($pass!=$_SESSION['Contrasena']){
+/*if($pass!=$_SESSION['Contrasena']){
     echo "<script>alert('Contraseña incorrecta');</script>";
     echo "<script>location.href='../menu_ventas/ventas.php'</script>";
-}
+}*/
 $res=busqueda($conexion,"carrito","Usuario",$_SESSION['Usuario']);
 $insert="";
 while($item=$res->fetch(PDO::FETCH_OBJ)){
