@@ -15,9 +15,21 @@ $fecha = date('d/m/Y', time());
 $precioFinal=0;
 $MontoRecibido=0;
 $cambio=0;
+$largo=intval(135);
+$productos=busqueda($conexion,"carrito","Usuario",$usu);
 
-define('EURO',chr(36)); // Constante con el símbolo Euro.
-$pdf = new FPDF('P','mm',array(80,170)); // Tamaño tickt 80mm x 150 mm (largo aprox)
+if($productos->rowCount()==0){
+    header('location: seccionventas.php');
+}else if($productos->rowCount()==1){
+    $largo=intval(135);
+}else{
+    while($item=$productos->fetch(PDO::FETCH_OBJ)){
+        $largo=$largo+6;
+    }
+}
+
+define('PESO',chr(36)); // Constante con el símbolo Peso.
+$pdf = new FPDF('P','mm',array(80,$largo)); // Tamaño tickt 80mm x 150 mm (largo aprox)
 $pdf->AddPage();
 
 $pdf->SetFont('Helvetica','B',12);
@@ -57,38 +69,26 @@ if($productos->rowCount()==0){
 
 while($item=$productos->fetch(PDO::FETCH_OBJ)){
     $pdf->MultiCell(30,4,'1 '.$item->tipo.' '.$item->Marca.' '.$item->Modelo.' '.$item->FinancieraActivacion,0,'L'); 
-    $pdf->Cell(45, -5, number_format(round($item->PrecioInicial,2), 0, ',', ' ').EURO,0,0,'R');
-    $pdf->Cell(15, -5, number_format(round($item->Precio,2), 0, ',', ' ').EURO,0,0,'R');
+    $pdf->Cell(45, -5, PESO.number_format(round($item->PrecioInicial,2), 0, ',', ' '),0,0,'R');
+    $pdf->Cell(15, -5, PESO.number_format(round($item->Precio,2), 0, ',', ' '),0,0,'R');
     $pdf->Ln(3);
     $precioFinal=intval($item->Precio)+$precioFinal;
 }
-/*$pdf->MultiCell(30,4,utf8_decode('telefonos Samsung A22 4+128 PayJoy'),0,'L'); 
-$pdf->Cell(45, -5, number_format(round(3200,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Cell(15, -5, number_format(round(500,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Ln(3);
-$pdf->MultiCell(30,4,utf8_decode('sims Movistar Movistar plan'),0,'L');
-$pdf->Cell(45, -5, number_format(round(0,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Cell(15, -5, number_format(round(0,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Ln(3);
-$pdf->MultiCell(30,4,utf8_decode('recarga Movistar'),0,'L'); 
-$pdf->Cell(45, -5, number_format(round(100,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Cell(15, -5, number_format(round(100,2), 0, ',', ' ').EURO,0,0,'R');
-$pdf->Ln(3);*/
 $MontoRecibido=$_GET['montRec'];
 $cambio=intval($MontoRecibido-$precioFinal);
 //SUMATORIO DE LOS PRODUCTOS
 $pdf->Ln(1); $pdf->Cell(60,0,'','T'); $pdf->Ln(1); 
 $pdf->SetFont('Helvetica', 'B', 9);
 $pdf->Cell(25, 10, 'Total', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 10, number_format(round($precioFinal,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 10, PESO.number_format(round($precioFinal,2), 0, ',', ' '),0,0,'R'); 
 $pdf->Ln(3); 
 $pdf->SetFont('Helvetica', '', 7);
 $pdf->Cell(25, 10, 'Monto recibido', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 10, number_format(round($MontoRecibido,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 10, PESO.number_format(round($MontoRecibido,2), 0, ',', ' '),0,0,'R'); 
 $pdf->Ln(3); 
 $pdf->SetFont('Helvetica', 'B', 9);
 $pdf->Cell(25, 13, 'Cambio', 0); $pdf->Cell(20, 10, '', 0); 
-$pdf->Cell(15, 13, number_format(round($cambio,2), 0, ',', ' ').EURO,0,0,'R'); 
+$pdf->Cell(15, 13, PESO.number_format(round($cambio,2), 0, ',', ' '),0,0,'R'); 
 
 // PIE DE PAGINA $pdf->Ln(10);
 $pdf->SetFont('Helvetica', '', 7); 
