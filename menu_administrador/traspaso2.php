@@ -6,7 +6,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario'];
-$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print($conexion->errorInfo()));
+$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print_r($conexion->errorInfo()));
 $traspas->execute();
 $Numtraspaso=0;
 function tipo($tipo){

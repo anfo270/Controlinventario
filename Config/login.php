@@ -9,7 +9,7 @@ $_SESSION['Usuario'] = "";
 $_SESSION['Contrasena'] = "";
 
 //buscar usuario
-$res = $conexion->prepare("SELECT * FROM usuarios WHERE Usuario='$user' AND Contrasena='$pass'") or die(print($conexion->errorInfo()));
+$res = $conexion->prepare("SELECT * FROM usuarios WHERE Usuario='$user' AND Contrasena='$pass'") or die(print_r($conexion->errorInfo()));
 $res->execute();
 
 //asignamos el valor en una variable, si es 0 no existe

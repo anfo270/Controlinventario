@@ -37,7 +37,7 @@
     }else if($nombre == "" || $tab == "" || $tm == ""){
         header("location: ..\menu_sistema/sistema.php");
     }else{
-        $res=$conexion->query("DELETE FROM $tm WHERE nombre = '$nombre'") or die(print($conexion->errorInfo()));
+        $res=$conexion->query("DELETE FROM $tm WHERE nombre = '$nombre'") or die(print_r($conexion->errorInfo()));
         if(!$res){
             echo '<script>alert("Se produjo un error, vuelve a intentarlo.")</script> ';
             echo "<script>location.href='$volver'</script>";

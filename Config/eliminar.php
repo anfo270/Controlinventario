@@ -8,7 +8,7 @@
         echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
     }else{
         //borramos el registro
-        $res=$conexion->query("DELETE FROM usuarios WHERE ID='$id'") or die(print($conexion->errorInfo()));
+        $res=$conexion->query("DELETE FROM usuarios WHERE ID='$id'") or die(print_r($conexion->errorInfo()));
         if($res){
             echo("<script>alert('Se elimino existosamente el usuario')</script>");
             echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
