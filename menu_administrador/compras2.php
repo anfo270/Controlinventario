@@ -67,19 +67,17 @@ function tipo($valor){
         </ul>
     </div>
     <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos.'&modelo='.$modelo.'&marcas='.$marcas.'&proveedor='.$proveedor.'&cantidad='.$cantidad.'&Factura='.$Factura.'&precio='.$precio; ?>" method="post">
-    <?php
-        if($tipos=="sims"){
-            echo '<h1>Ingreso de SIMs</h1>';
-        }else if($tipos=="telefonos"){
-            echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
-        }else if($tipos=="accesorio"){
-            echo '<h1>Ingreso de Accesorios</h1>';
-        }
-    ?>
-    <div>
-        <label><p>Factura: <?php echo $Factura;?>
-            </p>
-        </label>
+        <?php
+            if($tipos=="sims"){
+                echo '<h1>Ingreso de SIMs</h1>';
+            }else if($tipos=="telefonos"){
+                echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
+            }else if($tipos=="accesorio"){
+                echo '<h1>Ingreso de Accesorios</h1>';
+            }
+        ?>
+        <div>
+            <label><p>Factura: <?php echo $Factura;?></p></label>
         </div>
         <table>
             <tr>
@@ -98,22 +96,20 @@ function tipo($valor){
             </tr>
             <?php for ($i=0; $i <$cantidad ; $i++) { ?>
             <tr>
-                
                 <td>
                     <p><?php echo tipo($tipos); ?></p>
                 </td>
                 <td>
-                    <input type="text" name="numero<?php echo $i ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');">
+                    <input type="text" name="numero<?php echo $i; ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');">
                 </td>
-                
             </tr>
             <?php
                 $controlinput++;
                 } ?>
         </table>
         <div class="botones">
-            <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
-            <button class="btn">Aceptar</button>
+            <button type="reset" class="btn cancelar">Cancelar</button>
+            <button type="submit" class="btn">Aceptar</button>
         </div>
     </form>
 </body>

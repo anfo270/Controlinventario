@@ -5,6 +5,8 @@ session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
+$controlinput=0;
+$cantidad=$_POST['cantidad'];
 $usu = $_SESSION['Usuario'];
 $tipoTraspaso=$_GET['tipo'];
 $traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print_r($conexion->errorInfo()));
@@ -19,7 +21,6 @@ function tipo($tipo){
     return $tipos[$tipo];
 }
 $tipo=tipo($_GET['tipo']);
-
 if($traspas->rowCount()==0){
     $Numtraspaso=1;
 }else{
@@ -78,21 +79,17 @@ if($traspas->rowCount()==0){
     ?>
     <h3>Traspaso: <?php echo  $Numtraspaso?></h3>
         <table>
-            <?php 
-                $cantidad=$_POST['cantidad'];
-                for($i=0;$i<$cantidad;$i++){ ?>
+            <?php for($i=0;$i<$cantidad;$i++){ ?>
                 <tr>
                     <td><p><?php echo $tipo;?></p></td>
-                    <td><input type="text" class="boxtext"name="<?php echo 'id'.$i;?>"></td>
+                    <td><input type="text" class="boxtext" name="<?php echo 'id'.$i;?>"></td>
                 </tr>
             <?PHP } ?>
         </table>
         <div class="botones">
-            <button class="btn cancelar" onclick="location.href='administrador.php'">Cancelar</button>
-            <button class="btn">Aceptar</button>
+            <button type="reset" class="btn cancelar">Cancelar</button>
+            <button type="submit" class="btn">Aceptar</button>
         </div>
     </form>
-
-
 </body>
 </html>
