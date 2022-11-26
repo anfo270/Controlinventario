@@ -16,7 +16,7 @@ $Numtraspaso=0;
 function tipo($tipo){
     $tipos=array(
         "telefonos"=>"IMEI",
-        "accesorios"=>"SKU",
+        "accesorio"=>"SKU",
         "sims"=>"ICC",
     );
     return $tipos[$tipo];
