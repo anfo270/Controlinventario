@@ -11,9 +11,10 @@ while($item=$res->fetch(PDO::FETCH_OBJ)){
         $cambio=$conexion->query("UPDATE $item->tipo SET Locacion='$item->LocacionDestino' WHERE $item->tipo.ICC='$articulos'") or die(print_r($conexion->errorInfo()));
         $cambio=$conexion->query("UPDATE traspaso SET Estado='RECIBIDO' WHERE traspaso.IMEIICC='$articulos'") or die(print_r($conexion->errorInfo()));
     }else{
-        
+        echo "<script>alert('No se pudo traspasar el producto.');</script>";
     }
     $control++;
 }
-
+echo "<script>alert('Transacci\u00F3n realizada.');</script>";
+echo "<script>location.href='../menu_administrador/traspaso.php?tipo=" . $tipo . "'</script>";
 ?>
