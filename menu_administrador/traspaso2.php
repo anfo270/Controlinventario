@@ -7,6 +7,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 }
 $controlinput=0;
 $cantidad=$_POST['cantidad'];
+$locacion=$_POST['locacion'];
 $usu = $_SESSION['Usuario'];
 $tipoTraspaso=$_GET['tipo'];
 $traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print_r($conexion->errorInfo()));
@@ -67,7 +68,7 @@ if($traspas->rowCount()==0){
             ?>
         </ul>
     </div>
-    <form class="contenedor" action="../Config/traspasoMetodos.php?tipo=<?php echo $tipoTraspaso.'&modelo='.$modelo.'&marcas='.$marcas.'&proveedor='.$proveedor.'&cantidad='.$cantidad.'&Factura='.$Factura.'&precio='.$precio; ?>" method="post">
+    <form class="contenedor" method="post" action="../Config/traspasoMetodos.php?tipo=<?php echo $tipoTraspaso.'&NumTraspaso='.$Numtraspaso.'&cantidad='.$cantidad.'&locacion='.$locacion; ?>">
     <?php
         if($tipoTraspaso=="sims"){
             echo '<h1>Traspaso de SIMs</h1>';
@@ -77,7 +78,7 @@ if($traspas->rowCount()==0){
             echo '<h1>Traspaso de Accesorios</h1>';
         }
     ?>
-    <h3>Traspaso: <?php echo  $Numtraspaso?></h3>
+    <h3>Traspaso: <?php echo $Numtraspaso;?></h3>
         <table>
             <?php for($i=0;$i<$cantidad;$i++){ ?>
                 <tr>

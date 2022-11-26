@@ -5,7 +5,7 @@ include('metodosbd.php');
         
     }
     $Fecha = date('d/m/Y', time());
-    $cantidad= $_GET['cantidad'];
+    $cantidad=intval($_GET['cantidad']);
     $locacion=$_GET['locacion'];
     $tipo= $_GET['tipo'];
     function tipo($tipo){
