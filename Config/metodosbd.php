@@ -73,7 +73,7 @@ function insertar_accesorio($conexion,$SKU,$Marca,$Locacion,$Modelo,$Precio,$Fec
 }
 
 function insertar_traspaso($conexion,$ID,$Marca,$Modelo,$Telefonia,$Precio,$FechaIngreso,$Factura,$FechaTraspaso,$Proveedor,$LocacionActual,$LocacionDestino,$Estado,$NumTraspaso,$tipo){
-    $insert=$conexion->query("INSERT INTO traspaso (IMEIICC,Marca,Modelo,tipo,Telefonia,Precio,FechaIngreso,Factura,NumTraspaso,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) Values('$ID','$Marca','$Modelo','$tipo','$Telefonia','$Precio','$FechaIngreso','$Factura','$NumTraspaso','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print_r($conexion->errorInfo()));
+    $insert=$conexion->query("INSERT INTO traspaso (IMEIICC,Marca,Modelo,tipo,Telefonia,Precio,FechaIngreso,Factura,NumTraspaso,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) VALUES('$ID','$Marca','$Modelo','$tipo','$Telefonia','$Precio','$FechaIngreso','$Factura','$NumTraspaso','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print_r($conexion->errorInfo()));
     return $insert;
 }
 ?>
