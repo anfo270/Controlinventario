@@ -26,6 +26,7 @@ if($tipos=="telefonos"){
             echo "<script>alert('No se agreg\u00F3 el equipo {$_POST['numero'.$i]}.')</script>";
         }
     }
+    echo "<script>alert('$modelo')</script>";
     echo "<script>alert('Transacci\u00F3n realizada.')</script>";
     echo "<script>location.href='../menu_administrador/compras.php?tipo=telefonos'</script>";
 }else if($tipos=="sims"){
