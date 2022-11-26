@@ -10,7 +10,7 @@ $cantidad=$_POST['cantidad'];
 $locacion=$_POST['locacion'];
 $usu = $_SESSION['Usuario'];
 $tipoTraspaso=$_GET['tipo'];
-$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print_r($conexion->errorInfo()));
+$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM traspaso") or die(print_r($conexion->errorInfo()));
 $traspas->execute();
 $Numtraspaso=0;
 function tipo($tipo){

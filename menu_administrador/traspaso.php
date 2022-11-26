@@ -8,7 +8,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 $usu = $_SESSION['Usuario'];
 $tipo = $_GET['tipo'];
 
-$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM Traspaso") or die(print_r($conexion->errorInfo()));
+$traspas=$conexion->query("SELECT MAX(NumTraspaso) FROM traspaso") or die(print_r($conexion->errorInfo()));
 $traspas->execute();
 if($traspas->rowCount()==0){
     $Numtraspaso=1;
