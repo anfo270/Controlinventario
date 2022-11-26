@@ -38,15 +38,45 @@ function tipo($valor){
     <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
-
-    <title>Compras</title><script src="../javascript/script.js"></script>
+    <?php
+        if($tipos=="sims"){
+            echo '<title>SIMs - Compras</title>';
+        }else if($tipos=="telefonos"){
+            echo '<title>Tel&eacute;fonos - Compras</title>';
+        }else if($tipos=="accesorio"){
+            echo '<title>Accesorios - Compras</title>';
+        }
+    ?>
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    
+    <div class="bdcrumb">
+        <ul class="breadcrumb">
+            <li><a href="../menu.php">🏠</a></li>
+            <li><a href="administrador.php">Administrador</a></li>
+            <li><a href="SeleccionarTipo.php">Compras</a></li>
+            <?php
+                if($tipos=="sims"){
+                    echo '<li>SIMs</li>';
+                }else if($tipos=="telefonos"){
+                    echo '<li>Tel&eacute;fonos</li>';
+                }else if($tipos=="accesorio"){
+                    echo '<li>Accesorios</li>';
+                }
+            ?>
+        </ul>
+    </div>
     <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos.'&modelo='.$modelo.'&marcas='.$marcas.'&proveedor='.$proveedor.'&cantidad='.$cantidad.'&Factura='.$Factura.'&precio='.$precio; ?>" method="post">
-        <h2>Ingreso</h2>
-        <div>
+    <?php
+        if($tipos=="sims"){
+            echo '<h1>Ingreso de SIMs</h1>';
+        }else if($tipos=="telefonos"){
+            echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
+        }else if($tipos=="accesorio"){
+            echo '<h1>Ingreso de Accesorios</h1>';
+        }
+    ?>
+    <div>
         <label><p>Factura: <?php echo $Factura;?>
             </p>
         </label>
