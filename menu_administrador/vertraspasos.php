@@ -1,4 +1,6 @@
 <?php
+include('../config/conexionbd.php');
+include('../config/metodosbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: index.php');
@@ -26,10 +28,12 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn" onclick="location.href='traspaso.php?tipo=sims'">Sims</button>
-        <button class="btn" onclick="location.href='traspaso.php?tipo=telefonos'">Teléfonos</button>
-        <button class="btn ventas" onclick="location.href='traspaso.php?tipo=accesorio'">Accesorio</button>
-        <button class="btn ventas" onclick="location.href='vertraspasos.php'">Ver trapasos</button>
+        <?php
+        $trapasos=$conexion->query("SELECT DISTINCT NumTraspaso from traspaso");
+        while($item=$trapasos->fetch(PDO::FETCH_OBJ)){
+        ?>
+        <button class="btn ventas" onclick="location.href='listatrapaso.php?num=<?php echo $item->NumTraspaso?>'">Traspaso <?php echo $item->NumTraspaso?></button>
+        <?php }?>
     </div>
 </body>
 </html>

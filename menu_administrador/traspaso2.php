@@ -42,20 +42,25 @@ if($traspas->rowCount()==0){
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <form class="contenedor" action="" method="POST">
+    <form class="contenedor" action="../config/traspasoMetodos.php" method="POST">
         <h1>Traspaso <?php echo  $Numtraspaso?></h1>
+        <input type="text" name="Numtraspaso" value="<?php echo $Numtraspaso;?>" hidden>
         <table>
             <?php 
                 $cantidad=$_POST['cantidad'];
                 for($i=0;$i<$cantidad;$i++){ ?>
                 <tr>
                     <td><?php echo $tipo;?></td>
-                    <td><input type="text" class="boxtext"name="<?php echo 'id'.$i;?>"></td>
+                    <td><input type="text" class="boxtext" name="<?php echo 'id'.$i;?>" required></td>
                 </tr>
             <?PHP } ?>
         </table>
+        <input type="text" name="cantidad" value="<?php echo $cantidad;?>" hidden>
+        <input type="text" name="tipo" value="<?php echo $_GET['tipo'];?>" hidden>
+        <input type="text" name="locacion" value="<?php echo $_POST['locacion'];?>" hidden>
+        <div class="botones">
+            <button type="reset" class="btn cancelar" onclick="location.href='../menu_administrador/administrador.php'" >Cancelar</button>
+            <button type="submit" class="btn" >Guardar</button>
     </form>
-
-
 </body>
 </html>
