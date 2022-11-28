@@ -41,7 +41,7 @@
         }
     }
 
-    $res=$conexion->query("INSERT INTO $tm (nombre) VALUES ('$nombre')") or die(print($conexion->errorInfo()));
+    $res=$conexion->query("INSERT INTO $tm (nombre) VALUES ('$nombre')") or die(print_r($conexion->errorInfo()));
     if(!$res){
         echo 'Se produjo un error, vuelva a intentarlo.';
         echo "<script>location.href='../menu_sistema/sistema.php'</script>";

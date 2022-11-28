@@ -34,9 +34,9 @@ $spreadsheet->setActiveSheetIndex(0);
 $hojaactiva=$spreadsheet->getActiveSheet();
 //Consulta de datos segun la locacion del usuario
 if($señal==1){
-    $consulta_telefonos=$conexion->query("SELECT * FROM telefonos WHERE Locacion='$local'") or die(print($conexion->errorInfo()));
-    $consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
-    $consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print($conexion->errorInfo()));
+    $consulta_telefonos=$conexion->query("SELECT * FROM telefonos WHERE Locacion='$local'") or die(print_r($conexion->errorInfo()));
+    $consulta_accesorios=$conexion->query("SELECT * FROM accesorio WHERE Locacion='$local' ")or die(print_r($conexion->errorInfo()));
+    $consulta_sims=$conexion->query("SELECT * FROM sims WHERE Locacion='$local' ")or die(print_r($conexion->errorInfo()));
 
     //posision y valor en celda
 

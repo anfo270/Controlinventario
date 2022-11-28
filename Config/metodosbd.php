@@ -27,7 +27,7 @@ function bd($nombre){
 
 function consulta($conexion,$basedatos){
     $nombre=bd($basedatos);
-    $res=$conexion->query("SELECT * FROM $nombre ") or die(print($conexion->errorInfo()));
+    $res=$conexion->query("SELECT * FROM $nombre ") or die(print_r($conexion->errorInfo()));
     return $res;
 }
 function busqueda($conexion,$base_datos,$tipo,$referencia){
@@ -40,10 +40,10 @@ function insertar_telefono($IMEI,$Marca,$Locacion,$Modelo,$conexion,$Precio,$Fec
     $evaluar=busqueda($conexion,"telefonos","IMEI",$IMEI);
     $evaluar->execute();
     if($evaluar->rowCount()>0){
-        echo "<script>alert('El equipo ya existe' {$IMEI})</script>";
+        echo "<script>alert('El equipo con el IMEI {$IMEI} ya existe.')</script>";
         return $evaluar->rowCount()==0;
     }else{
-        $insert=$conexion->query("INSERT INTO telefonos (IMEI, Marca, Locacion, Modelo, Precio, FechaIngreso,Factura, FechaTraspaso,proveedor) Values ('$IMEI','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ','$proveedor')") or die(print($conexion->errorInfo()));
+        $insert=$conexion->query("INSERT INTO telefonos (IMEI, Marca, Locacion, Modelo, Precio, FechaIngreso,Factura, FechaTraspaso,proveedor) Values ('$IMEI','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ','$proveedor')") or die(print_r($conexion->errorInfo()));
         return $insert;
     }
 }
@@ -51,10 +51,10 @@ function insertar_sims($conexion,$ICC,$Marca,$Locacion,$Modelo,$Telefonia,$Preci
     $evaluar=busqueda($conexion,"sims","ICC",$ICC);
     $evaluar->execute();
     if($evaluar->rowCount()>0){
-        echo "<script>alert('El chip ya existe {$ICC}')</script>";
+        echo "<script>alert('El chip con el ICC {$ICC} ya existe.')</script>";
         return $evaluar->rowCount()==0;
     }else{
-        $insert=$conexion->query("INSERT INTO sims (ICC, Marca, Locacion, Modelo, Telefonia, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$ICC','$Marca','$Locacion','$Modelo','$Telefonia','$Precio','$FechaIngreso','$Factura',' ','$Proveedor')") or die(print($conexion->errorInfo()));
+        $insert=$conexion->query("INSERT INTO sims (ICC, Marca, Locacion, Modelo, Telefonia, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$ICC','$Marca','$Locacion','$Modelo','$Telefonia','$Precio','$FechaIngreso','$Factura',' ','$Proveedor')") or die(print_r($conexion->errorInfo()));
         return $insert;
     }
 }
@@ -64,16 +64,16 @@ function insertar_accesorio($conexion,$SKU,$Marca,$Locacion,$Modelo,$Precio,$Fec
     $evaluar=busqueda($conexion,"accesorio","SKU",$SKU);
     $evaluar->execute();
     if($evaluar->rowCount()>0){
-        echo "<script>alert('El accesorio ya existe {$SKU}')</script>";
+        echo "<script>alert('El accesorio con la PKU {$SKU} ya existe.')</script>";
         return $evaluar->rowCount()==0;
     }else{
-        $insert=$conexion->query("INSERT INTO accesorio (SKU, Marca, Locacion, Modelo, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$SKU','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ','$proveedor')") or die(print($conexion->errorInfo()));
+        $insert=$conexion->query("INSERT INTO accesorio (SKU, Marca, Locacion, Modelo, Precio,FechaIngreso,Factura,FechaTraspaso,Proveedor) Values ('$SKU','$Marca','$Locacion','$Modelo','$Precio','$FechaIngreso','$Factura',' ','$proveedor')") or die(print_r($conexion->errorInfo()));
         return $insert;
     }
 }
 
 function insertar_traspaso($conexion,$ID,$Marca,$Modelo,$Telefonia,$Precio,$FechaIngreso,$Factura,$FechaTraspaso,$Proveedor,$LocacionActual,$LocacionDestino,$Estado,$NumTraspaso,$tipo){
-    $insert=$conexion->query("INSERT INTO traspaso (IMEIICC,Marca,Modelo,tipo,Telefonia,Precio,FechaIngreso,Factura,NumTraspaso,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) Values('$ID','$Marca','$Modelo','$tipo','$Telefonia','$Precio','$FechaIngreso','$Factura','$NumTraspaso','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print($conexion->errorInfo()));
+    $insert=$conexion->query("INSERT INTO traspaso (IMEIICC,Marca,Modelo,tipo,Telefonia,Precio,FechaIngreso,Factura,NumTraspaso,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) VALUES('$ID','$Marca','$Modelo','$tipo','$Telefonia','$Precio','$FechaIngreso','$Factura','$NumTraspaso','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print_r($conexion->errorInfo()));
     return $insert;
 }
 ?>

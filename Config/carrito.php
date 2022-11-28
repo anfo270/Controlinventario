@@ -52,7 +52,7 @@ function articulo($nombre){
 }
 
 function insertar_carrito($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas,$Comentarios){
-    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo,Nombre,CorreoElectronico,NumeroTelefono,Comentarios) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas',' ',' ','','$Comentarios') ")or die(print_r($conexion->errorInfo()));
+    $res=$conexion->query("INSERT INTO carrito (Usuario, IMEIICCSKU, PrecioInicial, Precio, FinancieraActivacion,Marca,Modelo,tipo,Nombre,CorreoElectronico,NumeroTelefono,Comentarios) VALUES ('$usuario','$ID', '$precioInic','$precio','$financiera','$Marca','$Modelo','$columnas',' ',' ',0,'$Comentarios') ")or die(print_r($conexion->errorInfo()));
     return $res;
 }
 function insertar_carrito_telefonos($conexion,$usuario,$ID,$precioInic,$precio,$financiera,$Marca,$Modelo,$columnas,$Nombre,$CorreoElectronico,$NumeroTelefono,$Comentarios){

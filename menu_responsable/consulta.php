@@ -46,7 +46,7 @@ $modelo_buscar=str_replace('+',' ',$modelo);
             <?php 
             $locacion=consulta($conexion,"locacion");
             while($item=$locacion->fetch(PDO::FETCH_OBJ)){
-                $telefono=$conexion->query("SELECT COUNT(*) FROM telefonos WHERE Locacion='$item->Nombre' AND Modelo='$modelo_buscar'") or die(print($conexion->errorInfo()));
+                $telefono=$conexion->query("SELECT COUNT(*) FROM telefonos WHERE Locacion='$item->Nombre' AND Modelo='$modelo_buscar'") or die(print_r($conexion->errorInfo()));
                 $contado=$telefono->fetch();
                 ?>
 

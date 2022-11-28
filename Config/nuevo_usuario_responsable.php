@@ -23,7 +23,7 @@ if($_GET['identificador']==2){
 
 function actualizar($conexion,$id_use,$local){
     $Local="Local";
-    $res=$conexion->query("UPDATE usuarios SET $Local='$local' WHERE ID='$id_use'") or die(print($conexion->errorInfo()));
+    $res=$conexion->query("UPDATE usuarios SET $Local='$local' WHERE ID='$id_use'") or die(print_r($conexion->errorInfo()));
     return $res;
 }
 ?>

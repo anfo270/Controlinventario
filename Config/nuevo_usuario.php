@@ -40,14 +40,14 @@ if($_GET['identificador']==2){
 function actualizar($Nombre,$Apellidos_Paterno,$Apellido_Materno,$Contrasena,$puesto,$Local,$Usuario,$conexion,$id_use){
     $res="UPDATE usuarios SET Nombre='$Nombre' , Apellido_Paterno='$Apellidos_Paterno', Apellido_Materno='$Apellido_Materno' ,  Usuario='$Usuario',
                             Contrasena='$Contrasena' ,  Puesto='$puesto' ,  Local='$Local' WHERE ID='$id_use'" ;
-    $res=$conexion->query($res) or die(print($conexion->errorInfo()));
+    $res=$conexion->query($res) or die(print_r($conexion->errorInfo()));
     return $res;
 }
 
 function insert($Nombre,$Apellido_Paterno,$Apellido_Materno,$Contrasena,$puesto,$Local,$Usuario,$conexion){
     $res="INSERT INTO usuarios  (  Nombre ,  Apellido_Paterno, Apellido_Materno ,  Usuario ,  Contrasena ,  Puesto ,  Local ) 
     values ( '$Nombre' , '$Apellido_Paterno','$Apellido_Materno' , '$Usuario' , '$Contrasena' , '$puesto' , '$Local' )";
-    $res=$conexion->query($res) or die(print($conexion->errorInfo()));
+    $res=$conexion->query($res) or die(print_r($conexion->errorInfo()));
     return $res;
 }
 

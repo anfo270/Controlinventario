@@ -6,7 +6,7 @@ if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: index.php');
 }
 $usu = $_SESSION['Usuario'];
-$res=$conexion->query("SELECT *FROM usuarios WHERE ID=$_GET[id]") or die(print($conexion->errorInfo()));
+$res=$conexion->query("SELECT *FROM usuarios WHERE ID=$_GET[id]") or die(print_r($conexion->errorInfo()));
 if(!$item=$res->fetch(PDO::FETCH_OBJ)){
     echo '<script>alert("No se puede acceder al usuario")</script>';
 }

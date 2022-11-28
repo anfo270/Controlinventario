@@ -7,7 +7,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 }
 $usu = $_SESSION['Usuario'];
 $NumTras=$_POST['numero'];
-$res=$conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$NumTras AND Estado='PENDIENTE DE RECIBIR'") or die(print($conexion->errorInfo()));
+$res=$conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$NumTras AND Estado='PENDIENTE DE RECIBIR'") or die(print_r($conexion->errorInfo()));
 $res->execute();
 if($res->rowCount()==0){
     echo "<script>alert('No se encontró un traspaso pendiente');</script>";

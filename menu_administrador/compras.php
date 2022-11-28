@@ -3,9 +3,10 @@ require('../Config/metodosbd.php');
 require('../Config/conexionbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$tipo=$_GET['tipo'];
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +15,18 @@ $usu = $_SESSION['Usuario']
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
-
+    <?php
+        if($tipo=="sims"){
+            echo '<title>SIMs - Compras</title>';
+        }else if($tipo=="telefonos"){
+            echo '<title>Tel&eacute;fonos - Compras</title>';
+        }else if($tipo=="accesorio"){
+            echo '<title>Accesorios - Compras</title>';
+        }
+    ?>
     <title>Compras</title>
     <script src="../javascript/script.js"></script>
 </head>
@@ -28,12 +37,29 @@ $usu = $_SESSION['Usuario']
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
             <li><a href="administrador.php">Administrador</a></li>
-            <li>Compras</li>
+            <li><a href="SeleccionarTipo.php">Compras</a></li>
+            <?php
+                if($tipo=="sims"){
+                    echo '<li>SIMs</li>';
+                }else if($tipo=="telefonos"){
+                    echo '<li>Tel&eacute;fonos</li>';
+                }else if($tipo=="accesorio"){
+                    echo '<li>Accesorios</li>';
+                }
+            ?>
         </ul>
     </div>
-    <form action="compras2.php?tipo=<?php echo $_GET['tipo'];?>" method="post" class="contenedor">
-        <h1>Ingreso</h1>
-        <table>
+    <form action="compras2.php?tipo=<?php echo $tipo;?>" method="post" class="contenedor">
+    <?php
+        if($tipo=="sims"){
+            echo '<h1>Ingreso de SIMs</h1>';
+        }else if($tipo=="telefonos"){
+            echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
+        }else if($tipo=="accesorio"){
+            echo '<h1>Ingreso de Accesorios</h1>';
+        }
+    ?>
+    <table>
             <tr>
                 <td>
                     <p>Factura:</p>
@@ -41,7 +67,7 @@ $usu = $_SESSION['Usuario']
                 <td>
                     <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2');">
                 </td>
-            </tr><?php if($_GET['tipo']!="sims"){?>
+            </tr><?php if($tipo!="sims"){?>
             <tr>
                 <td>
                     <p>Proveedor:</p>
@@ -81,7 +107,7 @@ $usu = $_SESSION['Usuario']
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local;
-                        if($_GET['tipo']!="accesorio"){                        
+                        if($tipo!="accesorio"){                        
                         $local=consulta($conexion,"modelo");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
