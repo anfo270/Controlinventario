@@ -46,7 +46,7 @@ $usu = $_SESSION['Usuario']
             <h3>Tipo de servicio:</h3>
             <Label>
                 <P>Financiera: <select class="select-css" name="proveedor">
-                <?php $proveedores=consulta($conexion,"marcarecargas");
+                <?php $proveedores=consulta($conexion,"telefonia");
                     while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                         <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                             <?php } ?>
