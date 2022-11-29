@@ -52,11 +52,10 @@ if($traspas->rowCount()==0){
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-<<<<<<< HEAD
     <form class="contenedor" action="../config/traspasoMetodos.php" method="POST">
         <h1>Traspaso <?php echo  $Numtraspaso?></h1>
         <input type="text" name="Numtraspaso" value="<?php echo $Numtraspaso;?>" hidden>
-=======
+
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
@@ -84,11 +83,9 @@ if($traspas->rowCount()==0){
         }
     ?>
     <h3>Traspaso: <?php echo $Numtraspaso;?></h3>
->>>>>>> ccdf9cde8b55a84d536158c51eb13baa7b24dadb
         <table>
             <?php for($i=0;$i<$cantidad;$i++){ ?>
                 <tr>
-<<<<<<< HEAD
                     <td><?php echo $tipo;?></td>
                     <td><input type="text" class="boxtext" name="<?php echo 'id'.$i;?>" required></td>
                 </tr>
@@ -100,17 +97,6 @@ if($traspas->rowCount()==0){
         <div class="botones">
             <button type="reset" class="btn cancelar" onclick="location.href='../menu_administrador/administrador.php'" >Cancelar</button>
             <button type="submit" class="btn" >Guardar</button>
-=======
-                    <td><p><?php echo $tipo;?></p></td>
-                    <td><input type="text" class="boxtext" name="<?php echo 'id'.$i;?>"></td>
-                </tr>
-            <?PHP } ?>
-        </table>
-        <div class="botones">
-            <button type="reset" class="btn cancelar">Cancelar</button>
-            <button type="submit" class="btn">Aceptar</button>
-        </div>
->>>>>>> ccdf9cde8b55a84d536158c51eb13baa7b24dadb
     </form>
 </body>
 </html>
