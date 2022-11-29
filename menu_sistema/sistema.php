@@ -36,6 +36,7 @@ $usu = $_SESSION['Usuario']
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
         <button class="btn administrador" onclick="location.href='ab_activacion.php'">Tip. Activaci&oacute;n</button>
+        <button class="btn administrador" onclick="location.href='../menu_administrador/Usuarios.php'">Usuarios</button>
         <button class="btn cerrar reset"  onclick="document.getElementById('modal-contenedor').style.visibility='visible'">Reset general</button>
     </div>
     <div class="modal-contenedor" id="modal-contenedor">
