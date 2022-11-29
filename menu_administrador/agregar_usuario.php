@@ -59,6 +59,7 @@ $usu = $_SESSION['Usuario']
                             <option value="COORDINADOR">Coordinador</option>
                             <option value="SUPERVISOR">Supervisor</option>
                             <option value="ADMINISTRADOR">Administrador</option>
+                            <option value="SISTEMAS">Sistemas</option>
                         </select>
                     </td>
                 </tr>

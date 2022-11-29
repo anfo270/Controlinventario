@@ -62,7 +62,8 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                             <option value="RESPONSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
                             <option value="SUPERVISOR">Supervisor</option>
-                            <option value="ADMINISTRACION">Adminstración</option>
+                            <option value="ADMINISTRADOR">Adminstración</option>
+                            <option value="SISTEMAS">Sistemas</option>
                         </select>
                     </td>
                 </tr>
