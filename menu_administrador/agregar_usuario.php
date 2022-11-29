@@ -37,23 +37,26 @@ $usu = $_SESSION['Usuario']
         <form action="../Config/nuevo_usuario.php?identificador=<?php echo 1;?>" method="post">
             <table class="tabla_usuarios">
                 <tr>
-                    <td><p>Nombre:</p></td><td> <input type="text" name="Nombre" id="Nombre"></td>
+                    <td><p>Nombre*:</p></td><td> <input type="text" name="Nombre" id="Nombre" required></td>
                 </tr>
                 <tr>
-                    <td><p>Apellido Paterno:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellidos "></td>
+                    <td><p>Apellido Paterno*:</p></td><td> <input type="text" name="Apellido_Paterno" id="Apellidos " required></td>
                 </tr>
                 <tr>
                     <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellidos "></td>
                 </tr>
                 <tr>
-                    <td><p>Contraseña:</p></td><td> <input type="text" name="Contrasena" id="Contrasena"></td>
+                    <td><p>Usuario*:</p></td><td> <input type="text" name="Usuario_Empleado" id="Apellidos " required></td>
                 </tr>
                 <tr>
-                    <td><p>Puesto:</p></td>
+                    <td><p>Contraseña*:</p></td><td> <input type="text" name="Contrasena" id="Contrasena" required></td>
+                </tr>
+                <tr>
+                    <td><p>Puesto*:</p></td>
                     <td>
                         <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
-                            <option value="NUEVO"> Nuevo</option>
+                            <option value="NUEVO">Preingreso</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPONSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
@@ -64,7 +67,7 @@ $usu = $_SESSION['Usuario']
                     </td>
                 </tr>
                 <tr>
-                    <td><p>Local</p></td>
+                    <td><p>Local:</p></td>
                     <td>
                     <select name="Local" id="Local" class="select-css">
                         <option value=" ">Seleccionar...</option>

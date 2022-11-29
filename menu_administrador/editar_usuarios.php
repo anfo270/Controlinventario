@@ -51,6 +51,9 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                     <td><p>Apellido Materno:</p></td><td> <input type="text" name="Apellido_Materno" id="Apellido_Materno" <?php echo "value='$item->Apellido_Materno'"; ?>></td>
                 </tr>
                 <tr>
+                    <td><p>Usuario:</p></td><td> <input type="text" name="Usuario_Empleado" id="Apellido_Materno" <?php echo "value='$item->Usuario'"; ?>></td>
+                </tr>
+                <tr>
                     <td><p>Contraseña:</p></td><td> <input type="text" name="Contrasena" id="Contrasena" <?php echo "value='$item->Contrasena'"; ?>></td>
                 </tr>
                 <tr>

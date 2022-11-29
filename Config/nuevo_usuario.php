@@ -7,7 +7,8 @@ $Apellido_Materno=$_POST['Apellido_Materno'];
 $Contrasena=$_POST['Contrasena'];
 $puesto=$_POST['Puesto'];
 $Local=$_POST['Local'];
-$Usuario=$Nombre." ".$Apellido_Paterno;
+$Usuario=$_POST['Usuario_Empleado'];
+//$Usuario=$Nombre." ".$Apellido_Paterno;
 
 if($_GET['identificador']==1){
     $insertar=insert($Nombre,$Apellido_Paterno,$Apellido_Materno,$Contrasena,$puesto,$Local,$Usuario,$conexion);
