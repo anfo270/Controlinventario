@@ -31,7 +31,6 @@ $usu = $_SESSION['Usuario']
         <button class="btn administrador" onclick="location.href='ab_ModeloTelefono.php'">Modelos</button>
         <button class="btn administrador" onclick="location.href='ab_ModeloAccesorio.php'">Accesorio</button>
         <button class="btn administrador" onclick="location.href='ab_telefonia.php'">Telefonía</button>
-        <button class="btn administrador" onclick="location.href='ab_recargas.php'">Recargas</button>
         <button class="btn inventario" onclick="location.href='ab_financiera.php'">Financieras</button>
         <button class="btn administrador" onclick="location.href='ab_proveedor.php'">Proveedor</button>
         <button class="btn administrador" onclick="location.href='ab_locacion.php'">Locaci&oacute;n</button>
