@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('../config/conexionbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
@@ -27,10 +28,13 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn" onclick="location.href='compras.php?tipo=sims'">Sims</button>
-        <button class="btn" onclick="location.href='compras.php?tipo=telefonos'">Teléfonos</button>
-        <button class="btn ventas" onclick="location.href='compras.php?tipo=accesorio'">Accesorio</button>
-        <button class="btn ventas" onclick="location.href='listacompras.php'">Facturas</button>
+        <?php 
+        $tipo=$_GET['tipo'];
+        $consulta=$conexion->query("SELECT DISTINCT Factura from $tipo");
+        while($item=$consulta->fetch(PDO::FETCH_OBJ)){?>
+            <button class="btn ventas" onclick="location.href='verfactura.php?num=<?php echo $item->Factura.'&tipo='.$tipo;?>'">Traspaso <?php echo $item->Factura?></button>
+        <?php }?>
+        
     </div>
 </body>
 </html>

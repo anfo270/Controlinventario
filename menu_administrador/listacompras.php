@@ -27,10 +27,10 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
-        <button class="btn" onclick="location.href='compras.php?tipo=sims'">Sims</button>
-        <button class="btn" onclick="location.href='compras.php?tipo=telefonos'">Teléfonos</button>
-        <button class="btn ventas" onclick="location.href='compras.php?tipo=accesorio'">Accesorio</button>
-        <button class="btn ventas" onclick="location.href='listacompras.php'">Facturas</button>
+        <h1>Listas de facturas</h1>
+        <button class="btn" onclick="location.href='facturas.php?tipo=sims'">Sims</button>
+        <button class="btn" onclick="location.href='facturas.php?tipo=telefonos'">Teléfonos</button>
+        <button class="btn ventas" onclick="location.href='facturas.php?tipo=accesorio'">Accesorio</button>
     </div>
 </body>
 </html>
