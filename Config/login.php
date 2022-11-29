@@ -28,8 +28,15 @@ if ($res->rowCount() == 1) {
 
         if ($row['Puesto'] == "vendedor"||$row['Puesto'] == "VENDEDOR"||$row['Puesto'] == "nuevo"||$row['Puesto'] == "NUEVO") {
             header('location: ..\menu_ventas/abrircaja.php');
-        } else {
+        } else if ($row['Puesto'] == "RESPONSABLE"||$row['Puesto'] == "COORDINADOR") {
             header('location: ..\menu.php');
+        } else if ($row['Puesto'] == "ADMINISTRADOR") {
+            header('location: ..\menu_administrador/administrador.php');
+        }else if ($row['Puesto'] == "SISTEMAS") {
+            header('location: ..\menu_sistema/sistema.php');
+        }
+        else {
+            header('location: menu.php');
         }
     }
 

@@ -10,7 +10,14 @@ $enlaceVendedor="'menu_ventas/abrircaja.php'";
 $enlaceResponsable="'menu_responsable/inventario.php'";
 $enlaceAdmin="'menu_administrador/administrador.php'";
 $enlaceSistema="'menu_sistema/sistema.php'";
-$usu = $_SESSION['Usuario']
+if ($_SESSION['Puesto'] == "vendedor"||$_SESSION['Puesto'] == "VENDEDOR"||$_SESSION['Puesto'] == "nuevo"||$_SESSION['Puesto'] == "NUEVO") {
+    header('location: menu_ventas/abrircaja.php');
+} else if ($_SESSION['Puesto'] == "ADMINISTRADOR") {
+    header('location: menu_administrador/administrador.php');
+}else if ($_SESSION['Puesto'] == "SISTEMAS") {
+    header('location: menu_sistema/sistema.php');
+}
+$usu = $_SESSION['Usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +40,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <?php
-        if ($_SESSION['Puesto'] == "responsable"||$_SESSION['Puesto'] == "RESPONSABLE") {
+        if ($_SESSION['Puesto'] == "responsable"||$_SESSION['Puesto'] == "RESPONSABLE"||$_SESSION['Puesto'] == "COORDINADOR") {
             echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
         }else{

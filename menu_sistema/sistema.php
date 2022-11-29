@@ -19,7 +19,7 @@ $usu = $_SESSION['Usuario']
     <title>Sistema</title>
 </head>
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
