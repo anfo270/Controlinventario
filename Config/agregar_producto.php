@@ -16,7 +16,7 @@ if($tipos!="sims"){
     $proveedor=$telefonia;
 }
 $cantidad=intval($_GET['cantidad']);
-date_default_timezone_set('America/Mexico_City');
+date_default_timezone_set('America/Denver');
 $Fecha = date('d/m/Y', time());
 if($tipos=="telefonos"){
     for ($i=0; $i <$cantidad ; $i++){

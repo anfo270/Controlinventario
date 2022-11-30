@@ -9,7 +9,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 $usu = $_SESSION['Usuario'];
 $suc = $_SESSION['Local'];
 
-date_default_timezone_set('America/Mexico_City');
+date_default_timezone_set('America/Denver');
 $fecha = date('d/m/Y', time());
 
 $precioFinal=0;

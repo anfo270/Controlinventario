@@ -28,7 +28,7 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <button class="btn abrircaja" onclick="location.href='seccionventas.php'">Abrir Caja</button><br>
         <?php
-        date_default_timezone_set('America/Mexico_City');
+        date_default_timezone_set('America/Denver');
         $Fecha = date('d/m/Y', time());
         $Hora = date('h:i a', time());
         echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";

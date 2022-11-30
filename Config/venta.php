@@ -5,7 +5,7 @@ session_start();
 $pass=$_POST['pass'];
 $use=$_SESSION['Usuario'];
 $locacion=$_SESSION['Local'];
-date_default_timezone_set('America/Mexico_City');
+date_default_timezone_set('America/Denver');
 $Fecha = date('d-m-Y', time());
 $nombre=$_SESSION['Nombre completo'];
 $puesto=$_SESSION['Puesto'];

@@ -29,7 +29,7 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor">
         <button class="btncerrar" onclick="location.href='../cerrar.php'">Cerrar Caja</button>
         <?php
-        date_default_timezone_set('America/Mexico_City');
+        date_default_timezone_set('America/Denver');
         $Fecha = date('d/m/Y', time());
         $Hora = date('h:i a', time());
         echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";

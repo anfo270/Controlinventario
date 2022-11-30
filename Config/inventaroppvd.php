@@ -11,7 +11,7 @@ $data_d="";
 $data_m="";
 $data_y="";
 
-date_default_timezone_set('America/Mexico_City');
+date_default_timezone_set('America/Denver');
 $data = date('d/m/Y', time());
 $localPDV=$_SESSION['Local'];
 
