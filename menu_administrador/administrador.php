@@ -31,7 +31,7 @@ $usu = $_SESSION['Usuario']
         <button class="btn ventas" onclick="location.href='Usuarios.php'">Usuarios</button>
         <button class="btn ventas" onclick="location.href='cobranza.php?cortecaja=cobranza'">Cobranza</button>
         <!--<p>Vendedor(completo),   Perfil de vendedor</p>-->
-        <button class="btn ventas" onclick="location.href='../Config/inventaroppvd.php?señal=<?php echo '2';?>'">Inventario gral.</button>
+        <button class="btn ventas" onclick="location.href='../Config/genrep_74.php?señal=<?php echo '2';?>'">Inventario gral.</button>
         
     </div>
 </body>

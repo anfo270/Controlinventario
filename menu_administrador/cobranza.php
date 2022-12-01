@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario'];
 $cortecaja=$_GET['cortecaja'];
@@ -34,7 +34,7 @@ $cortecaja=$_GET['cortecaja'];
         </ul>
 
     </div>
-    <form class="contenedor" action="../Config/inventaroppvd.php?señal=3&cortecaja=<?php echo $cortecaja?>" method="post">
+    <form class="contenedor" action="../Config/genrep_74.php?señal=3&cortecaja=<?php echo $cortecaja?>" method="post">
         <h1>Seleccionar la fecha</h1>
         <!--<input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >-->
         agregar un rango de fechas

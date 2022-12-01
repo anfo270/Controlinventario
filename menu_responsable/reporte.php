@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario']
 ?>
@@ -18,7 +18,7 @@ $usu = $_SESSION['Usuario']
     <title>Men&uacute; inventario</title>
 </head>
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
@@ -28,7 +28,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <div class="contenedor">
         <button class="btn traspaso" onclick="location.href='stock.php?primero=primero'">Consulta</button>
-        <button class="btn inventario" onclick="location.href='../Config/inventaroppvd.php'">Inventario de PDV</button>
+        <button class="btn inventario" onclick="location.href='../Config/genrep_74.php?señal=1'">Inventario de PDV</button>
     </div>
 </body>
 </html>
