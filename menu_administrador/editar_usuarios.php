@@ -61,6 +61,7 @@ if(!$item=$res->fetch(PDO::FETCH_OBJ)){
                     <td>
                         <select name="Puesto" id="Puesto" class="select-css">
                             <option value=" ">Seleccionar...</option>
+                            <option value="NUEVO">Preingreso</option>
                             <option value="VENDEDOR">Vendedor</option>
                             <option value="RESPONSABLE">Responsable</option>
                             <option value="COORDINADOR">Coordinador</option>
