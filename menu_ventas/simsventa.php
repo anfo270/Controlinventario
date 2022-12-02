@@ -44,14 +44,16 @@ $usu = $_SESSION['Usuario']
         ?>
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=ICC" method="post">
+    <h1>SIMs</h1>    
+    <p style="font-size:12px; color:#616161;">Si la compa&ntilde;&iacute;a telef&oacute;nica no se carga, por favor, selecciona y escanea nuevamente.</p>
         <label for="">
             <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" onkeypress="pulsar('IMEI');" required></p>
         </label>
         <label for="">
-            <p>Telefonia:<p id="Telefonia"></p></p>
+            <p>Telefon&iacute;a:<p id="Telefonia"></p></p>
         </label>
         <label for="">
-            <p>Tipo de activación:
+            <p>Tipo de activaci&oacute;n:
                 <select name="proveedor" class="select-css">
                     <option value="">Seleccionar...</option>
                     <?php $activacion=consulta($conexion,"activacion");
@@ -67,10 +69,10 @@ $usu = $_SESSION['Usuario']
             <p>DN: <input type="number" name="num_tel" id="IMEI" class="boxtext" required></p>
         </label>
         <label for="">
-            <p>Precio:<input type="text" name="Precio" id="precio" class="boxtext" required></p>
+            <p>Precio: <input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
                 <label>
-                    <p>Comentarios
+                    <p>Comentarios:
                 <input type="text" name="comentarios" class="boxtext"></p>
                 </label>
         <div class="botones">

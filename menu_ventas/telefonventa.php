@@ -46,6 +46,7 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=IMEI" method="POST">
         <h1>Teléfonos</h1>
+        <p style="font-size:12px; color:#616161;">Si la marca y el modelo del tel&eacute;fono no se cargan, por favor, selecciona y escanea nuevamente.</p>
         <table class="tabla_venta">
             <tr>
                 <td>IMEI:</td>
