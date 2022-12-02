@@ -43,9 +43,9 @@ $usu = $_SESSION['Usuario']
     <div class="contenedor-ventas">
         <button class="btn telefon" onclick="location.href='telefonventa.php'">Tel&eacute;fonos</button>
         <button class="btn sims" onclick="location.href='simsventa.php'">SIMS CARDS</button>
-        <button class="btn recarga" onclick="location.href='recargaventa.php'">Recarga</button>
         <button class="btn accesorio" onclick="location.href='accesorioventa.php'">Accesorio</button>
-        <button class="btn servicios" onclick="location.href='serviciosventas.php'">Pago de servicio</button>
+        <button class="btn recarga btn_blue" onclick="location.href='recargaventa.php'">Recarga</button>
+        <button class="btn servicios btn_blue" onclick="location.href='serviciosventas.php'">Pago de servicio</button>
     </div> 
 </body>
 </html>

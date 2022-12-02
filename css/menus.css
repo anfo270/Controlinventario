@@ -22,7 +22,7 @@ body{
     height: 16%;
     width: 350px;
     /*width: 25%;*/
-    font-size: 3em;
+    font-size: 2.55em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -32,6 +32,12 @@ body{
 .btn:hover{
     background-color: #749e3c;
     cursor: pointer;
+}
+.btn_blue{
+    background-color: #0067ac;
+}
+.btn_blue:hover{
+    background-color: #063f64;
 }
 .cerrar{
     margin-bottom: 0px;
