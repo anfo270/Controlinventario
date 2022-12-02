@@ -82,7 +82,7 @@ function tipo($valor){
         <table>
             <tr>
                 <td>
-                    <p>Modelo</p>
+                    <p>Modelo:</p>
                 </td>
                 <td>
                     <p><?php 
@@ -97,10 +97,10 @@ function tipo($valor){
             <?php for ($i=0; $i <$cantidad ; $i++) { ?>
             <tr>
                 <td>
-                    <p><?php echo tipo($tipos); ?></p>
+                    <p><?php echo tipo($tipos); ?>:</p>
                 </td>
                 <td>
-                    <input type="text" name="numero<?php echo $i; ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');">
+                    <input type="text" name="numero<?php echo $i; ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');" required>
                 </td>
             </tr>
             <?php

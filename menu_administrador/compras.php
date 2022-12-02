@@ -65,7 +65,7 @@ $tipo=$_GET['tipo'];
                     <p>Factura:</p>
                 </td>
                 <td>
-                    <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2');">
+                    <input type="text" name="Factura" class="boxtext" id="input1" onkeypress="nextFocus('input1', 'input2');" required>
                 </td>
             </tr><?php if($tipo!="sims"){?>
             <tr>
@@ -73,7 +73,7 @@ $tipo=$_GET['tipo'];
                     <p>Proveedor:</p>
                 </td>
                 <td>
-                    <select name="proveedor" id="proveedor input2" class="select-css" onkeypress="nextFocus('input2', 'input3');">
+                    <select name="proveedor" id="proveedor input2" class="select-css" onkeypress="nextFocus('input2', 'input3');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"proveedor");
@@ -88,7 +88,7 @@ $tipo=$_GET['tipo'];
                     <p>Marcas:</p>
                 </td>
                 <td>
-                    <select name="marcas" id="marcas input3" class="select-css"  onkeypress="nextFocus('input3', 'input4');">
+                    <select name="marcas" id="marcas input3" class="select-css"  onkeypress="nextFocus('input3', 'input4');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"marcas");
@@ -103,7 +103,7 @@ $tipo=$_GET['tipo'];
                     <p>Modelo:</p>
                 </td>
                 <td>
-                    <select name="modelo" id="modelo input4" class="select-css"  onkeypress="nextFocus('input4', 'input5');">
+                    <select name="modelo" id="modelo input4" class="select-css"  onkeypress="nextFocus('input4', 'input5');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local;
@@ -124,7 +124,7 @@ $tipo=$_GET['tipo'];
                     <p>Telefonía</p>
                 </td>
                 <td>
-                <select name="telefonia" id="modelo input2" class="select-css" onkeypress="nextFocus('input2', 'input5');">
+                <select name="telefonia" id="modelo input2" class="select-css" onkeypress="nextFocus('input2', 'input5');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
                         $local=consulta($conexion,"telefonia");
@@ -137,14 +137,14 @@ $tipo=$_GET['tipo'];
                 <td>
                     <p>Precio Unitario </p>
                 <td>
-                    <input type="text" name="precio" class="boxtext" id="input5">
+                    <input type="text" name="precio" class="boxtext" id="input5" required>
                 </td>
             </tr>
             <tr>
                 <td>
                     <p>Cantidad </p>
                 <td>
-                    <input type="text" name="cantidad" class="boxtext" id="input5">
+                    <input type="text" name="cantidad" class="boxtext" id="input5" required>
                 </td>
             </tr>
         </table>

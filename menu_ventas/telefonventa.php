@@ -121,7 +121,7 @@ $usu = $_SESSION['Usuario']
             </tr>
             <tr>
                 <td>Comentarios</td>
-                <td><input type="text" name="comentarios" class="boxtext"></td>
+                <td><input type="text" name="comentarios" class="boxtext" value="N/A" required></td>
             </tr>
         </table>           
         <div class="botones">
