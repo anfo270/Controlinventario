@@ -36,7 +36,7 @@ if ($res->rowCount() == 1) {
             header('location: ..\menu_sistema/sistema.php');
         }
         else {
-            header('location: menu.php');
+            header('location: ../menu.php');
         }
     }
 

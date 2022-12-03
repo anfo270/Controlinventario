@@ -10,7 +10,7 @@ $NumTras=$_POST['numero'];
 $res=$conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$NumTras AND Estado='PENDIENTE DE RECIBIR'") or die(print_r($conexion->errorInfo()));
 $res->execute();
 if($res->rowCount()==0){
-    echo "<script>alert('No se encontró un traspaso pendiente');</script>";
+    echo "<script>alert('No se encontr\u00F3 traspaso pendiente.');</script>";
     echo "<script>location.href='inventario.php';</script>";
 }
 
@@ -21,19 +21,20 @@ if($res->rowCount()==0){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
 
     <title>Traspaso</title>
 </head>
 <body>
-    <nav><button class="btn cerrar" onclick="location.href='cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
+    <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
             <li><a href="inventario.php">Responsable</a></li>
-            <li>Traspaso</li>
+            <li><a href="traspaso.php">Traspaso</a></li>
+            <li>Recepci&oacute;n de traspaso #<?php echo $NumTras; ?></li>
         </ul>
     </div>
     <form action="../Config/recibirTraspaso.php?Numtraspaso= <?php echo $NumTras;?>" method="POST" class="contenedor">
@@ -43,13 +44,16 @@ if($res->rowCount()==0){
                     <p>IMEI / ICC / SKU</p>
                 </td>
                 <td class="titulo">
-                    <p>Modelo</p>
+                    <p>Tipo</p>
                 </td>
                 <td class="titulo">
                     <p>Marca</p>
                 </td>
                 <td class="titulo">
-                    <p>Locacion destino</p>
+                    <p>Modelo</p>
+                </td>
+                <td class="titulo">
+                    <p>Destino</p>
                 </td>
                 <td></td>
             </tr>
@@ -63,10 +67,13 @@ if($res->rowCount()==0){
                     <p><?php echo $item->IMEIICC;?><input type="text" name="id<?php echo $control;?>" value="<?php echo $item->IMEIICC;?>" hidden></p>
                 </td>
                 <td>
-                    <p><?php echo $item->Modelo;?></p>
+                    <p><?php echo $item->tipo;?></p>
                 </td>
                 <td>
                     <p><?php echo $item->Marca;?></p>
+                </td>
+                <td>
+                    <p><?php echo $item->Modelo;?></p>
                 </td>
                 <td>
                     <p><?php echo $item->LocacionDestino;?></p>
@@ -80,6 +87,7 @@ if($res->rowCount()==0){
             <button class="btn" type="submit">Aceptar</button>
             <button class="btn cancelar" type="reset" onclick="location.href='traspaso.php'">Cancelar</button>
         </div>
+        <?php echo '<p>NumControl: '.$control.'</p>'; ?>
     </form>
 </body>
 </html>
