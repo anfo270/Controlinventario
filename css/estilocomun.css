@@ -85,6 +85,13 @@ input {
     height: 1.2em;
     
 }
+.input {
+    border: 0;
+    border-radius: .25em;
+    width: 15.5em;
+    height: 1.2em;
+    
+}
 
 .cancelar {
     background-color: red;

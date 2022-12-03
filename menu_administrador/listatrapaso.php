@@ -5,7 +5,8 @@ session_start();
 if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$num=$_POST['num'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,10 +17,9 @@ $usu = $_SESSION['Usuario']
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
-    <link rel="stylesheet" href="../css/menus.css">
     <link rel="stylesheet" href="../css/reporte.css">
     <link rel="stylesheet" href="../css/popup.css">
-    <title>Usuario</title>
+    <title>Traspaso #<?PHP echo $num;?></title>
 </head>
 
 <body>
@@ -29,7 +29,9 @@ $usu = $_SESSION['Usuario']
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
             <li><a href="administrador.php">Administrador</a></li>
-            <li>Lista traspaso</li>
+            <li><a href="SeleccionarTipotraspaso.php">Traspasos</a></li>
+            <li><a href="vertraspasos.php">Ver traspasos</a></li>
+            <li>Traspaso #<?PHP echo $num;?></li>
         </ul>
     </div>
     <div class="contenedor">
@@ -44,14 +46,14 @@ $usu = $_SESSION['Usuario']
             </tr>
         </table>
         <?php
-        $num=$_GET['num'];
+        //$num=$_GET['num'];
         $res = $conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$num");
         while ($item = $res->fetch(PDO::FETCH_OBJ)) { 
             ?>
 
-                <table class="bordes">
+                <table class="bordes-corte">
                     <tr><?php $id=$item->ID; ?>
-                        <td><?php echo $item->tipo; ?></td>
+                        <td class="bordes-corte"><?php echo $item->tipo; ?></td>
                         <td><?php echo $item->IMEIICC; ?></td>
                         <td><?php echo $item->LocacionActual; ?></td>
                         <td><?php echo $item->LocacionDestino; ?></td>  
