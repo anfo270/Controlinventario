@@ -37,7 +37,7 @@ if($res->rowCount()==0){
             <li>Recepci&oacute;n de traspaso #<?php echo $NumTras; ?></li>
         </ul>
     </div>
-    <form action="../Config/recibirTraspaso.php?Numtraspaso= <?php echo $NumTras;?>" method="POST" class="contenedor">
+    <form action="../Config/recibirTraspaso.php?Numtraspaso= <?php echo $NumTras;?>" method="POST" class="contenedor" id="formElement">
         <table>
             <tr>
                 <td class="titulo">
@@ -55,7 +55,10 @@ if($res->rowCount()==0){
                 <td class="titulo">
                     <p>Destino</p>
                 </td>
-                <td></td>
+                <td>
+                    <a href="#" id="marcarTodo">Marcar todo</a> |
+                    <a href="#" id="desmarcarTodo">Desmarcar todo</a>
+                </td>
             </tr>
         </table>
         <table>
@@ -78,7 +81,9 @@ if($res->rowCount()==0){
                 <td>
                     <p><?php echo $item->LocacionDestino;?></p>
                 </td>
-                <td><input type="checkbox" name="articulo<?php echo $control;?>"> </td>
+                <td>
+                    <input type="checkbox" name="articulo<?php echo $control;?>">
+                </td>
             </tr>
                 
         <?php $control++; }?>
@@ -87,7 +92,32 @@ if($res->rowCount()==0){
             <button class="btn" type="submit">Aceptar</button>
             <button class="btn cancelar" type="reset" onclick="location.href='traspaso.php'">Cancelar</button>
         </div>
-        <?php echo '<p>NumControl: '.$control.'</p>'; ?>
     </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('marcarTodo').addEventListener('click', function(e) {
+                e.preventDefault();
+                //seleccionarTodo();
+                checkAll();
+            });
+            document.getElementById('desmarcarTodo').addEventListener('click', function(e) {
+                e.preventDefault();
+                //desmarcarTodo();
+                uncheckAll();
+            });
+        });
+    
+        function checkAll() {
+            document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+                checkElement.checked = true;
+            });
+        }
+    
+        function uncheckAll() {
+            document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+                checkElement.checked = false;
+            });
+        }
+    </script>
 </body>
 </html>
