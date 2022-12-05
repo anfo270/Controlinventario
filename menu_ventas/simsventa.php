@@ -3,7 +3,7 @@ session_start();
 include ('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario']
 ?>
@@ -15,7 +15,18 @@ $usu = $_SESSION['Usuario']
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logoci.png" type="image/x-icon">
+    <link rel="shortcut icon" href="
+    <?php $cant_carrito=0;$carrito=busqueda($conexion,"carrito","usuario",$usu);
+        while($item=$carrito->fetch(PDO::FETCH_OBJ)){
+            $cant_carrito++;
+        }
+        if($cant_carrito>0){
+            echo "../img/logoci_not2.png";
+        }else{
+            echo "../img/logoci.png";
+        }
+        ?>
+    " type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
     <title>Sims</title>
@@ -37,15 +48,15 @@ $usu = $_SESSION['Usuario']
             $cant_carrito++;
         }
         if($cant_carrito>0){
-            echo "<p><a href='ventas.php'>🛒 $cant_carrito</a></p>";
+            echo "<p><a href='ventas.php'>🛒 $cant_carrito art&iacute;culo(s)</a></p>";
         }else{
-            echo "<p>🛒 $cant_carrito</p>";
+            echo "<p>🛒 $cant_carrito art&iacute;culo(s)</p>";
         }
         ?>
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=ICC" method="post">
     <h1>SIMs</h1>    
-    <p style="font-size:12px; color:#616161;">Si la compa&ntilde;&iacute;a telef&oacute;nica no se carga, por favor, selecciona y escanea nuevamente.</p>
+    <p style="font-size:12px; color:#616161;">Si la compa&ntilde;&iacute;a telef&oacute;nica no se carga, por favor, borra y escanea nuevamente.</p>
         <label for="">
             <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" onkeypress="pulsar('IMEI');" required></p>
         </label>

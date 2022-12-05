@@ -70,7 +70,7 @@ while($item=$productos->fetch(PDO::FETCH_OBJ)){
     $pdf->MultiCell(30,4,'1 '.$item->tipo.' '.$item->Marca.' '.$item->Modelo.' '.$item->FinancieraActivacion,0,'L'); 
     $pdf->Cell(45, -5, PESO.number_format(round($item->PrecioInicial,2), 0, ',', ' '),0,0,'R');
     $pdf->Cell(15, -5, PESO.number_format(round($item->Precio,2), 0, ',', ' '),0,0,'R');
-    $pdf->Ln(3);
+    $pdf->Ln(1);
     $precioFinal=intval($item->Precio)+$precioFinal;
 }
 $MontoRecibido=$_GET['montRec'];
