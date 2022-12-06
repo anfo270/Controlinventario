@@ -47,7 +47,8 @@ $usu = $_SESSION['Usuario'];
     <form class="contenedor" action="../Config/carrito.php?tipo=servicio" method="post">
             <h3>Tipo de servicio:</h3>
             <Label>
-                <P>Financiera: <select class="select-css" name="proveedor">
+                <p>Financiera: <select class="select-css" name="proveedor">
+                <option value="">Seleccionar...</option>
                 <?php $proveedores=consulta($conexion,"telefonia");
                     while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                         <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
@@ -56,10 +57,10 @@ $usu = $_SESSION['Usuario'];
                     while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                         <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                 <?php } ?>
-                </select></P>
+                </select></p>
             </Label>
             <label>
-                <p>Monto: <input type="text" name="Precio" id="monto" class="boxtext"> </p>
+                <p>Monto: <input type="text" name="Precio" id="monto" class="boxtext" required> </p>
             </label>
             <div class="botones">
             <button class="btn cancelar" type="reset">Cancelar</button>

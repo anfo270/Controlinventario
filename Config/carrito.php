@@ -4,6 +4,8 @@ require('conexionbd.php');
 require('metodosbd.php');
 
 $usuario=$_SESSION['Usuario'];
+$volver=getenv('HTTP_REFERER');
+
 $id=$_POST['ID'];
 $tipo=articulo($_GET['tipo']);
 $financiera=$_POST['proveedor'];
@@ -14,7 +16,11 @@ $Nombre=$_POST['cliente'];
 $CorreoElectronico=$_POST['correo'];
 $NumeroTelefono=$_POST['num_tel'];
 $Comentarios=$_POST['comentarios'];
-if($tipo=="recarga"||$tipo=="servicio"){
+
+if($financiera == "Seleccionar..."||$financiera == ""||$financiera == " "){
+    echo '<script>alert("Por favor, selecciona informaci\u00F3n v\u00E1lida de FINANCIERA, ACTIVACI\u00D3N O COMPA\u00D1\u00CDA.")</script> ';
+    echo "<script>location.href='$volver'</script>";
+}else if($tipo=="recarga"||$tipo=="servicio"){
     insertar_carrito($conexion,$usuario,$tipo,$precio,$precio,$financiera,$Marca,$Modelo,$columnas,$Comentarios);
     header("location: ..\menu_ventas/ventas.php");
 }else if($articulo=busqueda($conexion,$tipo,$_GET['tipo'],$id)->fetch(PDO::FETCH_OBJ)){
