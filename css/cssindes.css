@@ -23,6 +23,9 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 0.8em;
+    box-shadow: 2px 2px 9px rgb(179, 179, 179);
+    -webkit-box-shadow: 2px 2px 9px rgb(179, 179, 179);
+    -moz-box-shadow: 2px 2px 9px rgb(179, 179, 179);
 }
 
 button {
