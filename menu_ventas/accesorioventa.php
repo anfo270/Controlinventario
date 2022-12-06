@@ -2,10 +2,11 @@
 session_start();
 include ('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
+include('../Config/infoCarrito.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +17,7 @@ $usu = $_SESSION['Usuario']
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="
-    <?php $cant_carrito=0;$carrito=busqueda($conexion,"carrito","usuario",$usu);
-        while($item=$carrito->fetch(PDO::FETCH_OBJ)){
-            $cant_carrito++;
-        }
+    <?php 
         if($cant_carrito>0){
             echo "../img/logoci_not2.png";
         }else{
@@ -29,7 +27,7 @@ $usu = $_SESSION['Usuario']
     " type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
-    <title>Accesorio</title>
+    <title>Accesorio<?php if($cant_carrito>0){ echo " (".$cant_carrito.")"; } ?></title>
     <script src="../javascript/datosaccesorio.js"></script>
     <script src="../javascript/script.js"></script>
 </head>
@@ -44,15 +42,8 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="carrito">
-        <?php $cant_carrito=0;$carrito=busqueda($conexion,"carrito","usuario",$usu);
-        while($item=$carrito->fetch(PDO::FETCH_OBJ)){
-            $cant_carrito++;
-        }
-        if($cant_carrito>0){
-            echo "<p><a href='ventas.php'>🛒 $cant_carrito art&iacute;culo(s)</a></p>";
-        }else{
-            echo "<p>🛒 $cant_carrito art&iacute;culo(s)</p>";
-        }
+        <?php
+            echo $edoCarrito;
         ?>
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=SKU" method="post">
