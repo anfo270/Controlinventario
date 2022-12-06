@@ -35,7 +35,7 @@ $usu = $_SESSION['Usuario']
         <form action="listatrapaso.php" method="post">
             <select name="num" class="input" style="font-size: 17px">
                 <?php
-                $trapasos=$conexion->query("SELECT DISTINCT NumTraspaso from traspaso") or die(print_r($conexion->errorInfo()));
+                $trapasos=$conexion->query("SELECT DISTINCT NumTraspaso from traspaso ORDER BY NumTraspaso DESC") or die(print_r($conexion->errorInfo()));
                 while($item=$trapasos->fetch(PDO::FETCH_OBJ)){
                     echo "<option value='$item->NumTraspaso'>$item->NumTraspaso</option>";
                 }
