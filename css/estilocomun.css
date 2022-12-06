@@ -33,6 +33,9 @@ button{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 2px 2px 5px rgb(179, 179, 179);
+    -webkit-box-shadow: 2px 2px 5px rgb(179, 179, 179);
+    -moz-box-shadow: 2px 2px 4px rgb(179, 179, 179);
 }
 .btn:hover{
     background-color: #749e3c;
@@ -45,6 +48,9 @@ nav{
     align-items: center;
     padding: .25em;
     height: 2.5em;
+    box-shadow: 2px 2px 7px rgb(179, 179, 179);
+    -webkit-box-shadow: 2px 2px 7px rgb(179, 179, 179);
+    -moz-box-shadow: 2px 2px 7px rgb(179, 179, 179);
 }
 
 nav>.cerrar{
