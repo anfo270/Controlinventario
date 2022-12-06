@@ -57,11 +57,11 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=IMEI" method="POST">
         <h1>Teléfonos</h1>
-        <p style="font-size:12px; color:#616161;">Si la marca y el modelo del tel&eacute;fono no se cargan, por favor, selecciona y escanea nuevamente.</p>
+        <p style="font-size:12px; color:#616161;"> ⚠️ Si la marca y el modelo del tel&eacute;fono no se cargan, por favor, selecciona y escanea nuevamente.</p>
         <table class="tabla_venta">
             <tr>
                 <td>IMEI:</td>
-                <td><input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" required></td>
+                <td><input type="text" name="ID" id="IMEI" class="boxtext IMEI" onkeypress="pulsar('IMEI');" onFocus="this.select()" value="0" required></td>
             </tr>
             <tr>
                 <td>

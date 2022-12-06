@@ -56,9 +56,9 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=ICC" method="post">
     <h1>SIMs</h1>    
-    <p style="font-size:12px; color:#616161;">Si la compa&ntilde;&iacute;a telef&oacute;nica no se carga, por favor, borra y escanea nuevamente.</p>
+    <p style="font-size:12px; color:#616161;">⚠️ Si la compa&ntilde;&iacute;a telef&oacute;nica no se carga, por favor, borra y escanea nuevamente.</p>
         <label for="">
-            <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" onkeypress="pulsar('IMEI');" required></p>
+            <p>ICC:<input type="text" name="ID" id="IMEI" class="boxtext" onkeypress="pulsar('IMEI');" onFocus="this.select()" required></p>
         </label>
         <label for="">
             <p>Telefon&iacute;a:<p id="Telefonia"></p></p>

@@ -57,9 +57,9 @@ $usu = $_SESSION['Usuario']
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=SKU" method="post">
         <h1>Accesorio</h1>
-    <p style="font-size:12px; color:#616161;">Si la marca y el modelo del accesorio no se cargan, por favor, selecciona y escanea nuevamente.</p>
+    <p style="font-size:12px; color:#616161;">⚠️ Si la marca y el modelo del accesorio no se cargan, por favor, selecciona y escanea nuevamente.</p>
         <label  >
-            <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('ID');"  required></p>
+            <p>SKU:<input type="text" name="ID" id="ID" class="boxtext SKU"  onkeypress="pulsar('ID');" onFocus="this.select()" required></p>
         </label>
         <label>
             <p>Marca: </p><p id="Marca"></p>
