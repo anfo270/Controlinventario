@@ -10,7 +10,7 @@
         //borramos el registro
         $res=$conexion->query("DELETE FROM usuarios WHERE ID='$id'") or die(print_r($conexion->errorInfo()));
         if($res){
-            echo("<script>alert('Se elimino existosamente el usuario')</script>");
+            echo("<script>alert('Se elimin\u00F3 existosamente el usuario')</script>");
             echo ("<script>location.href='../menu_administrador/Usuarios.php'</script>");
         }else{
             echo("<script>alert('No se pudo eliminar')</script>");

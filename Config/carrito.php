@@ -35,7 +35,7 @@ if($tipo=="recarga"||$tipo=="servicio"){
         echo "<script>location.href='../menu_ventas/ventas.php'</script>";  
     }
 }else{
-    echo "<script>alert('No se encontró el articulo.')</script>";
+    echo "<script>alert('No se encontr\u00F3 el articulo.')</script>";
     echo "<script>location.href='../menu_ventas/seccionventas.php'</script>";
 }
 

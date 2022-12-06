@@ -1,7 +1,6 @@
 <?php
 include('../Config/conexionbd.php');
 include('../Config/metodosbd.php');
-include('../Config/infoCarrito.php');
 session_start();
 if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
@@ -17,19 +16,11 @@ $montRec=$_POST['montRec'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="
-    <?php 
-        if($cant_carrito>0){
-            echo "../img/logoci_not2.png";
-        }else{
-            echo "../img/logoci.png";
-        }
-        ?>
-    " type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/ventas.css">
 
-    <title>Ticket de compra<?php if($cant_carrito>0){ echo " (".$cant_carrito.")"; } ?></title>
+    <title>Ticket de compra</title>
 </head>
 <body>
 <nav><button class="btn cerrar caja" onclick="location.href='cerrarcaja.php'">Cerrar Caja</button><?PHP echo "<p>$usu</p>" ?></nav>
