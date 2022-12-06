@@ -3,9 +3,7 @@ session_start();
 if(!isset($_SESSION['Usuario']) && !isset( $_SESSION['Contrasena'])){
     header('location: index.php');
 }
-if ($_SESSION['Puesto'] == "vendedor"||$_SESSION['Puesto'] == "VENDEDOR"||$_SESSION['Puesto'] == "nuevo"||$_SESSION['Puesto'] == "NUEVO") {
-    header('location: menu_ventas/seccionventas.php');
-}
+
 $enlaceVendedor="'menu_ventas/abrircaja.php'";
 $enlaceResponsable="'menu_responsable/inventario.php'";
 $enlaceAdmin="'menu_administrador/administrador.php'";

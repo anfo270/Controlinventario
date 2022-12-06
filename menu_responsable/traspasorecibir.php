@@ -3,7 +3,7 @@ include('../Config/metodosbd.php');
 include('../Config/conexionbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario'];
 $NumTras=$_POST['numero'];

@@ -31,7 +31,6 @@ $tipo=$_GET['tipo'];
     <script src="../javascript/script.js"></script>
 </head>
 <body>
-
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">
         <ul class="breadcrumb">
@@ -50,16 +49,16 @@ $tipo=$_GET['tipo'];
         </ul>
     </div>
     <form action="compras2.php?tipo=<?php echo $tipo;?>" method="post" class="contenedor">
-    <?php
-        if($tipo=="sims"){
-            echo '<h1>Ingreso de SIMs</h1>';
-        }else if($tipo=="telefonos"){
-            echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
-        }else if($tipo=="accesorio"){
-            echo '<h1>Ingreso de Accesorios</h1>';
-        }
-    ?>
-    <table>
+        <?php
+            if($tipo=="sims"){
+                echo '<h1>Ingreso de SIMs</h1>';
+            }else if($tipo=="telefonos"){
+                echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
+            }else if($tipo=="accesorio"){
+                echo '<h1>Ingreso de Accesorios</h1>';
+            }
+        ?>
+        <table>
             <tr>
                 <td>
                     <p>Factura:</p>
@@ -152,6 +151,6 @@ $tipo=$_GET['tipo'];
             <button class="btn cancelar" type="reset" onclick="location.href='administrador.php'">Cancelar</button>
             <button class="btn" type="submit">Siguiente</button>
         </div>
-    </div>
+    </form>
 </body>
 </html>

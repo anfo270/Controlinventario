@@ -37,5 +37,5 @@ include('metodosbd.php');
             }
         }
     }
-    header('location: ../menu_administrador/administrador.php');
+    echo "<script>location.href='../menu_administrador/administrador.php'</script>";
 ?>

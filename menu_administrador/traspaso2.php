@@ -52,10 +52,6 @@ if($traspas->rowCount()==0){
 </head>
 <body>
     <nav><button class="btn cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
-    <form class="contenedor" action="../config/traspasoMetodos.php" method="POST">
-        <h1>Traspaso <?php echo  $Numtraspaso?></h1>
-        <input type="text" name="Numtraspaso" value="<?php echo $Numtraspaso;?>" hidden>
-
     <div class="bdcrumb">
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
@@ -73,6 +69,7 @@ if($traspas->rowCount()==0){
         </ul>
     </div>
     <form class="contenedor" method="post" action="../Config/traspasoMetodos.php?tipo=<?php echo $tipoTraspaso.'&NumTraspaso='.$Numtraspaso.'&cantidad='.$cantidad.'&locacion='.$locacion; ?>">
+    <input type="text" name="Numtraspaso" value="<?php echo $Numtraspaso;?>" hidden>
     <?php
         if($tipoTraspaso=="sims"){
             echo '<h1>Traspaso de SIMs</h1>';
