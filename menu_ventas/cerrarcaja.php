@@ -1,9 +1,20 @@
 <?php
+include('../Config/conexionbd.php');
+include('../Config/metodosbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$cant_carrito=0;
+$carrito=busqueda($conexion,"carrito","usuario",$usu);
+while($item=$carrito->fetch(PDO::FETCH_OBJ)){
+    $cant_carrito++;
+}
+if($cant_carrito>0){
+    echo '<script>alert("Por favor, termina la venta que tienes activa (CARRITO).")</script> ';
+    echo "<script>location.href='ventas.php'</script>";
+}
 ?>
 
 <!DOCTYPE html>
