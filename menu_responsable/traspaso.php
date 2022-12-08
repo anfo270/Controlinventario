@@ -1,9 +1,12 @@
 <?php
+include('../Config/conexionbd.php');
+include('../Config/metodosbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
+$sucursal = $_SESSION['Local'];
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +30,40 @@ $usu = $_SESSION['Usuario']
             <li>Traspaso</li>
         </ul>
     </div>
-    <form action="traspasorecibir.php" method="post" class="contenedor">
-        <h1>Traspasos</h1>
-        <h3>
-            N&uacute;mero de traspaso:
-            <input type="text" name="numero" class="boxtext" required>
-        </h3>
-        <div class="botones">
-            <button class="btn" type="submit">Aceptar</button>
-            <button class="btn cancelar" type="reset" onclick="location.href='inventario.php'">Cancelar</button>
-        </div>
-    </form>
+    <div class="contenedor">
+        <form action="traspasorecibir.php" method="GET">
+            <h1>Traspasos</h1>
+            <h3>
+                Consultar n&uacute;mero de traspaso:
+                <input type="text" name="numero" class="boxtext" required>
+            </h3>
+            <div class="botones">
+                <button class="btn" type="submit">Aceptar</button>
+                <button class="btn cancelar" type="reset" onclick="location.href='inventario.php'">Cancelar</button>
+            </div>
+        </form>
+
+        <table class="">
+            <tr>
+                <th class="titulo">N&uacute;m. traspaso</th>
+                <th class="titulo">Destino</th>
+                <th class="titulo"></th>
+            </tr>
+        </table>
+        <?php
+        $trapasos=$conexion->query("SELECT DISTINCT NumTraspaso from traspaso WHERE Estado='PENDIENTE DE RECIBIR' AND LocacionDestino = '$sucursal' ORDER BY NumTraspaso DESC") or die(print_r($conexion->errorInfo()));
+        while ($item = $trapasos->fetch(PDO::FETCH_OBJ)) { 
+            ?>
+            <table class="bordes-corte">
+                <tr>
+                    <td class="bordes-corte">
+                        <input name="numero" value="<?php echo $item->NumTraspaso; ?>" hidden><?php echo $item->NumTraspaso; ?>
+                    </td>
+                    <td><?php echo $sucursal; ?></td>
+                    <td><button class="btn" type="submit" onclick="location.href='traspasorecibir.php?numero=<?PHP echo $item->NumTraspaso; ?>'">Ver detalles</button></td>
+                </tr>
+            </table>
+        <?php } ?>
+    </div>
 </body>
 </html>

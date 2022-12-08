@@ -6,13 +6,17 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario'];
-$NumTras=$_POST['numero'];
+$NumTras=$_GET['numero'];
+if($NumTras==""){
+    header('location: ../menu.php');
+}
 $res=$conexion->query("SELECT * FROM traspaso WHERE NumTraspaso=$NumTras AND Estado='PENDIENTE DE RECIBIR'") or die(print_r($conexion->errorInfo()));
 $res->execute();
 if($res->rowCount()==0){
     echo "<script>alert('No se encontr\u00F3 traspaso pendiente.');</script>";
     echo "<script>location.href='inventario.php';</script>";
 }
+
 
 ?>
 <!DOCTYPE html>
