@@ -19,7 +19,7 @@
         $tm="modelo";
         $nf_ModeloTel=$_POST['nf_ModeloTel'];
         $nf_RecursosTel=$_POST['nf_RecursosTel'];
-        $nombre=$nf_ModeloTel . " • " . $nf_RecursosTel;
+        $nombre=$nf_ModeloTel . " - " . $nf_RecursosTel;
     }else{
         $nombre=$_POST['nf'];
         if($tab=="o13n1rio"){
