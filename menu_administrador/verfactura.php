@@ -37,7 +37,10 @@ function tip($ti){
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
             <li><a href="administrador.php">Administrador</a></li>
-            <li>Lista traspaso</li>
+            <li><a href="SeleccionarTipo.php">Compras</a></li>
+            <li><a href="listacompras.php">Tipo de factura</a></li>
+            <li><a href="facturas.php?tipo=<?php $tipo=$_GET['tipo']; echo $tipo; ?>">Lista de facturas</a></li>
+            <li>Factura #<?php $num=$_GET['num']; echo $num; ?></li>
         </ul>
     </div>
     <div class="contenedor">

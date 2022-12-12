@@ -1,10 +1,10 @@
 <?php
 session_start();
-require('../config/conexionbd.php');
+require('../Config/conexionbd.php');
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
 }
-$usu = $_SESSION['Usuario']
+$usu = $_SESSION['Usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $usu = $_SESSION['Usuario']
     <link rel="shortcut icon" href="../img/logoci.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/menus.css">
-    <title>Compras</title>
+    <title>Lista de facturas</title>
 </head>
 <body>
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
@@ -24,7 +24,9 @@ $usu = $_SESSION['Usuario']
         <ul class="breadcrumb">
             <li><a href="../menu.php">🏠</a></li>
             <li><a href="administrador.php">Administrador</a></li>
-            <li>Compras</li>
+            <li><a href="SeleccionarTipo.php">Compras</a></li>
+            <li><a href="listacompras.php">Tipo de factura</a></li>
+            <li>Lista de facturas</li>
         </ul>
     </div>
     <div class="contenedor">
@@ -32,7 +34,7 @@ $usu = $_SESSION['Usuario']
         $tipo=$_GET['tipo'];
         $consulta=$conexion->query("SELECT DISTINCT Factura from $tipo");
         while($item=$consulta->fetch(PDO::FETCH_OBJ)){?>
-            <button class="btn ventas" onclick="location.href='verfactura.php?num=<?php echo $item->Factura.'&tipo='.$tipo;?>'">Traspaso <?php echo $item->Factura?></button>
+            <button class="btn ventas" onclick="location.href='verfactura.php?num=<?php echo $item->Factura.'&tipo='.$tipo;?>'">Factura: <?php echo $item->Factura?></button>
         <?php }?>
         
     </div>
