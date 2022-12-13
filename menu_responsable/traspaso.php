@@ -43,10 +43,12 @@ $sucursal = $_SESSION['Local'];
             </div>
         </form>
 
+        <h2>Traspasos pendientes</h2>
         <table class="">
             <tr>
                 <th class="titulo">N&uacute;m. traspaso</th>
                 <th class="titulo">Destino</th>
+                <th class="titulo">Estado</th>
                 <th class="titulo"></th>
             </tr>
         </table>
@@ -57,9 +59,10 @@ $sucursal = $_SESSION['Local'];
             <table class="bordes-corte">
                 <tr>
                     <td class="bordes-corte">
-                        <input name="numero" value="<?php echo $item->NumTraspaso; ?>" hidden><?php echo $item->NumTraspaso; ?>
+                        <?php echo $item->NumTraspaso; ?>
                     </td>
                     <td><?php echo $sucursal; ?></td>
+                    <td>PENDIENTE DE RECIBIR</td>
                     <td><button class="btn" type="submit" onclick="location.href='traspasorecibir.php?numero=<?PHP echo $item->NumTraspaso; ?>'">Ver detalles</button></td>
                 </tr>
             </table>
