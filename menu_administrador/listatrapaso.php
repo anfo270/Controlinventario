@@ -6,7 +6,7 @@ if (!isset($_SESSION['Usuario']) && !isset($_SESSION['Contrasena'])) {
     header('location: ../index.php');
 }
 $usu = $_SESSION['Usuario'];
-$num=$_POST['num'];
+$num=$_GET['num'];
 ?>
 <!DOCTYPE html>
 <html>
