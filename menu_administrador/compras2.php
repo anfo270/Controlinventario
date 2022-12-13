@@ -5,7 +5,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 }
 $controlinput=0;
 $usu = $_SESSION['Usuario'];
-$Factura=intval($_POST['Factura']);
+$Factura=$_POST['Factura'];
 $tipos=$_GET['tipo'];
 $precio=$_POST['precio'];
 if($tipos!="sims"){

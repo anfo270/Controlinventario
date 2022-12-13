@@ -58,7 +58,7 @@ function tip($ti){
         $tipo=$_GET['tipo'];
         $num=$_GET['num'];
         $el=tip($tipo);
-        $res = $conexion->query("SELECT * FROM $tipo WHERE Factura=$num");
+        $res = $conexion->query("SELECT * FROM $tipo WHERE Factura='$num'");
         while ($item = $res->fetch(PDO::FETCH_OBJ)) { 
             ?>
                 <table class="bordes">

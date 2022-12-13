@@ -2,7 +2,7 @@
 include('../Config/conexionbd.php');
 include('../Config/metodosbd.php');
 
-$Factura=intval($_GET['Factura']);
+$Factura=$_GET['Factura'];
 $tipos=$_GET['tipo'];
 $precio=$_GET['precio'];
 if($tipos!="sims"){
