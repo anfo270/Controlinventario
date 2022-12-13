@@ -1,5 +1,6 @@
 <?php
 include('conexionbd.php');
+include('metodosbd.php');
 
 session_start();
 
@@ -19,11 +20,14 @@ if ($res->rowCount() == 1) {
     $_SESSION['Nombre'] = $row['Nombre'];
     $_SESSION['Apellido_Paterno'] = $row['Apellido_Paterno'];
     $_SESSION['Apellido_Materno']=$row['Apellido_Materno'];
-    $_SESSION['Nombre completo']=$row['Nombre']." ".$row['Apellido_Paterno']." ".$row['Apellido_Materno'];
+    $_SESSION['Nombre completo']=$row['Apellido_Paterno']." ".$row['Apellido_Materno']." ".$row['Nombre'];
     $_SESSION['Usuario'] = $row['Usuario'];
     $_SESSION['Contrasena'] = $row['Contrasena'];
     $_SESSION['Puesto'] = $row['Puesto'];
     $_SESSION['Local'] = $row['Local'];
+
+    insertar_log($conexion,$FechaHora,$_SESSION['Nombre completo'],$direccionProtocol,'Inicio de sesion.','NOTIFICACION');
+
     if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contrasena']){
 
         if ($row['Puesto'] == "vendedor"||$row['Puesto'] == "VENDEDOR"||$row['Puesto'] == "nuevo"||$row['Puesto'] == "NUEVO") {

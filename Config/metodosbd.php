@@ -2,6 +2,29 @@
 
 use PhpOffice\PhpSpreadsheet\Calculation\Statistical\Distributions\F;
 
+include_once('Request_Location.php');
+
+function UbicacioneIP(){
+    $requestModel = new Request();
+    $ip = $requestModel->getIpAddress();
+    $isValidIpAddress = $requestModel->isValidIpAddress($ip);
+
+    if ($isValidIpAddress == "") {
+        $datosFinales="";
+    } else {
+        $geoLocationData = $requestModel->getLocation($ip);
+        $datosFinales=$geoLocationData['ip'] .' - '. $geoLocationData['city'] .', '. $geoLocationData['country'].'.';
+    }
+    return $datosFinales;
+}
+
+date_default_timezone_set('America/Denver');
+$Fecha = date('d-m-Y', time());
+$Hora = date('h:i a', time());
+$FechaHora=$Fecha.' '.$Hora;
+
+$direccionProtocol=UbicacioneIP();
+
 function bd($nombre){
     $bd=array(
         "accesorio"=>"accesorio",
@@ -74,6 +97,11 @@ function insertar_accesorio($conexion,$SKU,$Marca,$Locacion,$Modelo,$Precio,$Fec
 
 function insertar_traspaso($conexion,$ID,$Marca,$Modelo,$Telefonia,$Precio,$FechaIngreso,$Factura,$FechaTraspaso,$Proveedor,$LocacionActual,$LocacionDestino,$Estado,$NumTraspaso,$tipo){
     $insert=$conexion->query("INSERT INTO traspaso (IMEIICC,Marca,Modelo,tipo,Telefonia,Precio,FechaIngreso,Factura,NumTraspaso,FechaTraspaso,Proveedor,LocacionActual,LocacionDestino,Estado) VALUES('$ID','$Marca','$Modelo','$tipo','$Telefonia','$Precio','$FechaIngreso','$Factura','$NumTraspaso','$FechaTraspaso','$Proveedor','$LocacionActual','$LocacionDestino','$Estado')")or die(print_r($conexion->errorInfo()));
+    return $insert;
+}
+
+function insertar_log($conexion,$FechaHora,$Usuario,$direccionProtocol,$Movimiento,$Gravedad){
+    $insert=$conexion->query("INSERT INTO reglog(Fecha,Usuario,Direccion,Movimiento,Gravedad) VALUES('$FechaHora','$Usuario','$direccionProtocol','$Movimiento','$Gravedad')")or die(print_r($conexion->errorInfo()));
     return $insert;
 }
 ?>
