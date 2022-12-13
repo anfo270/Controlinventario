@@ -9,7 +9,7 @@
     $server='localhost';
     $user='root';
     $pass='';
-    $db='control_inventario';
+    $db='movil_sistemas';
     //conexion a base de datos
     try{
         $conexion= new PDO("mysql:host=$server;port=3306;dbname=$db",$user ,$pass);
