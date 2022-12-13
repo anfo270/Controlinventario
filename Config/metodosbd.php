@@ -13,7 +13,7 @@ function UbicacioneIP(){
         $datosFinales="";
     } else {
         $geoLocationData = $requestModel->getLocation($ip);
-        $datosFinales=$geoLocationData['ip'] .' - '. $geoLocationData['city'] .', '. $geoLocationData['country'].'.';
+        $datosFinales=$geoLocationData['ip'] .' - '. $geoLocationData['city'] .', ' . $geoLocationData['region'] . ', ' . $geoLocationData['country'].'.';
     }
     return $datosFinales;
 }
