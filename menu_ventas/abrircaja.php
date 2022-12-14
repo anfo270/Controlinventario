@@ -26,13 +26,15 @@ $usu = $_SESSION['Usuario']
         </ul>
     </div>
     <div class="contenedor">
+      <h1>&iexcl;Te damos la bienvenida!</h1>
         <button class="btn abrircaja" onclick="location.href='seccionventas.php'">Abrir Caja</button><br>
+      <h2>Sucursal: <?php echo $_SESSION['Local']; ?></h2>
         <?php
         date_default_timezone_set('America/Denver');
         $Fecha = date('d/m/Y', time());
         $Hora = date('h:i a', time());
-        echo "<h3>Fecha:</h3><p id='fecha'>$Fecha</p>";
-        echo "<h3>Fecha:</h3><p id='hora'>$Hora</p>";
+        echo "<h3>Fecha:</h3> <p id='fecha'>$Fecha</p>";
+        echo "<h3>Fecha:</h3> <p id='hora'>$Hora</p>";
         ?>
     </div> 
 </body>
