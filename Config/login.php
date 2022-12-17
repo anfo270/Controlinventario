@@ -30,7 +30,7 @@ if ($res->rowCount() == 1) {
 
     if($user==$_SESSION['Usuario'] && $pass==$_SESSION['Contrasena']){
 
-        if ($row['Puesto'] == "vendedor"||$row['Puesto'] == "VENDEDOR"||$row['Puesto'] == "nuevo"||$row['Puesto'] == "NUEVO") {
+        if ($row['Puesto'] == "especialista"||$row['Puesto'] == "ESPECIALISTA"||$row['Puesto'] == "preingreso"||$row['Puesto'] == "PREINGRESO") {
             header('location: ..\menu_ventas/abrircaja.php');
         } else if ($row['Puesto'] == "RESPONSABLE"||$row['Puesto'] == "COORDINADOR") {
             header('location: ..\menu.php');

@@ -8,7 +8,7 @@ $enlaceVendedor="'menu_ventas/abrircaja.php'";
 $enlaceResponsable="'menu_responsable/inventario.php'";
 $enlaceAdmin="'menu_administrador/administrador.php'";
 $enlaceSistema="'menu_sistema/sistema.php'";
-if ($_SESSION['Puesto'] == "vendedor"||$_SESSION['Puesto'] == "VENDEDOR"||$_SESSION['Puesto'] == "nuevo"||$_SESSION['Puesto'] == "NUEVO") {
+if ($_SESSION['Puesto'] == "especialista"||$_SESSION['Puesto'] == "ESPECIALISTA"||$_SESSION['Puesto'] == "preingreso"||$_SESSION['Puesto'] == "PREINGRESO") {
     header('location: menu_ventas/abrircaja.php');
 } else if ($_SESSION['Puesto'] == "ADMINISTRADOR") {
     header('location: menu_administrador/administrador.php');
@@ -39,10 +39,10 @@ $usu = $_SESSION['Usuario'];
     <div class="contenedor">
         <?php
         if ($_SESSION['Puesto'] == "responsable"||$_SESSION['Puesto'] == "RESPONSABLE"||$_SESSION['Puesto'] == "COORDINADOR") {
-            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
+            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Ventas</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
         }else{
-            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Vendedor</button>';
+            echo '<button class="btn ventas" onclick="location.href=' . $enlaceVendedor . '">Ventas</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceResponsable . '">Responsable</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceAdmin . '">Administrador</button>';
             echo '<button class="btn inventario" onclick="location.href=' . $enlaceSistema . '">Sistema</button>';
