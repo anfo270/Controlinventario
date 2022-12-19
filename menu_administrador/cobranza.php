@@ -5,6 +5,11 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 }
 $usu = $_SESSION['Usuario'];
 $cortecaja=$_GET['cortecaja'];
+
+date_default_timezone_set('America/Denver');
+$FechaDia = date('d', time());
+$FechaMes = date('m', time());
+$FechaAnio = date('Y', time());
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +41,16 @@ $cortecaja=$_GET['cortecaja'];
     </div>
     <form class="contenedor" action="../Config/genrep_74.php?señal=3&cortecaja=<?php echo $cortecaja?>" method="post">
         <h1>Seleccionar la fecha</h1>
-        <!--<input type="date" name="date" id="date" required pattern="\d{4}/\d{2}/\d{2}"   >-->
-        agregar un rango de fechas
-        <!-- dia 1 -->
-        <p>D&iacute;a:</p>
-        <select type='text' name='date_d' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        
+        <h3>Desde</h3>
+        <p>D&iacute;a:
+        <select type='text' name='date_d' class='boxtext' class='select-css'>
             <?php
+            if($FechaDia<=9){
+                echo "<option value='0$FechaDia'>0$FechaDia</option>";
+            }else if($FechaDia>=10){
+                echo "<option value='$FechaDia'>$FechaDia</option>";
+            }
             for($i=1;$i<=9;$i++){
                 echo "<option value='0$i'>0$i</option>";
             }
@@ -50,9 +59,14 @@ $cortecaja=$_GET['cortecaja'];
             }
             ?>
         </select>
-        <p>Mes:</p>
-        <select type='text' name='date_m' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        Mes:
+        <select type='text' name='date_m' class='boxtext' class='select-css'>
             <?php
+            if($FechaMes<=9){
+                echo "<option value='0$FechaMes'>0$FechaMes</option>";
+            }else if($FechaMes>=10){
+                echo "<option value='$FechaMes'>$FechaMes</option>";
+            }
             for($i=1;$i<=9;$i++){
                 echo "<option value='0$i'>0$i</option>";
             }
@@ -61,18 +75,25 @@ $cortecaja=$_GET['cortecaja'];
             }
             ?>
         </select>
-        <p>A&ntilde;o:</p>
-        <select type='text' name='date_y' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        A&ntilde;o:
+        <select type='text' name='date_y' class='boxtext' class='select-css'>
             <?php
-            for($i=2022;$i<=2099;$i++){
+            echo "<option value='$FechaAnio'>$FechaAnio</option>";
+            for($i=2022;$i<=2030;$i++){
                 echo "<option value='$i'>$i</option>";
             }
             ?>
-        </select><br>
-                <!-- dia 2 -->
-        <p>D&iacute;a:</p>
-        <select type='text' name='date_d2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        </select></p><br>
+        
+        <h3>Hasta</h3>
+        <p>D&iacute;a:
+        <select type='text' name='date_d2' class='boxtext' class='select-css'>
             <?php
+            if($FechaDia<=9){
+                echo "<option value='0$FechaDia'>0$FechaDia</option>";
+            }else if($FechaDia>=10){
+                echo "<option value='$FechaDia'>$FechaDia</option>";
+            }
             for($i=1;$i<=9;$i++){
                 echo "<option value='0$i'>0$i</option>";
             }
@@ -81,9 +102,14 @@ $cortecaja=$_GET['cortecaja'];
             }
             ?>
         </select>
-        <p>Mes:</p>
-        <select type='text' name='date_m2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        Mes:
+        <select type='text' name='date_m2' class='boxtext' class='select-css'>
             <?php
+            if($FechaMes<=9){
+                echo "<option value='0$FechaMes'>0$FechaMes</option>";
+            }else if($FechaMes>=10){
+                echo "<option value='$FechaMes'>$FechaMes</option>";
+            }
             for($i=1;$i<=9;$i++){
                 echo "<option value='0$i'>0$i</option>";
             }
@@ -93,18 +119,19 @@ $cortecaja=$_GET['cortecaja'];
             ?>
         </select>
         
-        <p>A&ntilde;o:</p>
-        <select type='text' name='date_y2' class='boxtext' placeholder='Elige financiera' class='select-css'>
+        A&ntilde;o:
+        <select type='text' name='date_y2' class='boxtext' class='select-css'>
             <?php
-            for($i=2022;$i<=2099;$i++){
+            echo "<option value='$FechaAnio'>$FechaAnio</option>";
+            for($i=2022;$i<=2030;$i++){
                 echo "<option value='$i'>$i</option>";
             }
             ?>
-        </select>
-        <div class="botones">
+        </select></p><br>
+        <p><div class="botones">
             <button class="btn cancelar"type="reset">Cancelar</button>
             <button class="btn"type="submit">Aceptar</button>
-        </div>
+        </div></p>
     </form>
 </body>
 </html>
