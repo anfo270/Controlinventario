@@ -13,10 +13,10 @@ $Usuario=$_POST['Usuario_Empleado'];
 if($_GET['identificador']==1){
     $insertar=insert($Nombre,$Apellido_Paterno,$Apellido_Materno,$Contrasena,$puesto,$Local,$Usuario,$conexion);
     if($insertar){
-        echo "<script>alert('Se agrego el Usuario');</script>"; 
+        echo "<script>alert('Se agreg\u00F3 el usuario.');</script>"; 
         echo "<script>location.href='../menu_administrador/Usuarios.php'</script>";
     }else{
-        echo "<script>alert('No se agrego el usuario');</script>";
+        echo "<script>alert('No se agreg\u00F3 el usuario.');</script>";
         echo "<script>location.href='../menu_administrador/Usuarios.php'</script>";
     }
 }

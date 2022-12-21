@@ -77,14 +77,14 @@ $usu = strval($_SESSION['Usuario']);
                         else{
                                 echo ucwords($item->Modelo); }
                                 ?></p></td>
-                        <td><p><?php echo "$" . ucwords($item->Precio); ?></p></td>
+                        <td><p><?php echo ucwords($item->Precio); ?></p></td>
                         <td><button class="btn cancelar" onclick="location.href='../Config/eliminar_carrito.php?id=<?php echo $item->ID; ?>'">Eliminar</button></td>
                     </tr>
                 <?php $precio=intval($item->Precio)+$precio;  }?>
 
         </table>
         <label>
-            <p>Total: <?php echo('$'.$precio);?> </p>
+            <p>Total:<?php echo('$'.$precio);?> </p>
         </label>
         <div class="botonventa">
 
