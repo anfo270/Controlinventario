@@ -53,6 +53,11 @@ function consulta($conexion,$basedatos){
     $res=$conexion->query("SELECT * FROM $nombre ") or die(print_r($conexion->errorInfo()));
     return $res;
 }
+function consulta_orden_asc($conexion,$basedatos,$ordenarPor){
+    $nombre=bd($basedatos);
+    $res=$conexion->query("SELECT * FROM $nombre ORDER BY $ordenarPor ASC") or die(print_r($conexion->errorInfo()));
+    return $res;
+}
 function busqueda($conexion,$base_datos,$tipo,$referencia){
     $nombre=bd($base_datos);
     $res=$conexion->query("SELECT * FROM $nombre WHERE $tipo='$referencia'");

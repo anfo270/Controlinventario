@@ -75,7 +75,7 @@ $tipo=$_GET['tipo'];
                     <select name="proveedor" id="proveedor input2" class="select-css" onkeypress="nextFocus('input2', 'input3');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
-                        $local=consulta($conexion,"proveedor");
+                        $local=consulta_orden_asc($conexion,"proveedor","Nombre");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php } ?>
@@ -90,7 +90,7 @@ $tipo=$_GET['tipo'];
                     <select name="marcas" id="marcas input3" class="select-css"  onkeypress="nextFocus('input3', 'input4');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
-                        $local=consulta($conexion,"marcas");
+                        $local=consulta_orden_asc($conexion,"marcas","Nombre");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php } ?>
@@ -107,11 +107,11 @@ $tipo=$_GET['tipo'];
                         <?php
                         $local;
                         if($tipo!="accesorio"){                        
-                        $local=consulta($conexion,"modelo");
+                        $local=consulta_orden_asc($conexion,"modelo","Nombre");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php }}else{
-                        $local=consulta($conexion,"modeloaccesorio");
+                        $local=consulta_orden_asc($conexion,"modeloaccesorio","Nombre");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php }}?>
@@ -126,7 +126,7 @@ $tipo=$_GET['tipo'];
                 <select name="telefonia" id="modelo input2" class="select-css" onkeypress="nextFocus('input2', 'input5');" required>
                         <option value=" ">Seleccionar...</option>
                         <?php
-                        $local=consulta($conexion,"telefonia");
+                        $local=consulta_orden_asc($conexion,"telefonia","Nombre");
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php } ?>
