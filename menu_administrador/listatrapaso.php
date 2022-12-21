@@ -43,7 +43,6 @@ $num=$_GET['num'];
                 <td class="titulo">Locacion destino</td>
                 <td class="titulo"> Fecha de traspaso</td>
                 <td class="titulo">Estado</td>
-                <td></td>
             </tr>
         </table>
         <?php
@@ -53,31 +52,18 @@ $num=$_GET['num'];
             ?>
 
                 <table class="bordes-corte">
-                    <tr><?php $id=$item->IMEIICC; ?>
+                    <tr><?php $id=$item->ID; ?>
                         <td class="bordes-corte"><?php echo $item->tipo; ?></td>
                         <td><?php echo $item->IMEIICC; ?></td>
                         <td><?php echo $item->LocacionActual; ?></td>
                         <td><?php echo $item->LocacionDestino; ?></td>  
                         <td><?php echo $item->FechaTraspaso; ?></td>
                         <td><?php echo $item->Estado; ?></td>
-                        <?php
-                        if($item->Estado=="PENDIENTE DE RECIBIR"){?>
-                        <td><button class='btn cancelar' id="elimina<" onclick=" document.getElementById('modal-contenedor').style.visibility='visible'">Cancelar</button></td>
-                        <?php } else{ echo "<td></td>";}?>
                 </table>
 
         <?php } ?>
         
     </div>
-    <div class="modal-contenedor" id="modal-contenedor">
-            <div class="model">
-                    <form action="../Config/cancelartraspaso.php?trapaso=<?php echo $num?>&ID=<?php echo $id?>" method="post">
-                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
-                        <button id="" class="btn cancelar" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
-                        <button class="btn" id="aceptar" type="submit" >Aceptar</button>
-                    </form>
-            </div>
-        </div>
 </body>
 
 </html>

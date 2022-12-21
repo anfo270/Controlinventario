@@ -1,15 +1,15 @@
 <?php
     //datos de db
 
-    /*$server='localhost';
+    $server='localhost';
     $user='movil_sistemas';
     $pass='Sistema.pv2022';
-    $db='movil_sistemas';*/
+    $db='movil_sistemas';
 
-    $server='localhost';
+    /*$server='localhost';
     $user='root';
     $pass='';
-    $db='movil_sistemas';
+    $db='control_inventario';*/
     //conexion a base de datos
     try{
         $conexion= new PDO("mysql:host=$server;port=3306;dbname=$db",$user ,$pass);

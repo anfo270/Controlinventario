@@ -48,7 +48,6 @@ $fecha = date('d-m-Y', time());
                 <th class="titulo">Vendedor</th>
                 <th class="titulo">Local</th>
                 <th class="titulo">Fecha</th>
-                <th></th>
             </tr>
         </table>
 
@@ -67,21 +66,11 @@ $fecha = date('d-m-Y', time());
                         <td><?php echo $item->Vendedor; ?></td>
                         <td><?php echo $item->Locacion; ?></td>
                         <td><?php echo $item->Fecha; ?></td>
-                        <td><button class='btn cancelar' id="eliminar" onclick=" document.getElementById('modal-contenedor').style.visibility='visible'">Eliminar</button></td>
                     </tr>
                 </table>
 
         <?php } ?>
     </div><br><br><br>
-    <div class="modal-contenedor" id="modal-contenedor">
-            <div class="model">
-                    <form action="../Config/cancelarventa.php?id=<?php echo $id;?>" method="post">
-                        <p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>
-                        <button id="" class="btn cancelar" id='cancelar' onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
-                        <button class="btn" id="aceptar" type="submit" >Aceptar</button>
-                    </form>
-            </div>
-        </div>
 </body>
 
 </html>

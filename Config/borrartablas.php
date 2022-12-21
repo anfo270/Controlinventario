@@ -28,7 +28,7 @@ if($_POST['pass']!=$_SESSION['Contrasena']){
         if($bd[$i]!="usuarios"){
             $delete=$conexion->query("TRUNCATE TABLE $bd[$i]");
         }else{
-            $deleteusarios=$conexion->query("DELETE FROM usuarios WHERE Puesto!='SISTEMAS'");
+            $deleteusarios=$conexion->query("DELETE FROM usuarios WHERE Puesto!='SISTEMAS' AND Puesto!='MASTER'");
         }
     }
     echo ("<script>location.href='../menu_sistema/sistema.php'</script>");

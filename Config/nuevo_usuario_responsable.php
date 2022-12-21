@@ -9,10 +9,10 @@ if($_GET['identificador']==2){
     $actualizar=actualizar($conexion,$id_use,$Local);
     if($actualizar){
         $_SESSION['Local']=$Local;
-        echo "<script>alert('Se modific\u00F3 el usuario.');</script>"; 
+        echo "<script>alert('Se modifico el Usuario');</script>"; 
         echo "<script>location.href='../menu_responsable/usuarios.php'</script>";
     }else{
-        echo "<script>alert('No se modific\u00F3 el usuario.');</script>";
+        echo "<script>alert('No se modifico el usuario');</script>";
         echo "<script>location.href='../menu_responsable/usuarios.php'</script>";
     }
 }else{
