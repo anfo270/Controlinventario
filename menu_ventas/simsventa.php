@@ -77,14 +77,14 @@ $usu = $_SESSION['Usuario']
             </p>
         </label>
         <label for="">
-            <p>DN: <input type="number" name="num_tel" id="IMEI" class="boxtext" required></p>
+            <p>DN: <input type="number" name="num_tel" id="dn" class="boxtext" maxlength="10" required></p>
         </label>
         <label for="">
-            <p>Precio: <input type="text" name="Precio" id="precio" class="boxtext" required></p>
+            <p>Precio: <input type="text" name="Precio" id="precio" class="boxtext" value="0" onFocus="this.select()"  required></p>
         </label>
                 <label>
                     <p>Comentarios:
-                <input type="text" name="comentarios" class="boxtext"></p>
+                <input type="text" name="comentarios" class="boxtext" value="N/A" onFocus="this.select()"></p>
                 </label>
         <div class="botones">
             <button class="btn cancelar" type="reset">Cancelar</button>

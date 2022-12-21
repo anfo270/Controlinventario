@@ -46,7 +46,7 @@ $styles1 = array( 'font'=>'Calibri','font-size'=>11,'font-style'=>'bold', 'fill'
 $styles2 = array( 'font'=>'Calibri','font-size'=>11,'halign'=>'left', 'border'=>'left,right,top,bottom' );
 $styles3 = array( array(),array(),array(),array(),array(),array(),array(),$styles1,$styles1,array());
 $styles4 = array( array(),array(),array(),array(),array(),array(),array(),$styles2,$styles2,array());
-$header = array("string","string","string","string");
+$header = array("string","string","string","string","string","string","string","string","string","string","string","string");
 
 //$senal=intval(1);
 
@@ -158,20 +158,20 @@ if ($senal==1){
     }
 
     // Especificar header
-    $writer->writeSheetHeader('Hoja1', $header, $col_options = ['widths'=>[25,15,20,23,15,15,20,15,15,30], 'suppress_row'=>true] );
-    $writer->writeSheetRow('Hoja1', $rowdata = array('IMEI/ICC/SKU','Marca','Modelo','Vendedor','Perfil vendedor', 'Fecha', 'Locacion','Precio', 'Financiera','Comentarios'), $styles1);
+    $writer->writeSheetHeader('Hoja1', $header, $col_options = ['widths'=>[25,15,20,15,23,15,15,20,8,15,30], 'suppress_row'=>true] );
+    $writer->writeSheetRow('Hoja1', $rowdata = array('IMEI/ICC/SKU','Marca','Modelo','DN','Vendedor','Perfil vendedor', 'Fecha', 'Locacion','Precio', 'Financiera','Comentarios'), $styles1);
 
     // Comenzar rellenado de datos
     // Ventas realizadas
     while ($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
         $writer->writeSheetRow('Hoja1', $rowdata = array(
-            $item->IMEIICCSKU,$item->Marca,$item->Modelo,$item->Vendedor,$item->TipoVendedor,$item->Fecha,$item->Locacion,$item->Precio,$item->Financiera,$item->Comentarios
+            $item->IMEIICCSKU,$item->Marca,$item->Modelo,$item->NumeroTelefono,$item->Vendedor,$item->TipoVendedor,$item->Fecha,$item->Locacion,$item->Precio,$item->Financiera,$item->Comentarios
         ), $styles2);
     }
     $writer->writeSheetRow('Hoja1',$rowdata = array(''));
     $writer->writeSheetRow('Hoja1',$rowdata = array(''));
-    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','','Total ventas',''),$styles3);
-    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','',$totalVentas,''),$styles4);
+    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','Total ventas','',''),$styles3);
+    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','',$totalVentas,'',''),$styles4);
 
     // Generamos el archivo
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

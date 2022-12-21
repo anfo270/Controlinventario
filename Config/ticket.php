@@ -8,6 +8,7 @@ if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
 }
 $usu = $_SESSION['Usuario'];
 $suc = $_SESSION['Local'];
+$vendedor = $_SESSION['Nombre completo'];
 
 date_default_timezone_set('America/Denver');
 $fecha = date('d/m/Y', time());
@@ -15,7 +16,7 @@ $fecha = date('d/m/Y', time());
 $precioFinal=0;
 $MontoRecibido=0;
 $cambio=0;
-$largo=intval(135);
+$largo=intval(139);
 $productos=busqueda($conexion,"carrito","Usuario",$usu);
 
 if($productos->rowCount()==0){
@@ -45,9 +46,10 @@ $pdf->Cell(60,4,utf8_decode('Régimen de las personas morales'),0,1,'C');
  
 // DATOS FACTURA        
 $pdf->Ln(5);
-$pdf->Cell(60,4,utf8_decode('Ticket Núm.:_'),0,1,'');
+$pdf->Cell(60,4,utf8_decode('Ticket Núm.:____'),0,1,'');
+$pdf->Cell(60,4,utf8_decode('Tipo de pago:____'),0,1,'');
 $pdf->Cell(60,4,'Fecha: ' . $fecha,0,1,'');
-$pdf->Cell(60,4,utf8_decode('Le atendió: '.$usu),0,1,'');
+$pdf->Cell(60,4,utf8_decode('Le atendió: '.$vendedor),0,1,'');
 
 // COLUMNAS
 $pdf->SetFont('Helvetica', 'B', 7);
@@ -67,11 +69,20 @@ if($productos->rowCount()==0){
 }
 
 while($item=$productos->fetch(PDO::FETCH_OBJ)){
-    $tipoClave="";
+    $descripcionProducto="";
     if($item->tipo=="telefonos"){
         $tipoClave="IMEI: " . $item->IMEIICCSKU;
+        $descripcionProducto='1 teléfono '.$item->Marca.' '.$item->Modelo.' por '.$item->FinancieraActivacion.' IMEI: '.$item->IMEIICCSKU;
+    }else if($item->tipo=="sims"){
+        $descripcionProducto='1 SIM '.$item->Marca.' '.$item->FinancieraActivacion.' DN: '.$item->NumeroTelefono;
+    }else if($item->tipo=="accesorio"){
+        $descripcionProducto='1 accesorio '.$item->Marca.' '.$item->Modelo;
+    }else if($item->tipo=="recarga"){
+        $descripcionProducto='1 recarga '.$item->FinancieraActivacion.' Número: '.$item->NumeroTelefono;
+    }else if($item->tipo=="servicio"){
+        $descripcionProducto='1 pago de servicio '.$item->FinancieraActivacion;
     }
-    $pdf->MultiCell(30,4,'1 '.$item->tipo.' '.$item->Marca.' '.$item->Modelo.' '.$item->FinancieraActivacion.' '.$tipoClave,0,'L'); 
+    $pdf->MultiCell(30,4,utf8_decode($descripcionProducto),0,'L'); 
     $pdf->Cell(45, -5, PESO.number_format(round($item->PrecioInicial,2), 0, ',', ' '),0,0,'R');
     $pdf->Cell(15, -5, PESO.number_format(round($item->Precio,2), 0, ',', ' '),0,0,'R');
     $pdf->Ln(1);

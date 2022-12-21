@@ -46,14 +46,15 @@ $usu = $_SESSION['Usuario'];
     </div>
     <form class="contenedor" action="../Config/carrito.php?tipo=servicio" method="post">
             <h3>Tipo de servicio:</h3>
+            <input name="num_tel" value="0" hidden>
             <Label>
                 <p>Financiera: <select class="select-css" name="proveedor">
                 <option value="">Seleccionar...</option>
-                <?php $proveedores=consulta($conexion,"telefonia");
+                <?php $proveedores=consulta($conexion,"financiera");
                     while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                         <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                             <?php } ?>
-                <?php $proveedores=consulta($conexion,"financiera");
+                <?php $proveedores=consulta($conexion,"telefonia");
                     while($item=$proveedores->fetch(PDO::FETCH_OBJ)) {?>
                         <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                 <?php } ?>

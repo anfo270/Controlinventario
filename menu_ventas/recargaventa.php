@@ -58,6 +58,9 @@ $usu = $_SESSION['Usuario']
 
         </label>
         <label for="">
+            <p>N&uacute;mero: <input type="number" name="num_tel" id="numero" class="boxtext" maxlength="10" required></p>
+        </label>
+        <label for="">
             <p>Monto: <input type="text" name="Precio" id="precio" class="boxtext" required></p>
         </label>
         
