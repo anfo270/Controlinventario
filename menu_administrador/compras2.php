@@ -69,11 +69,11 @@ function tipo($valor){
     <form class="contenedor" action="../Config/agregar_producto.php?tipo=<?php echo $tipos.'&modelo='.$modelo.'&marcas='.$marcas.'&proveedor='.$proveedor.'&cantidad='.$cantidad.'&Factura='.$Factura.'&precio='.$precio; ?>" method="post">
         <?php
             if($tipos=="sims"){
-                echo '<h1>Ingreso de SIMs</h1>';
+                echo '<h2>Por favor, ingresa los ICC</h2>';
             }else if($tipos=="telefonos"){
-                echo '<h1>Ingreso de Tel&eacute;fonos</h1>';
+                echo '<h2>Por favor, ingresa los IMEI</h2>';
             }else if($tipos=="accesorio"){
-                echo '<h1>Ingreso de Accesorios</h1>';
+                echo '<h2>Por favor, ingresa los SKU</h2>';
             }
         ?>
         <div>
@@ -94,7 +94,7 @@ function tipo($valor){
                     }?></p>
                 </td>
             </tr>
-            <?php for ($i=0; $i <$cantidad ; $i++) { ?>
+            <?php for ($i=0; $i <$cantidad-1 ; $i++) { ?>
             <tr>
                 <td>
                     <p><?php echo tipo($tipos); ?>:</p>
@@ -106,11 +106,28 @@ function tipo($valor){
             <?php
                 $controlinput++;
                 } ?>
+            <tr>
+                <td>
+                    <p><?php echo tipo($tipos); ?>:</p>
+                </td>
+                <td>
+                    <input type="text" name="numero<?php echo $cantidad-1; ?>" class="boxtext" id='<?php echo 'input'. $controlinput ?>' onkeypress="nextFocus('<?php echo 'input'.$controlinput?>','<?php echo'input'. $controlinput= $controlinput+1;  $controlinput= $controlinput-1; ?>');" required>
+                </td>
+            </tr>
         </table>
         <div class="botones">
             <button type="reset" class="btn cancelar">Cancelar</button>
             <button type="submit" class="btn">Aceptar</button>
         </div>
     </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[id=input<?php echo $controlinput; ?>]').forEach( node => node.addEventListener('keypress', e => {
+                if(e.keyCode == 13) {
+                    e.preventDefault();
+                }
+            }))
+        });
+    </script>
 </body>
 </html>
