@@ -39,6 +39,7 @@ $num=$_GET['num'];
             <tr>
                 <td class="titulo">Tipo</td>
                 <td class="titulo">IMEI/ICC/SKU</td>
+                <td class="titulo">Marca/Modelo</td>
                 <td class="titulo">Locacion Actual</td>
                 <td class="titulo">Locacion destino</td>
                 <td class="titulo"> Fecha de traspaso</td>
@@ -56,6 +57,15 @@ $num=$_GET['num'];
                     <tr><?php $id=$item->IMEIICC; ?>
                         <td class="bordes-corte"><?php echo $item->tipo; ?></td>
                         <td><?php echo $item->IMEIICC; ?></td>
+                        <td>
+                            <?php
+                            if($item->tipo=="telefonos" || $item->tipo=="accesorio"){
+                                echo $item->Marca." ".$item->Modelo;
+                            }else{
+                                echo $item->Marca;
+                            }
+                            ?>
+                        </td>
                         <td><?php echo $item->LocacionActual; ?></td>
                         <td><?php echo $item->LocacionDestino; ?></td>  
                         <td><?php echo $item->FechaTraspaso; ?></td>
