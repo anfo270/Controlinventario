@@ -27,19 +27,11 @@ $FechaAnio = date('Y', time());
     <nav><button class="btn cerrar" id="cerrar" onclick="location.href='../cerrar.php'">Cerrar Sesi&oacute;n</button><?PHP echo "<p>$usu</p>" ?></nav>
     <div class="bdcrumb">   
         <ul class="breadcrumb">
-        <?php
-            if($_SESSION['Puesto']=="RESPONSABLE"){
-                echo("<li><a href='../menu.php'>🏠</a></li>");
-                $cortecaja=$_GET['cortecaja'];
-            }else{
-                echo("  <li><a href='../menu.php'>🏠</a></li><li><a href='administrador.php'>Administrador</a></li><li>Cobranza</li>");
-                $cortecaja="";
-            }
-            ?>
+            <li><a href='../menu.php'>🏠</a></li>
         </ul>
 
     </div>
-    <form class="contenedor" action="../Config/genrep_74.php?señal=3&cortecaja=<?php echo $cortecaja?>" method="post">
+    <form class="contenedor" action="../Config/genrep_74.php?señal=3&cortecaja=<?php echo $cortecaja; ?>" method="post">
         <h1>Seleccionar la fecha</h1>
         
         <h3>Desde</h3>
@@ -127,7 +119,14 @@ $FechaAnio = date('Y', time());
                 echo "<option value='$i'>$i</option>";
             }
             ?>
-        </select></p><br>
+        </select></p><br><br>
+        <p>Formato de reporte: 
+            <select type='text' name='tipo_archivo' class='boxtext' class='select-css'>
+                <option value="xlsx">EXCEL</option>
+                <option value="pdf">PDF</option>
+            </select>
+        </p>
+        <br>
         <p><div class="botones">
             <button class="btn cancelar"type="reset">Cancelar</button>
             <button class="btn"type="submit">Aceptar</button>

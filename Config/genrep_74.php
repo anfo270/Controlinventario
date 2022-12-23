@@ -20,6 +20,7 @@ $senal=$_GET['señal'];
 $data_d="";
 $data_m="";
 $data_y="";
+$tipoArchivo=$_POST['tipo_archivo'];
 
 date_default_timezone_set('America/Denver');
 $data = date('d/m/Y', time());
@@ -142,43 +143,46 @@ if ($senal==1){
     $data2=$data_d2 . "-" . $data_m2 . "-" . $data_y2;
     $cortecaja=$_GET['cortecaja'];
 
-    // Condicion para saber si se trata de corte de caja-
-    // o si se hara una consulta general entre un lapzo de tiempo
-    if($cortecaja=='cortecaja'){
-        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'");
-        $consulta_suma_ventas=$conexion->query("SELECT SUM(Precio) AS TotalVentas FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'");
-    }else{ 
-        $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
-        $consulta_suma_ventas=$conexion->query("SELECT SUM(Precio) AS TotalVentas FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
+    if($tipoArchivo=="pdf"){
+        echo "<script>location.href='genrep_pdf.php?date1=".$data."&date2=".$data2."&cortecaja=".$cortecaja."&local=".$local."'</script>";
+    }else{
+        // Condicion para saber si se trata de corte de caja-
+        // o si se hara una consulta general entre un lapzo de tiempo
+        if($cortecaja=='cortecaja'){
+            $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'");
+            $consulta_suma_ventas=$conexion->query("SELECT SUM(Precio) AS TotalVentas FROM ventas WHERE Locacion='$local' AND Fecha BETWEEN '$data' AND '$data2'");
+        }else{ 
+            $consulta_ventas=$conexion->query("SELECT * FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
+            $consulta_suma_ventas=$conexion->query("SELECT SUM(Precio) AS TotalVentas FROM ventas WHERE Fecha BETWEEN '$data' AND '$data2'");
+        }
+
+        if($consulta_suma_ventas->rowCount() == 1){
+            $suma_ventas = $consulta_suma_ventas->fetch();
+            $totalVentas = $suma_ventas['TotalVentas'];
+        }
+
+        // Especificar header
+        $writer->writeSheetHeader('Hoja1', $header, $col_options = ['widths'=>[25,15,20,15,23,15,15,20,8,15,30], 'suppress_row'=>true] );
+        $writer->writeSheetRow('Hoja1', $rowdata = array('IMEI/ICC/SKU','Marca','Modelo','DN','Vendedor','Perfil vendedor', 'Fecha', 'Locacion','Precio', 'Financiera','Comentarios'), $styles1);
+
+        // Comenzar rellenado de datos
+        // Ventas realizadas
+        while ($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
+            $writer->writeSheetRow('Hoja1', $rowdata = array(
+                $item->IMEIICCSKU,$item->Marca,$item->Modelo,$item->NumeroTelefono,$item->Vendedor,$item->TipoVendedor,$item->Fecha,$item->Locacion,$item->Precio,$item->Financiera,$item->Comentarios
+            ), $styles2);
+        }
+        $writer->writeSheetRow('Hoja1',$rowdata = array(''));
+        $writer->writeSheetRow('Hoja1',$rowdata = array(''));
+        $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','','Total',''),$styles3);
+        $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','','$'.$totalVentas,''),$styles4);
+
+        // Generamos el archivo
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="ReporteCobranza_del_' . $data . '_al_' . $data2 . '.xlsx"');
+        header('Cache-Control: max-age=0');
+        $writer->writeToStdOut();
     }
-
-    if($consulta_suma_ventas->rowCount() == 1){
-        $suma_ventas = $consulta_suma_ventas->fetch();
-        $totalVentas = $suma_ventas['TotalVentas'];
-    }
-
-    // Especificar header
-    $writer->writeSheetHeader('Hoja1', $header, $col_options = ['widths'=>[25,15,20,15,23,15,15,20,8,15,30], 'suppress_row'=>true] );
-    $writer->writeSheetRow('Hoja1', $rowdata = array('IMEI/ICC/SKU','Marca','Modelo','DN','Vendedor','Perfil vendedor', 'Fecha', 'Locacion','Precio', 'Financiera','Comentarios'), $styles1);
-
-    // Comenzar rellenado de datos
-    // Ventas realizadas
-    while ($item=$consulta_ventas->fetch(PDO::FETCH_OBJ)){
-        $writer->writeSheetRow('Hoja1', $rowdata = array(
-            $item->IMEIICCSKU,$item->Marca,$item->Modelo,$item->NumeroTelefono,$item->Vendedor,$item->TipoVendedor,$item->Fecha,$item->Locacion,$item->Precio,$item->Financiera,$item->Comentarios
-        ), $styles2);
-    }
-    $writer->writeSheetRow('Hoja1',$rowdata = array(''));
-    $writer->writeSheetRow('Hoja1',$rowdata = array(''));
-    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','','Total ventas','',''),$styles3);
-    $writer->writeSheetRow('Hoja1',$rowdata = array('','','','','','','',$totalVentas,'',''),$styles4);
-
-    // Generamos el archivo
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="ReporteCobranza_del_' . $data . '_al_' . $data2 . '.xlsx"');
-    header('Cache-Control: max-age=0');
-    $writer->writeToStdOut();
-
 } else {
     echo '<script>alert("No se pudo generar el reporte.");</script>';
     echo "<script>location.href='../menu.php'</script>";
