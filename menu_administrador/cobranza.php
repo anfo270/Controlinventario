@@ -39,7 +39,7 @@ $FechaAnio = date('Y', time());
         <select type='text' name='date_d' class='boxtext' class='select-css'>
             <?php
             if($FechaDia<=9){
-                echo "<option value='0$FechaDia'>0$FechaDia</option>";
+                echo "<option value='$FechaDia'>$FechaDia</option>";
             }else if($FechaDia>=10){
                 echo "<option value='$FechaDia'>$FechaDia</option>";
             }
@@ -55,7 +55,7 @@ $FechaAnio = date('Y', time());
         <select type='text' name='date_m' class='boxtext' class='select-css'>
             <?php
             if($FechaMes<=9){
-                echo "<option value='0$FechaMes'>0$FechaMes</option>";
+                echo "<option value='$FechaMes'>$FechaMes</option>";
             }else if($FechaMes>=10){
                 echo "<option value='$FechaMes'>$FechaMes</option>";
             }
@@ -82,7 +82,7 @@ $FechaAnio = date('Y', time());
         <select type='text' name='date_d2' class='boxtext' class='select-css'>
             <?php
             if($FechaDia<=9){
-                echo "<option value='0$FechaDia'>0$FechaDia</option>";
+                echo "<option value='$FechaDia'>$FechaDia</option>";
             }else if($FechaDia>=10){
                 echo "<option value='$FechaDia'>$FechaDia</option>";
             }
@@ -98,7 +98,7 @@ $FechaAnio = date('Y', time());
         <select type='text' name='date_m2' class='boxtext' class='select-css'>
             <?php
             if($FechaMes<=9){
-                echo "<option value='0$FechaMes'>0$FechaMes</option>";
+                echo "<option value='$FechaMes'>$FechaMes</option>";
             }else if($FechaMes>=10){
                 echo "<option value='$FechaMes'>$FechaMes</option>";
             }
