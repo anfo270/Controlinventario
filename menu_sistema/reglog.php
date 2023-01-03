@@ -41,7 +41,7 @@ $usu = $_SESSION['Usuario'];
             </tr>
         </table>
         <?php
-        $trapasos=$conexion->query("SELECT * FROM reglog ORDER BY ID DESC") or die(print_r($conexion->errorInfo()));
+        $trapasos=$conexion->query("SELECT * FROM reglog ORDER BY ID DESC LIMIT 600") or die(print_r($conexion->errorInfo()));
         while ($item = $trapasos->fetch(PDO::FETCH_OBJ)) { 
             ?>
             <table class="bordes-corte">
