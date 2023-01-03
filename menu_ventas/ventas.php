@@ -1,6 +1,6 @@
 <?php
-require('../Config/conexionbd.php');
-require('../Config/metodosbd.php');
+include('../Config/conexionbd.php');
+include('../Config/metodosbd.php');
 session_start();
 if(!isset($_SESSION['Usuario'])&& !isset( $_SESSION['Contrasena'])){
     header('location: ../index.php');
@@ -29,7 +29,7 @@ $usu = strval($_SESSION['Usuario']);
     " type="image/x-icon">
     <link rel="stylesheet" href="../css/estilocomun.css">
     <link rel="stylesheet" href="../css/reporte.css">
-    <link rel="stylesheet" href="../css/popup.css">
+    <!--<link rel="stylesheet" href="../css/popup.css">-->
 
     <title>Carrito de ventas</title>
 </head>
@@ -66,7 +66,7 @@ $usu = strval($_SESSION['Usuario']);
         }
                 $precio=0;
                 while($item=$productos->fetch(PDO::FETCH_OBJ)){ ?>
-                    <tr>
+                    <tr class="bordes-hover">
                         <td><p><?php echo ucwords($item->tipo); ?></p></td>
                         <td><p><?php 
                         if($item->tipo=="recarga"||$item->tipo=="servicio"){
@@ -77,31 +77,34 @@ $usu = strval($_SESSION['Usuario']);
                         else{
                                 echo ucwords($item->Modelo); }
                                 ?></p></td>
-                        <td><p><?php echo ucwords($item->Precio); ?></p></td>
+                        <td><p><?php echo '$'.ucwords($item->Precio); ?></p></td>
                         <td><button class="btn cancelar" onclick="location.href='../Config/eliminar_carrito.php?id=<?php echo $item->ID; ?>'">Eliminar</button></td>
                     </tr>
                 <?php $precio=intval($item->Precio)+$precio;  }?>
 
         </table>
         <label>
-            <p>Total:<?php echo('$'.$precio);?> </p>
+            <h2>Total:<?php echo(' $'.$precio);?> </h2>
         </label>
-        <div class="botonventa">
-
-            <button class="btn cancelar" onclick="location.href='../Config/eliminar_carrito.php?id=<?php echo 'eliminar'; ?>'">Cancelar</button>
-            <button class="btn" onclick="location.href='seccionventas.php'">Agregar</button>
-            <button class="btn" onclick=" document.getElementById('modal-contenedor').style.visibility='visible'">Finalizar</button>
-        </div>
-        <div class="modal-contenedor" id="modal-contenedor">
-            <div class="model">
-                    <form action="finalizar_compra.php" method="post">
-                        <p>Pago del cliente <input type="text" name="montRec" required></p>
-                        <!--<p>Ingresa tu contraseña para confirmar<input type="password" name="pass" id="pass" ></p>-->
-                        <button class="btn cancelar" id='cancelar' type="reset" onclick= "document.getElementById('modal-contenedor').style.visibility='hidden'">Cancelar</button>
-                        <button class="btn" id="aceptar" type="submit" >Pagar</button>
-                    </form>
+        <form action="finalizar_compra.php" method="post">
+            <label class="labelNoP">
+                <h2>Monto de pago: <input type="number" placeholder=" $0" name="montRec" class="select-css" required></h2>
+            </label>
+            <label>
+                <h3>Tipo de pago: <select name="tipoPago" class="select-css">
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="QR code">C&oacute;digo QR</option>
+                    <option value="Cheque">Cheque</option>
+                </select></h3>
+            </label><br>
+            <div class="botonventa">
+                <button class="btn cancelar" onclick="location.href='../Config/eliminar_carrito.php?id=<?php echo 'eliminar'; ?>'">Cancelar</button>
+                <button class="btn" onclick="location.href='seccionventas.php'">Agregar</button>
+                <button class="btn" ">Finalizar</button>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>

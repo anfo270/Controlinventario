@@ -58,6 +58,9 @@ th, td {
   border-top: 0.5px solid rgb(175, 173, 196);
   border-bottom: 0.5px solid rgb(175, 173, 196);
 }
+.bordes-hover:hover{
+  background-color: rgb(223, 226, 216);
+}
 
 .tabla_usuarios {
   display: flex;
