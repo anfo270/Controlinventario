@@ -11,7 +11,7 @@ $suc = $_SESSION['Local'];
 $vendedor = $_SESSION['Nombre completo'];
 
 date_default_timezone_set('America/Denver');
-$fecha = date('d/m/Y', time());
+$fecha = date('d/m/Y', time())." ".date('h:i a', time());
 
 $precioFinal=0;
 $MontoRecibido=0;
