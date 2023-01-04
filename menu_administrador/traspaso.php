@@ -83,6 +83,7 @@ if($traspas->rowCount()==0){
                         while($item=$local->fetch(PDO::FETCH_OBJ)){?>
                             <option value="<?php echo $item->Nombre; ?>"><?php echo $item->Nombre; ?></option>
                         <?php }?>
+                        <option value="ALMACEN">Almacen</option>
                     </select>
                 </td>
             </tr>
