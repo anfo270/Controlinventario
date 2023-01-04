@@ -106,7 +106,7 @@ $FechaAnio = date('Y', time());
                 echo "<option value='0$i'>0$i</option>";
             }
             for($i=10;$i<=12;$i++){
-                echo "<option value='0$i'>$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
