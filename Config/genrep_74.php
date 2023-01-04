@@ -20,7 +20,7 @@ $senal=$_GET['señal'];
 $data_d="";
 $data_m="";
 $data_y="";
-$tipoArchivo=$_POST['tipo_archivo'];
+//$tipoArchivo=$_POST['tipo_archivo'];
 
 date_default_timezone_set('America/Denver');
 $data = date('d/m/Y', time());
@@ -131,6 +131,8 @@ if ($senal==1){
 } else if ($senal==3){
     // Consulta de ventas por lapso de fechas y/o local
     // Variables de consulta personalizada
+    $tipoArchivo=$_POST['tipo_archivo'];
+
     $data_d=$_POST['date_d'];
     $data_m=$_POST['date_m'];
     $data_y=$_POST['date_y'];
